@@ -72,7 +72,7 @@ node --check .\src\patch.cjs
 node --check .\src\build-manifest.cjs
 ```
 
-Результаты проверки версии 1.3.0 приведены в [`docs/VERIFICATION.md`](docs/VERIFICATION.md).
+Результаты проверки версии 1.4.2 приведены в [`docs/VERIFICATION.md`](docs/VERIFICATION.md).
 
 ## Важно
 
