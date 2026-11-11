@@ -1,4 +1,4 @@
-// Russian UI mapping for GitHub Desktop 3.6.10.
+// Russian UI mapping for GitHub Desktop 3.6.10 and 3.6.11.
 // Exact-string replacements only. Missing strings are left in English.
 module.exports = {
   main: {
@@ -322,7 +322,7 @@ module.exports = {
     "Open the repository in your external editor": "Открыть репозиторий во внешнем редакторе",
     "Unable to open external editor": "Не удалось открыть внешний редактор",
     "Open the repository page on GitHub in your browser": "Открыть страницу репозитория на GitHub",
-    "Summary (required)": "Описание коммита (обязательно)",
+    "Summary (required)": "Заголовок коммита (обязательно)",
     "Are you sure you want to discard all ": "Точно отменить изменения во всех ",
     " changed files?": " изменённых файлах?",
     "Are you sure you want to discard all changes to:": "Точно отменить все изменения в файле:",

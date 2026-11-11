@@ -1,14 +1,29 @@
 {
-  "patchVersion": "1.4.2",
-  "supportedAppDirectory": "app-3.6.10",
-  "originalSha256": {
-    "main": "2F1AFA93CFDDEC3D1E9E5634C40312A6842C6A6DC70C3757A4C53AA775F13857",
-    "renderer": "3A5B3789B9755FFCD61E2E9CD05F4964364CBBEDF28AB9D5B343E425A7C23CD4"
-  },
-  "patchedSha256": {
-    "main": "8802581F06E52F7534A1F2DBCBEAE1172464F335C6379A694CE0BB9A4EE0CD4D",
-    "renderer": "D10DB552870D5A494B4D70E0586597B0DC811F6EBEEDD5515B0BA52A2AEDD87F"
-  },
+  "patchVersion": "1.4.4",
+  "builds": [
+    {
+      "appDirectory": "app-3.6.11",
+      "originalSha256": {
+        "main": "EBF14D7D844268F8BE76DBB17DEB6976CAEE8F3673C75CC62ACF25693B59E6F2",
+        "renderer": "DF8AC40D0ECA0EBA878D4572929516D5B050F520391BFF7B2E5AA10C238367E7"
+      },
+      "patchedSha256": {
+        "main": "E48656E766379982F4A27B9DCD3433D3C47AD49D92ADB4976A710F38AF6CDD5D",
+        "renderer": "6FBFBF1BD1F45659AE595F59D11B4045F43B75F555C05EA5FE6D14EDCD4B3B77"
+      }
+    },
+    {
+      "appDirectory": "app-3.6.10",
+      "originalSha256": {
+        "main": "2F1AFA93CFDDEC3D1E9E5634C40312A6842C6A6DC70C3757A4C53AA775F13857",
+        "renderer": "3A5B3789B9755FFCD61E2E9CD05F4964364CBBEDF28AB9D5B343E425A7C23CD4"
+      },
+      "patchedSha256": {
+        "main": "8802581F06E52F7534A1F2DBCBEAE1172464F335C6379A694CE0BB9A4EE0CD4D",
+        "renderer": "975E8DB45D3E5B179CB4D96C120189D43B2BB1F5C2DA87D58FEC1ABBF0903AEE"
+      }
+    }
+  ],
   "operations": {
     "main": [
       {
@@ -1780,7 +1795,7 @@
       },
       {
         "needle": "\"Summary (required)\"",
-        "replacement": "\"Описание коммита (обязательно)\"",
+        "replacement": "\"Заголовок коммита (обязательно)\"",
         "occurrences": 1
       },
       {

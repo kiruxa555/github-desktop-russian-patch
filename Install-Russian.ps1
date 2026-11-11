@@ -85,14 +85,35 @@ if (-not (Test-Path -LiteralPath $githubRoot)) {
     throw "GitHub Desktop не найден: $githubRoot"
 }
 
-$app = Get-Item -LiteralPath (Join-Path $githubRoot ([string]$manifest.supportedAppDirectory)) -ErrorAction SilentlyContinue
-if ($null -eq $app) {
+$builds = @($manifest.builds)
+if ($builds.Count -eq 0) {
+    throw 'В манифесте нет поддерживаемых сборок GitHub Desktop.'
+}
+
+$installedBuilds = foreach ($build in $builds) {
+    $directory = Join-Path $githubRoot ([string]$build.appDirectory)
+    $item = Get-Item -LiteralPath $directory -ErrorAction SilentlyContinue
+    if ($null -eq $item) { continue }
+    $versionText = ([string]$build.appDirectory) -replace '^app-', ''
+    [pscustomobject]@{
+        Build   = $build
+        App     = $item
+        Version = [version]$versionText
+    }
+}
+
+if ($installedBuilds.Count -eq 0) {
     $installed = @(Get-ChildItem -LiteralPath $githubRoot -Directory -Filter 'app-*' -ErrorAction SilentlyContinue |
         Sort-Object LastWriteTimeUtc -Descending |
         Select-Object -ExpandProperty Name)
     $installedText = if ($installed) { $installed -join ', ' } else { 'не найдены' }
-    throw "Этот комплект рассчитан на $($manifest.supportedAppDirectory). Установленные версии: $installedText."
+    $supportedText = ($builds | ForEach-Object { $_.appDirectory }) -join ', '
+    throw "Этот комплект рассчитан на $supportedText. Установленные версии: $installedText."
 }
+
+$selected = $installedBuilds | Sort-Object Version -Descending | Select-Object -First 1
+$app = $selected.App
+$variant = $selected.Build
 
 $exeFile = Join-Path $app.FullName 'GitHubDesktop.exe'
 $targetAppDir = Join-Path $app.FullName 'resources\app'
@@ -105,28 +126,21 @@ foreach ($required in @($exeFile, $mainFile, $rendererFile)) {
 }
 
 $statePath = Join-Path $githubRoot 'ru-locale-patch.json'
-if (Test-Path -LiteralPath $statePath) {
-    $existingState = Get-Content -LiteralPath $statePath -Raw -Encoding UTF8 | ConvertFrom-Json
-    $mainHash = (Get-FileHash -LiteralPath $mainFile -Algorithm SHA256).Hash
-    $rendererHash = (Get-FileHash -LiteralPath $rendererFile -Algorithm SHA256).Hash
-    if (
-        [string]$existingState.patchVersion -eq [string]$manifest.patchVersion -and
-        $mainHash -eq [string]$manifest.patchedSha256.main -and
-        $rendererHash -eq [string]$manifest.patchedSha256.renderer
-    ) {
-        Write-Host "Русский патч $($manifest.patchVersion) уже установлен."
-        if (-not $NoLaunch) { Start-Process -FilePath $exeFile }
-        return
-    }
-    throw 'Найден другой установленный русский патч. Сначала запусти «Вернуть-английский.cmd», затем повтори установку.'
-}
-
 $currentMainHash = (Get-FileHash -LiteralPath $mainFile -Algorithm SHA256).Hash
 $currentRendererHash = (Get-FileHash -LiteralPath $rendererFile -Algorithm SHA256).Hash
-if (
-    $currentMainHash -ne [string]$manifest.originalSha256.main -or
-    $currentRendererHash -ne [string]$manifest.originalSha256.renderer
-) {
+$matchesPatched = $currentMainHash -eq [string]$variant.patchedSha256.main -and $currentRendererHash -eq [string]$variant.patchedSha256.renderer
+$matchesOriginal = $currentMainHash -eq [string]$variant.originalSha256.main -and $currentRendererHash -eq [string]$variant.originalSha256.renderer
+
+if ($matchesPatched) {
+    Write-Host "Русский патч $($manifest.patchVersion) уже установлен."
+    if (-not $NoLaunch) { Start-Process -FilePath $exeFile }
+    return
+}
+
+if (-not $matchesOriginal) {
+    if (Test-Path -LiteralPath $statePath) {
+        throw 'Найден другой установленный русский патч. Сначала запусти «Вернуть-английский.cmd», затем повтори установку.'
+    }
     throw 'Файлы GitHub Desktop отличаются от проверенной оригинальной версии. Установка остановлена без изменений.'
 }
 
@@ -151,8 +165,8 @@ try {
     $stagedMainHash = (Get-FileHash -LiteralPath (Join-Path $stageAppDir 'main.js') -Algorithm SHA256).Hash
     $stagedRendererHash = (Get-FileHash -LiteralPath (Join-Path $stageAppDir 'renderer.js') -Algorithm SHA256).Hash
     if (
-        $stagedMainHash -ne [string]$manifest.patchedSha256.main -or
-        $stagedRendererHash -ne [string]$manifest.patchedSha256.renderer
+        $stagedMainHash -ne [string]$variant.patchedSha256.main -or
+        $stagedRendererHash -ne [string]$variant.patchedSha256.renderer
     ) {
         throw 'Контрольные суммы подготовленных файлов не совпали с эталоном. Установка остановлена.'
     }
@@ -184,8 +198,8 @@ try {
         appVersionDirectory = $app.Name
         targetAppDir = $targetAppDir
         backupDir = $backupDir
-        originalSha256 = $manifest.originalSha256
-        patchedSha256 = $manifest.patchedSha256
+        originalSha256 = $variant.originalSha256
+        patchedSha256 = $variant.patchedSha256
         appliedKeys = $appliedKeys
         appliedOccurrences = $appliedOccurrences
     }
