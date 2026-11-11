@@ -1,0 +1,10 @@
+*.log
+*.tmp
+*.bak
+dry-run-report*.json
+ru-locale-patch.json
+ru-locale-backups/
+work/
+node_modules/
+.DS_Store
+Thumbs.db

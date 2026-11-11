@@ -1,0 +1,2668 @@
+{
+  "patchVersion": "1.4.2",
+  "supportedAppDirectory": "app-3.6.10",
+  "originalSha256": {
+    "main": "2F1AFA93CFDDEC3D1E9E5634C40312A6842C6A6DC70C3757A4C53AA775F13857",
+    "renderer": "3A5B3789B9755FFCD61E2E9CD05F4964364CBBEDF28AB9D5B343E425A7C23CD4"
+  },
+  "patchedSha256": {
+    "main": "8802581F06E52F7534A1F2DBCBEAE1172464F335C6379A694CE0BB9A4EE0CD4D",
+    "renderer": "D10DB552870D5A494B4D70E0586597B0DC811F6EBEEDD5515B0BA52A2AEDD87F"
+  },
+  "operations": {
+    "main": [
+      {
+        "needle": "`&Open in ${e??\"external editor\"}`",
+        "replacement": "`Открыть в ${e??\"внешнем редакторе\"}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`O&pen in ${t??\"shell\"}`",
+        "replacement": "`Открыть в ${\"Command Prompt\"===t?\"Командной строке\":t??\"терминале\"}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`&Update from ${i}`",
+        "replacement": "`Получить изменения из ${i}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Discarded Changes Will Be Unrecoverable\"",
+        "replacement": "\"Отменённые изменения нельзя будет восстановить\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Squas&h and merge into current branch…\"",
+        "replacement": "\"Объединить коммиты и влить в текущую ветку…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Do you want to fork this repository?\"",
+        "replacement": "\"Создать форк этого репозитория?\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Confirm Committing Conflicted Files\"",
+        "replacement": "\"Подтвердить коммит файлов с конфликтами\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Update Existing Git LFS Filters?\"",
+        "replacement": "\"Обновить существующие фильтры Git LFS?\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"OS Version No Longer Supported\"",
+        "replacement": "\"Версия операционной системы больше не поддерживается\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Unable to Open External Editor\"",
+        "replacement": "\"Не удалось открыть внешний редактор\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"View &pull request on GitHub\"",
+        "replacement": "\"Открыть Pull Request на GitHub\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Merge into current branch…\"",
+        "replacement": "\"Объединить с текущей веткой…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Generic Git Authentication\"",
+        "replacement": "\"Аутентификация Git\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Contract active resizable\"",
+        "replacement": "\"Свернуть активную панель\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Invalidated Account Token\"",
+        "replacement": "\"Токен аккаунта недействителен\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Re-Authorization Required\"",
+        "replacement": "\"Требуется повторная авторизация\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Contact GitHub support…\"",
+        "replacement": "\"Связаться с поддержкой GitHub…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"About dialog (test mode)\"",
+        "replacement": "\"Окно «О программе» (тестовый режим)\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Update banner (priority)\"",
+        "replacement": "\"Обновить приоритетный баннер\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Expand active resizable\"",
+        "replacement": "\"Развернуть активную панель\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Toggle developer tools\"",
+        "replacement": "\"Инструменты разработчика\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Create &issue on GitHub\"",
+        "replacement": "\"Создать задачу на GitHub\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"R&ebase current branch…\"",
+        "replacement": "\"Перебазировать текущую ветку…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show keyboard shortcuts\"",
+        "replacement": "\"Показать горячие клавиши\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Crash renderer process…\"",
+        "replacement": "\"Аварийно завершить процесс интерфейса…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Newer Commits On Remote\"",
+        "replacement": "\"В удалённом репозитории есть новые коммиты\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Upstream Already Exists\"",
+        "replacement": "\"Вышестоящий репозиторий уже существует\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Add &local repository…\"",
+        "replacement": "\"Добавить локальный репозиторий…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"S&how logs in Explorer\"",
+        "replacement": "\"Показать журналы в Проводнике\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Showcase Update banner\"",
+        "replacement": "\"Показать демонстрационный баннер\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Repository &settings…\"",
+        "replacement": "\"Параметры репозитория…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"View branch on GitHub\"",
+        "replacement": "\"Открыть ветку на GitHub\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&About GitHub Desktop\"",
+        "replacement": "\"О GitHub Desktop\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Cherry Pick Conflicts\"",
+        "replacement": "\"Конфликты при переносе коммитов\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"H&ide stashed changes\"",
+        "replacement": "\"Скрыть отложенные изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Sho&w stashed changes\"",
+        "replacement": "\"Показать отложенные изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Discard all changes…\"",
+        "replacement": "\"Отменить все изменения…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Preview pull request\"",
+        "replacement": "\"Предпросмотр Pull Request\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Unable to Locate Git\"",
+        "replacement": "\"Не удалось найти Git\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Unable to Open Shell\"",
+        "replacement": "\"Не удалось открыть терминал\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Create &pull request\"",
+        "replacement": "\"Создать Pull Request\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Toggle &full screen\"",
+        "replacement": "\"Полноэкранный режим\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Crash main process…\"",
+        "replacement": "\"Аварийно завершить основной процесс…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Dispatch CLI action\"",
+        "replacement": "\"Выполнить действие CLI\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Stash all changes…\"",
+        "replacement": "\"Отложить все изменения…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Clo&ne repository…\"",
+        "replacement": "\"Клонировать репозиторий…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Compare to branch\"",
+        "replacement": "\"Сравнить с веткой\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Compare on &GitHub\"",
+        "replacement": "\"Сравнить на GitHub\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Reorder Successful\"",
+        "replacement": "\"Порядок успешно изменён\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show Error Dialogs\"",
+        "replacement": "\"Показывать окна ошибок\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Stash all changes\"",
+        "replacement": "\"Отложить все изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show in E&xplorer\"",
+        "replacement": "\"Показать в Проводнике\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Add to dictionary\"",
+        "replacement": "\"Добавить в словарь\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show notification\"",
+        "replacement": "\"Показать уведомление\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Command Line Tool\"",
+        "replacement": "\"Инструмент командной строки\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"New &repository…\"",
+        "replacement": "\"Новый репозиторий…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Repository &list\"",
+        "replacement": "\"Список репозиториев\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show User Guides\"",
+        "replacement": "\"Открыть руководства\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Merge Successful\"",
+        "replacement": "\"Объединение выполнено\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Untrusted Server\"",
+        "replacement": "\"Недоверенный сервер\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Wor&ktrees list\"",
+        "replacement": "\"Список рабочих деревьев\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&View on GitHub\"",
+        "replacement": "\"Открыть на GitHub\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Files Too Large\"",
+        "replacement": "\"Файлы слишком большие\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Branches list\"",
+        "replacement": "\"Список веток\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Go to &Summary\"",
+        "replacement": "\"Перейти к описанию коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"New work&tree…\"",
+        "replacement": "\"Новое рабочее дерево…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Prune branches\"",
+        "replacement": "\"Очистить удалённые ветки\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show App Error\"",
+        "replacement": "\"Показать ошибку приложения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Reorder Undone\"",
+        "replacement": "\"Изменение порядка отменено\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Report issue…\"",
+        "replacement": "\"Сообщить о проблеме…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Release notes\"",
+        "replacement": "\"Примечания к выпуску\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Update banner\"",
+        "replacement": "\"Обновить баннер\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Push Rejected\"",
+        "replacement": "\"Отправка отклонена\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"New &branch…\"",
+        "replacement": "\"Новая ветка…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Arm64 banner\"",
+        "replacement": "\"Баннер ARM64\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Force P&ush…\"",
+        "replacement": "\"Принудительно отправить…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Select &all\"",
+        "replacement": "\"Выбрать всё\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Repository\"",
+        "replacement": "\"Репозиторий\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Open &with…\"",
+        "replacement": "\"Открыть с помощью…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show banner\"",
+        "replacement": "\"Показать баннер\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Force P&ush\"",
+        "replacement": "\"Принудительно отправить\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Reset zoom\"",
+        "replacement": "\"Сбросить масштаб\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show popup\"",
+        "replacement": "\"Показать всплывающее окно\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Options…\"",
+        "replacement": "\"Параметры…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Thank you\"",
+        "replacement": "\"Спасибо\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"&Changes\"",
+        "replacement": "\"Изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&History\"",
+        "replacement": "\"История\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Zoom out\"",
+        "replacement": "\"Уменьшить\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Rename…\"",
+        "replacement": "\"Переименовать…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Delete…\"",
+        "replacement": "\"Удалить…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Remove…\"",
+        "replacement": "\"Убрать…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Zoom in\"",
+        "replacement": "\"Увеличить\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Reload\"",
+        "replacement": "\"Перезагрузить\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Branch\"",
+        "replacement": "\"Ветка\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Remove\"",
+        "replacement": "\"Убрать\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Paste\"",
+        "replacement": "\"Вставить\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Fetch\"",
+        "replacement": "\"Проверить обновления\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&File\"",
+        "replacement": "\"Файл\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"E&xit\"",
+        "replacement": "\"Выход\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Edit\"",
+        "replacement": "\"Правка\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Undo\"",
+        "replacement": "\"Отменить\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Redo\"",
+        "replacement": "\"Повторить\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Copy\"",
+        "replacement": "\"Копировать\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Find\"",
+        "replacement": "\"Найти\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&View\"",
+        "replacement": "\"Вид\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Pu&ll\"",
+        "replacement": "\"Получить изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"&Help\"",
+        "replacement": "\"Справка\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"P&ush\"",
+        "replacement": "\"Отправить\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Cu&t\"",
+        "replacement": "\"Вырезать\"",
+        "occurrences": 1
+      }
+    ],
+    "renderer": [
+      {
+        "needle": "`Use the Up and Down arrow keys to choose a new location for the selected commit${n}, then press Enter to confirm or Escape to cancel.`",
+        "replacement": "`Стрелками вверх и вниз выберите новое место коммита, затем нажмите Enter для подтверждения или Escape для отмены.`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Committed Just now - ${this.props.mostRecentLocalCommit.summary} (Sha: ${this.props.mostRecentLocalCommit.shortSha})`",
+        "replacement": "`Коммит создан только что — ${this.props.mostRecentLocalCommit.summary} (SHA: ${this.props.mostRecentLocalCommit.shortSha})`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`${i!==s.length?`${JR(i)} of `:\"\"}\\n    ${JR(s.length)} changed file${lH(s.length)}`",
+        "replacement": "`${i!==s.length?`${JR(i)} из `:\"\"}\\n    изменено файлов: ${JR(s.length)}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`You have ${l.join(\" and \")} waiting to be pushed to ${o?\"GitHub\":\"the remote\"}.`",
+        "replacement": "`Ожидают отправки в ${o?\"GitHub\":\"удалённый репозиторий\"}: ${l.join(\" и \")}.`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Sorry, I can't find any changed files matching the following filters: ${n}`",
+        "replacement": "`Не найдены изменённые файлы по фильтрам: ${n}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Press Enter to insert the selected commit${n} ${s} or Escape to cancel.`",
+        "replacement": "`Нажмите Enter, чтобы вставить выбранные коммиты ${s}, или Escape для отмены.`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`${t} ${this.getFilesToBeCommittedButtonText()}to `",
+        "replacement": "`${t} ${this.getFilesToBeCommittedButtonText()}в `",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Push ${a.join(\" and \")} to the ${t.name} remote`",
+        "replacement": "`Отправить ${a.join(\" и \")} в ${t.name}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Open in ${e.resolvedExternalEditor||\"editor\"}`",
+        "replacement": "`Открыть в ${e.resolvedExternalEditor||\"редакторе\"}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`This commit has ${t} tag${t>1?\"s\":\"\"} to push`",
+        "replacement": "`У этого коммита есть теги для отправки: ${t}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Pull requests in ${this.getRepositoryName()}`",
+        "replacement": "`Pull Request в ${this.getRepositoryName()}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`${JR(e.length)} changed file${lH(e.length)}`",
+        "replacement": "`Изменено файлов: ${JR(e.length)}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`View the files of your repository in ${e}`",
+        "replacement": "`Просмотреть файлы репозитория в ${e}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Choose a branch to merge into ${e.name}`",
+        "replacement": "`Выберите ветку для объединения с ${e.name}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Behind (${JR(e.aheadBehind.behind)})`",
+        "replacement": "`Отстаёт (${JR(e.aheadBehind.behind)})`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`${this.getButtonVerb()} last commit`",
+        "replacement": "`${this.getButtonVerb()} последний коммит`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Fetch the latest changes from ${t}`",
+        "replacement": "`Проверить последние изменения в ${t}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Ahead (${JR(e.aheadBehind.ahead)})`",
+        "replacement": "`Опережает (${JR(e.aheadBehind.ahead)})`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Open in ${e.externalEditorLabel}`",
+        "replacement": "`Открыть в ${e.externalEditorLabel}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Bring my changes to ${e.name}`",
+        "replacement": "`Перенести мои изменения в ${e.name}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`${e} ${e>1?\"files\":\"file\"} `",
+        "replacement": "`Файлов: ${e} `",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Cherry-pick ${t} commits…`",
+        "replacement": "`Перенести коммиты (${t})…`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Open in ${e.shellLabel}`",
+        "replacement": "`Открыть в ${e.shellLabel}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Pull ${e} with rebase`",
+        "replacement": "`Получить ${e} с перебазированием`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Reorder ${t} commits…`",
+        "replacement": "`Изменить порядок коммитов (${t})…`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`before commit ${t+1}`",
+        "replacement": "`перед коммитом ${t+1}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Squash ${t} commits…`",
+        "replacement": "`Объединить коммиты (${t})…`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`${e.name} (default)`",
+        "replacement": "`${e.name} (по умолчанию)`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Cloning into ${t}`",
+        "replacement": "`Клонирование в ${t}`",
+        "occurrences": 2
+      },
+      {
+        "needle": "`after commit ${t}`",
+        "replacement": "`после коммита ${t}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Delete tag ${s}`",
+        "replacement": "`Удалить тег ${s}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`${e} (default)`",
+        "replacement": "`${e} (по умолчанию)`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Pull ${t.name}`",
+        "replacement": "`Получить из ${t.name}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Push ${t.name}`",
+        "replacement": "`Отправить в ${t.name}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`${t} to ${e}`",
+        "replacement": "`${t} в ${e}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Open in ${n}`",
+        "replacement": "`Открыть в ${n}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Open in ${r}`",
+        "replacement": "`Открыть в ${r}`",
+        "occurrences": 2
+      },
+      {
+        "needle": "`Fetch ${e}`",
+        "replacement": "`Проверить ${e}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Fetch ${t}`",
+        "replacement": "`Проверить ${t}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Pull ${e}`",
+        "replacement": "`Получить ${e}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"When enabled, GitHub Desktop will attempt to load environment variables from your shell when executing Git hooks. This is useful if your Git hooks depend on environment variables set in your shell configuration files, a common practice for version managers such as nvm, rbenv, asdf, etc.\"",
+        "replacement": "\"GitHub Desktop будет загружать переменные окружения из терминала при выполнении Git-хуков. Это полезно, если хуки зависят от переменных в файлах настройки терминала, например для nvm, rbenv или asdf.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"When enabled, check marks will be displayed along side the line numbers and groups of line numbers in the diff when committing. When disabled, the line number controls will be less prominent.\"",
+        "replacement": "\"При создании коммита рядом с номерами строк и группами строк будут показаны отметки. Если отключить параметр, элементы выбора строк станут менее заметными.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Turning this off will not stop the periodic fetching of your currently selected repository, but may improve overall app performance for users with many repositories.\"",
+        "replacement": "\"Отключение не остановит проверку выбранного репозитория, но может ускорить приложение при большом количестве репозиториев.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"These icons indicate which repositories have local or remote changes, and require the periodic fetching of repositories that are not currently selected.\"",
+        "replacement": "\"Значки показывают локальные и удалённые изменения. Для этого GitHub Desktop периодически проверяет репозитории, которые сейчас не выбраны.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"When enabled, GitHub Desktop will underline links in commit messages, comments, and other text fields. This can help make links easier to distinguish. \"",
+        "replacement": "\"GitHub Desktop будет подчёркивать ссылки в описаниях коммитов, комментариях и других текстовых полях, чтобы их было легче заметить. \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"This repository is currently only available on your local machine. By publishing it on GitHub you can share it, and collaborate with others.\"",
+        "replacement": "\"Сейчас репозиторий хранится только на этом компьютере. Опубликуйте его на GitHub, чтобы открыть доступ другим участникам.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\". You may want to change it due to different workflows, or because your integrations still require the historical default branch name of \"",
+        "replacement": "\". Его можно изменить под свой рабочий процесс или если интеграциям всё ещё требуется прежнее название ветки \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Add a custom provider to use your own API keys with OpenAI-compatible endpoints, Azure, Anthropic, or local providers like Ollama.\"",
+        "replacement": "\"Добавьте собственного провайдера, чтобы использовать свои API-ключи с OpenAI-совместимыми сервисами, Azure, Anthropic или локальными провайдерами вроде Ollama.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Cache hook environment variables to improve performance. Disable if your hooks rely on frequently changing environment variables.\"",
+        "replacement": "\"Кэширование переменных окружения ускоряет работу. Отключите его, если хуки зависят от часто меняющихся переменных.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\") is already published to GitHub. Preview the changes this pull request will have before proposing your changes.\"",
+        "replacement": "\") уже опубликована на GitHub. Просмотрите будущие изменения Pull Request перед отправкой.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"The repository does not seem to exist anymore. You may not have access, or it may have been deleted or renamed.\"",
+        "replacement": "\"Репозиторий больше не найден. Возможно, к нему нет доступа, или его удалили либо переименовали.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"There are no uncommitted changes in this repository. Here are some friendly suggestions for what to do next.\"",
+        "replacement": "\"В репозитории нет незакоммиченных изменений. Вот что можно сделать дальше.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\") is already published to GitHub. Create a pull request to propose and collaborate on your changes.\"",
+        "replacement": "\") уже опубликована на GitHub. Создайте Pull Request, чтобы предложить изменения и обсудить их.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"for private repositories outside of GitHub.com. This feature is experimental and subject to change.\"",
+        "replacement": "\"для частных репозиториев вне GitHub.com. Функция экспериментальная и может измениться.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"The push was rejected by the remote server because a required status check has not been satisfied.\"",
+        "replacement": "\"Сервер отклонил отправку: обязательная проверка состояния не пройдена.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Allows the display of notifications when high-signal events take place in the current repository.\"",
+        "replacement": "\"Показывает уведомления о важных событиях в текущем репозитории.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"If you are using GitHub Enterprise at work, sign in to it to get access to your repositories.\"",
+        "replacement": "\"Если на работе используется GitHub Enterprise, войдите, чтобы получить доступ к репозиториям.\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"The commits from the selected branch will be added to the current branch via a merge commit.\"",
+        "replacement": "\"Коммиты выбранной ветки будут добавлены в текущую через отдельный коммит объединения.\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"This branch cannot be deleted from the remote repository because it is marked as protected.\"",
+        "replacement": "\"Эту ветку нельзя удалить из удалённого репозитория: она защищена.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"The commits in the selected branch will be combined into one commit in the current branch.\"",
+        "replacement": "\"Коммиты выбранной ветки будут объединены в один коммит текущей ветки.\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\" GitHub Desktop has no permission to display notifications. Please, enable them in the\"",
+        "replacement": "\" У GitHub Desktop нет разрешения на показ уведомлений. Включите их в\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"The commits from the selected branch will be rebased and added to the current branch.\"",
+        "replacement": "\"Коммиты выбранной ветки будут перебазированы и добавлены в текущую ветку.\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Always available in the toolbar when there are local commits waiting to be pushed or \"",
+        "replacement": "\"Всегда доступно на панели, когда есть неотправленные локальные коммиты, или \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\" You can drag & drop an existing repository folder here to add it to Desktop\"",
+        "replacement": "\" Перетащите сюда папку существующего репозитория, чтобы добавить её в GitHub Desktop\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Base URL must be an https URL, or an http URL pointing at the local machine.\"",
+        "replacement": "\"Базовый URL должен использовать HTTPS или указывать по HTTP на локальный компьютер.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Sign in to an account with a Copilot license to configure Copilot settings.\"",
+        "replacement": "\"Войдите в аккаунт с лицензией Copilot, чтобы настроить Copilot.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"You can try to show it anyway, but performance may be negatively impacted.\"",
+        "replacement": "\"Его можно показать, но программа может начать работать медленнее.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Select a single commit or a range of consecutive commits to view a diff.\"",
+        "replacement": "\"Выбрать один коммит или непрерывный диапазон коммитов для сравнения.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"that will be committed. Are you sure you want to commit these changes?\"",
+        "replacement": "\"которые войдут в коммит. Продолжить?\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"You have changes on this branch. What would you like to do with them?\"",
+        "replacement": "\"В этой ветке есть изменения. Что с ними сделать?\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Copilot features in GitHub Desktop require a GitHub Copilot license.\"",
+        "replacement": "\"Для функций Copilot в GitHub Desktop нужна лицензия GitHub Copilot.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Always available in the toolbar when there are remote changes or\"",
+        "replacement": "\"Всегда доступно на панели, когда есть удалённые изменения, или\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"There aren’t any remote branches that match the current branch.\"",
+        "replacement": "\"Нет удалённых веток, соответствующих текущей.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Sign in to your GitHub.com account to access your repositories.\"",
+        "replacement": "\"Войдите в аккаунт GitHub.com, чтобы получить доступ к репозиториям.\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\". If you should, please check with a repository administrator.\"",
+        "replacement": "\". Если оно должно быть, уточните это у администратора репозитория.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Unable to display diff when multiple non-consecutive selected.\"",
+        "replacement": "\"Нельзя показать различия для нескольких несмежных коммитов.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"An optimized version of GitHub Desktop is available for your\"",
+        "replacement": "\"Для вашего устройства доступна оптимизированная версия GitHub Desktop\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Add a repository to GitHub Desktop to start collaborating\"",
+        "replacement": "\"Добавьте репозиторий в GitHub Desktop, чтобы начать совместную работу\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Always available in the toolbar for local repositories or\"",
+        "replacement": "\"Всегда доступно на панели для локальных репозиториев, или\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"The force push has been rejected for the current branch.\"",
+        "replacement": "\"Принудительная отправка текущей ветки отклонена.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"This commit has not been pushed to the remote repository\"",
+        "replacement": "\"Этот коммит ещё не отправлен в удалённый репозиторий\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Drag the commits to the branch menu to cherry-pick them.\"",
+        "replacement": "\"Перетащить коммиты в меню веток, чтобы перенести их.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Your in-progress work will follow you to the new branch\"",
+        "replacement": "\"Незавершённые изменения перейдут в новую ветку\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Are you sure you want to discard these stashed changes?\"",
+        "replacement": "\"Точно удалить эти отложенные изменения?\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Always stash and leave my changes on the current branch\"",
+        "replacement": "\"Всегда откладывать изменения в текущей ветке\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\" Do you want to create a fork of this repository at \"",
+        "replacement": "\" Создать форк этого репозитория в \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\" machine and will be installed at the next launch or\"",
+        "replacement": "\" и будет установлена при следующем запуске, или\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"The current repository is in a detached HEAD state.\"",
+        "replacement": "\"Репозиторий находится в состоянии detached HEAD.\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"This path does not appear to be a valid executable.\"",
+        "replacement": "\"Указанный путь не ведёт к исполняемому файлу.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"to display these notifications from GitHub Desktop.\"",
+        "replacement": "\"для GitHub Desktop.\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Model changes apply to future conflict resolutions.\"",
+        "replacement": "\"Выбранная модель будет применяться при следующем разрешении конфликтов.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Open the repository page on GitHub in your browser\"",
+        "replacement": "\"Открыть страницу репозитория на GitHub\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"your tool of choice, or close to resolve manually.\"",
+        "replacement": "\"в другом инструменте или закройте окно для ручного решения.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"The diff is too large to be displayed by default.\"",
+        "replacement": "\"Сравнение слишком большое, чтобы показывать его сразу.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Add an Existing Repository from your local drive…\"",
+        "replacement": "\"Добавить существующий репозиторий с компьютера…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Repository URL or GitHub username and repository\"",
+        "replacement": "\"URL репозитория или имя пользователя GitHub и репозиторий\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"There are uncommitted changes in this repository\"",
+        "replacement": "\"В репозитории есть несохранённые в коммите изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Are you sure you want to discard all changes to:\"",
+        "replacement": "\"Точно отменить все изменения в файле:\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Overriding commit message with generated message\"",
+        "replacement": "\"Заменой описания коммита сгенерированным текстом\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Right click on multiple commits to see options.\"",
+        "replacement": "\"Щёлкнуть правой кнопкой по нескольким коммитам для просмотра действий.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Load Git hook environment variables from shell\"",
+        "replacement": "\"Загружать переменные окружения для Git-хуков из терминала\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Always use Copilot when conflicts are detected\"",
+        "replacement": "\"Всегда использовать Copilot при обнаружении конфликтов\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"It looks like you don’t have write access to \"",
+        "replacement": "\"Похоже, у вас нет права записи в \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Publish your repository to GitHub. Need help?\"",
+        "replacement": "\"Опубликуйте репозиторий на GitHub. Нужна помощь?\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Create a New Repository on your local drive…\"",
+        "replacement": "\"Создать новый репозиторий на компьютере…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Learn more about generating commit messages.\"",
+        "replacement": "\"Подробнее о создании описаний коммитов.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Open the repository in your external editor\"",
+        "replacement": "\"Открыть репозиторий во внешнем редакторе\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"A ref cannot be longer than 255 characters.\"",
+        "replacement": "\"Имя ссылки не может быть длиннее 255 символов.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Drag the commits to squash or reorder them.\"",
+        "replacement": "\"Перетащить коммиты, чтобы объединить их или изменить порядок.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Commit may be misattributed. View warning.\"",
+        "replacement": "\"Автор коммита может быть определён неверно. Показать предупреждение.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Email address is disallowed. View warning.\"",
+        "replacement": "\"Этот адрес электронной почты запрещён. Показать предупреждение.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"If I have changes and I switch branches...\"",
+        "replacement": "\"Если есть изменения и я переключаю ветку…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Help GitHub Desktop improve by submitting\"",
+        "replacement": "\"Отправлять данные, чтобы помочь улучшить GitHub Desktop:\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Default branch name for new repositories\"",
+        "replacement": "\"Название ветки по умолчанию для новых репозиториев\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Always bring my changes to my new branch\"",
+        "replacement": "\"Всегда переносить изменения в новую ветку\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show status icons in the repository list\"",
+        "replacement": "\"Показывать значки состояния в списке репозиториев\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Loading pull requests as fast as I can!\"",
+        "replacement": "\"Загружаю запросы на слияние…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"will be shown in the pull request list.\"",
+        "replacement": "\"будут показаны в списке Pull Request.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"A commit summary is required to commit\"",
+        "replacement": "\"Для коммита нужно заполнить краткое описание\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Clone a repository from the Internet…\"",
+        "replacement": "\"Клонировать репозиторий из интернета…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Switch to repository and pull request\"",
+        "replacement": "\"Перейти к репозиторию и Pull Request\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Are you sure you want to discard all \"",
+        "replacement": "\"Точно отменить изменения во всех \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Learn more about unreachable commits.\"",
+        "replacement": "\"Подробнее о недостижимых коммитах.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Shell to use when loading environment\"",
+        "replacement": "\"Терминал для загрузки окружения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Ask me where I want the changes to go\"",
+        "replacement": "\"Спрашивать, куда перенести изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Do you want to fork this repository?\"",
+        "replacement": "\"Создать форк этого репозитория?\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Generate commit message with Copilot\"",
+        "replacement": "\"Создать описание коммита с помощью Copilot\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"You have a filter applied. There are\"",
+        "replacement": "\"Включён фильтр. Есть\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Cache Git hook environment variables\"",
+        "replacement": "\"Кэшировать переменные окружения Git-хуков\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show a confirmation dialog before...\"",
+        "replacement": "\"Запрашивать подтверждение перед…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"and get going on your next project?\"",
+        "replacement": "\"и начать работу над следующей задачей?\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"The currently checked out branch is\"",
+        "replacement": "\"Текущая выбранная ветка:\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Prefer absolute dates over relative\"",
+        "replacement": "\"Показывать точные даты вместо относительных\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Committing changes hidden by filter\"",
+        "replacement": "\"Созданием коммита со скрытыми фильтром изменениями\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Always available in the toolbar or\"",
+        "replacement": "\"Всегда доступно на панели, или\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Select one or more files to commit\"",
+        "replacement": "\"Выберите хотя бы один файл для коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Sign in to your GitHub Enterprise\"",
+        "replacement": "\"Войти в GitHub Enterprise\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Configure Copilot in app settings\"",
+        "replacement": "\"Настроить Copilot в параметрах приложения\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Publish this branch to the remote\"",
+        "replacement": "\"Опубликовать эту ветку в удалённом репозитории\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Publish this repository to GitHub\"",
+        "replacement": "\"Опубликовать этот репозиторий на GitHub\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Showing changes from all commits\"",
+        "replacement": "\"Показаны изменения из всех коммитов\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"GitHub's default branch name is \"",
+        "replacement": "\"Название ветки GitHub по умолчанию — \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"edit your global Git config file\"",
+        "replacement": "\"глобальный файл настроек Git\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Use system OpenSSH (recommended)\"",
+        "replacement": "\"Использовать системный OpenSSH (рекомендуется)\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"You don't have write access to \"",
+        "replacement": "\"У вас нет права записи в \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"There are no changes to commit.\"",
+        "replacement": "\"Нет изменений для коммита.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show Copilot model credit costs\"",
+        "replacement": "\"Показать стоимость модели Copilot в кредитах\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Return to in progress tutorial\"",
+        "replacement": "\"Вернуться к незавершённому обучению\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Do not show this message again\"",
+        "replacement": "\"Больше не показывать\"",
+        "occurrences": 12
+      },
+      {
+        "needle": "\"Current branch dropdown button\"",
+        "replacement": "\"Меню текущей ветки\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Unable to open external editor\"",
+        "replacement": "\"Не удалось открыть внешний редактор\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Please add at least one model.\"",
+        "replacement": "\"Добавьте хотя бы одну модель.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"View commit author information\"",
+        "replacement": "\"Показать сведения об авторе коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"These arguments are not valid.\"",
+        "replacement": "\"Недопустимые аргументы.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Discarding changes permanently\"",
+        "replacement": "\"Безвозвратным удалением изменений\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Create a tutorial repository…\"",
+        "replacement": "\"Создать учебный репозиторий…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"The current branch is unborn.\"",
+        "replacement": "\"В текущей ветке ещё нет коммитов.\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Publish this branch to GitHub\"",
+        "replacement": "\"Опубликовать эту ветку на GitHub\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Add GitHub Enterprise account\"",
+        "replacement": "\"Добавить аккаунт GitHub Enterprise\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Open Copilot feature settings\"",
+        "replacement": "\"Открыть параметры Copilot\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Make sure notifications are \"",
+        "replacement": "\"Убедитесь, что уведомления \"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Show check marks in the diff\"",
+        "replacement": "\"Показывать отметки в окне сравнения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"No Copilot models available.\"",
+        "replacement": "\"Нет доступных моделей Copilot.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"View Pull Request on GitHub\"",
+        "replacement": "\"Открыть Pull Request на GitHub\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"is already up to date with \"",
+        "replacement": "\"уже синхронизирована с \"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"File does not exist on disk\"",
+        "replacement": "\"Файл отсутствует на диске\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Pull Request checks failed\"",
+        "replacement": "\"Проверки Pull Request не пройдены\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"URL or username/repository\"",
+        "replacement": "\"URL или пользователь/репозиторий\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Sign in using your browser\"",
+        "replacement": "\"Войти через браузер\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Toggle password visibility\"",
+        "replacement": "\"Показать или скрыть пароль\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Generating commit details…\"",
+        "replacement": "\"Создание описания коммита…\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Unknown repository section\"",
+        "replacement": "\"Неизвестный раздел репозитория\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\" for GitHub Desktop in the\"",
+        "replacement": "\" для GitHub Desktop в\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Show commit length warning\"",
+        "replacement": "\"Предупреждать о длине описания коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Use Git Credential Manager\"",
+        "replacement": "\"Использовать Git Credential Manager\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Chat completions (default)\"",
+        "replacement": "\"Chat Completions (по умолчанию)\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Welcome to GitHub Desktop\"",
+        "replacement": "\"Добро пожаловать в GitHub Desktop\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"No open pull requests in \"",
+        "replacement": "\"Нет открытых запросов на слияние в \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Open with default program\"",
+        "replacement": "\"Открыть программой по умолчанию\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Checkout in new worktree…\"",
+        "replacement": "\"Открыть в новом рабочем дереве…\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Cherry-pick to new branch\"",
+        "replacement": "\"Перенести коммиты в новую ветку\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Select branch to compare…\"",
+        "replacement": "\"Выберите ветку для сравнения…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Create branch from commit\"",
+        "replacement": "\"Создать ветку из коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"View on GitHub Enterprise\"",
+        "replacement": "\"Открыть в GitHub Enterprise\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"View your stashed changes\"",
+        "replacement": "\"Показать отложенные изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Loading available models…\"",
+        "replacement": "\"Загрузка доступных моделей…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Commit message generation\"",
+        "replacement": "\"Создание описания коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Filter your repositories\"",
+        "replacement": "\"Фильтр репозиториев\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Add existing repository…\"",
+        "replacement": "\"Добавить существующий репозиторий…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"from the current branch?\"",
+        "replacement": "\"из текущей ветки?\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Fast-forwarding branches\"",
+        "replacement": "\"Обновление веток\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Configure custom editor…\"",
+        "replacement": "\"Настроить другой редактор…\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Pull requests targeting \"",
+        "replacement": "\"Pull Request для \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Configure commit options\"",
+        "replacement": "\"Настроить параметры коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Revert changes in commit\"",
+        "replacement": "\"Отменить изменения этого коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Checking Copilot access…\"",
+        "replacement": "\"Проверка доступа к Copilot…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Confirm discard changes\"",
+        "replacement": "\"Подтвердить отмену изменений\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Open in external editor\"",
+        "replacement": "\"Открыть во внешнем редакторе\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Copy relative file path\"",
+        "replacement": "\"Копировать относительный путь\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Hide whitespace changes\"",
+        "replacement": "\"Скрывать различия в пробелах\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"restore stashed changes\"",
+        "replacement": "\"восстановить отложенные изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"No other editors found.\"",
+        "replacement": "\"Другие редакторы не найдены.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Configure custom shell…\"",
+        "replacement": "\"Настроить другой терминал…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Network and credentials\"",
+        "replacement": "\"Сеть и учётные данные\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"This is an example link\"",
+        "replacement": "\"Пример ссылки\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Create new repository…\"",
+        "replacement": "\"Создать новый репозиторий…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"No repository selected\"",
+        "replacement": "\"Репозиторий не выбран\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Switch to pull request\"",
+        "replacement": "\"Перейти к Pull Request\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"No branches to compare\"",
+        "replacement": "\"Нет веток для сравнения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Command line arguments\"",
+        "replacement": "\"Аргументы командной строки\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"These preferences will\"",
+        "replacement": "\"Эти параметры изменят\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Notifications Settings\"",
+        "replacement": "\"параметрах уведомлений\"",
+        "occurrences": 4
+      },
+      {
+        "needle": "\"create a pull request\"",
+        "replacement": "\"создать запрос на слияние\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Refreshing repository\"",
+        "replacement": "\"Обновление репозитория\"",
+        "occurrences": 4
+      },
+      {
+        "needle": "\"Successfully rebased \"",
+        "replacement": "\"Успешно перебазировано \"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Create a merge commit\"",
+        "replacement": "\"Создать коммит объединения\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"No commits to diff...\"",
+        "replacement": "\"Нет коммитов для сравнения...\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Select your editor in\"",
+        "replacement": "\"Выберите редактор в разделе\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Open in command line,\"",
+        "replacement": "\"Откройте в терминале,\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Removing repositories\"",
+        "replacement": "\"Удалением репозиториев из списка\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Checking out a commit\"",
+        "replacement": "\"Переходом к коммиту\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Fork this repository\"",
+        "replacement": "\"Создать форк\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Discard all changes…\"",
+        "replacement": "\"Отменить все изменения…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Empty commit message\"",
+        "replacement": "\"Описание коммита не заполнено\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Add local repository\"",
+        "replacement": "\"Добавить локальный репозиторий\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"The current branch (\"",
+        "replacement": "\"Текущая ветка (\"",
+        "occurrences": 4
+      },
+      {
+        "needle": "\"Loading system theme\"",
+        "replacement": "\"Загрузка системной темы\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Enable notifications\"",
+        "replacement": "\"Включить уведомления\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"create a new branch\"",
+        "replacement": "\"создать новую ветку\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Continue in browser\"",
+        "replacement": "\"Продолжить в браузере\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"For my own purposes\"",
+        "replacement": "\"Для личного использования\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"This commit message\"",
+        "replacement": "\"Это описание коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Committing changes…\"",
+        "replacement": "\"Создание коммита…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Cherry-pick commit…\"",
+        "replacement": "\"Перенести коммит…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"properly configured\"",
+        "replacement": "\"правильно настроены\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"custom instructions\"",
+        "replacement": "\"пользовательские инструкции\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Conflict resolution\"",
+        "replacement": "\"Разрешение конфликтов\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Let's get started!\"",
+        "replacement": "\"Начнём работу!\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Publish repository\"",
+        "replacement": "\"Опубликовать репозиторий\"",
+        "occurrences": 4
+      },
+      {
+        "needle": "\"Checking out files\"",
+        "replacement": "\"Получение файлов\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Enterprise address\"",
+        "replacement": "\"Адрес GitHub Enterprise\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Clone a repository\"",
+        "replacement": "\"Клонировать репозиторий\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Initialize Git LFS\"",
+        "replacement": "\"Инициализировать Git LFS\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Current repository\"",
+        "replacement": "\"Текущий репозиторий\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Summary (required)\"",
+        "replacement": "\"Описание коммита (обязательно)\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Stash all changes…\"",
+        "replacement": "\"Отложить все изменения…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"No commits to list\"",
+        "replacement": "\"Нет коммитов\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"No files in commit\"",
+        "replacement": "\"В коммите нет файлов\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"No commit selected\"",
+        "replacement": "\"Коммит не выбран\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Path to executable\"",
+        "replacement": "\"Путь к исполняемому файлу\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Discarding changes\"",
+        "replacement": "\"Отменой изменений\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Removing worktrees\"",
+        "replacement": "\"Удалением рабочих деревьев\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Background updates\"",
+        "replacement": "\"Фоновое обновление\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"View Copilot plans\"",
+        "replacement": "\"Посмотреть тарифы Copilot\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Your repositories\"",
+        "replacement": "\"Ваши репозитории\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Clone repository…\"",
+        "replacement": "\"Клонировать репозиторий…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Would you like to\"",
+        "replacement": "\"Хочешь\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Copy the full SHA\"",
+        "replacement": "\"Копировать полный SHA\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Receiving objects\"",
+        "replacement": "\"Получение объектов\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Pull requests in \"",
+        "replacement": "\"Pull Request в \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Remove repository\"",
+        "replacement": "\"Убрать репозиторий из списка\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Stash all changes\"",
+        "replacement": "\"Отложить все изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"OpenAI-compatible\"",
+        "replacement": "\"OpenAI-совместимый\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show credit costs\"",
+        "replacement": "\"Показать стоимость в кредитах\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show in Explorer\"",
+        "replacement": "\"Показать в Проводнике\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Resolving deltas\"",
+        "replacement": "\"Обработка различий\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"No local changes\"",
+        "replacement": "\"Нет локальных изменений\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Squash and merge\"",
+        "replacement": "\"Объединить коммиты и влить\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"No file selected\"",
+        "replacement": "\"Файл не выбран\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Reset to commit…\"",
+        "replacement": "\"Сбросить до коммита…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Checkout commit?\"",
+        "replacement": "\"Перейти к коммиту?\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"grant permission\"",
+        "replacement": "\"разрешить уведомления\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Discarding stash\"",
+        "replacement": "\"Удалением отложенных изменений\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"No models found.\"",
+        "replacement": "\"Модели не найдены.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Create a branch\"",
+        "replacement": "\"Создать ветку\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"You're all set!\"",
+        "replacement": "\"Всё готово!\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Discard changes\"",
+        "replacement": "\"Отменить изменения\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Continue rebase\"",
+        "replacement": "\"Продолжить перебазирование\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"External editor\"",
+        "replacement": "\"Внешний редактор\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Open in browser\"",
+        "replacement": "\"Открыть в браузере\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\" changed files?\"",
+        "replacement": "\" изменённых файлах?\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Reset to commit\"",
+        "replacement": "\"Сбросить до коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Checkout commit\"",
+        "replacement": "\"Перейти к коммиту\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Reorder commits\"",
+        "replacement": "\"Изменить порядок коммитов\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"discard changes\"",
+        "replacement": "\"отменить изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Underline links\"",
+        "replacement": "\"Подчёркивать ссылки\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Failed to push\"",
+        "replacement": "\"Не удалось отправить\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Publish branch\"",
+        "replacement": "\"Опубликовать ветку\"",
+        "occurrences": 4
+      },
+      {
+        "needle": "\"View on GitHub\"",
+        "replacement": "\"Открыть на GitHub\"",
+        "occurrences": 6
+      },
+      {
+        "needle": "\"Copy file path\"",
+        "replacement": "\"Копировать путь к файлу\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"GitHub Copilot\"",
+        "replacement": "\"GitHub Copilot\"",
+        "occurrences": 8
+      },
+      {
+        "needle": "\"Default branch\"",
+        "replacement": "\"Ветка по умолчанию\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Initial commit\"",
+        "replacement": "\"Первый коммит\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Current branch\"",
+        "replacement": "\"Текущая ветка\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"hidden changes\"",
+        "replacement": "\"скрытые изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Copy repo name\"",
+        "replacement": "\"Копировать название репозитория\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Copy repo path\"",
+        "replacement": "\"Копировать путь к репозиторию\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Reorder commit\"",
+        "replacement": "\"Изменить порядок коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Choose a model\"",
+        "replacement": "\"Выбрать модель\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\" to continue?\"",
+        "replacement": "\" и продолжить?\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Exit tutorial\"",
+        "replacement": "\"Закрыть обучение\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Delete branch\"",
+        "replacement": "\"Удалить ветку\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Clear filters\"",
+        "replacement": "\"Сбросить фильтры\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"New worktree…\"",
+        "replacement": "\"Новое рабочее дерево…\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Switch branch\"",
+        "replacement": "\"Переключить ветку\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Commit anyway\"",
+        "replacement": "\"Всё равно создать коммит\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Configure Git\"",
+        "replacement": "\"Настроить Git\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Last fetched \"",
+        "replacement": "\"Последняя проверка \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Never fetched\"",
+        "replacement": "\"Обновления ещё не проверялись\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Merge options\"",
+        "replacement": "\"Варианты объединения\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Open in shell\"",
+        "replacement": "\"Открыть в терминале\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Branch filter\"",
+        "replacement": "\"Фильтр веток\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Amend commit…\"",
+        "replacement": "\"Изменить последний коммит…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Number format\"",
+        "replacement": "\"Формат чисел\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Force pushing\"",
+        "replacement": "\"Принудительной отправкой\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Commit Length\"",
+        "replacement": "\"Длина описания коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Add provider…\"",
+        "replacement": "\"Добавить провайдера…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Filter models\"",
+        "replacement": "\"Фильтр моделей\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Diff Options\"",
+        "replacement": "\"Параметры сравнения\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Open options\"",
+        "replacement": "\"Открыть параметры\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Bearer token\"",
+        "replacement": "\"Bearer-токен\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Unknown user\"",
+        "replacement": "\"Неизвестный пользователь\"",
+        "occurrences": 4
+      },
+      {
+        "needle": "\"Remove alias\"",
+        "replacement": "\"Удалить псевдоним\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Undo commit…\"",
+        "replacement": "\"Отменить коммит…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Cached input\"",
+        "replacement": "\"Кэшированный ввод\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Recycle Bin\"",
+        "replacement": "\"Корзина\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Undo commit\"",
+        "replacement": "\"Отменить коммит\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"In progress\"",
+        "replacement": "\"Выполняется\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Description\"",
+        "replacement": "\"Описание\"",
+        "occurrences": 4
+      },
+      {
+        "needle": "\"Create Tag…\"",
+        "replacement": "\"Создать тег…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Delete tag…\"",
+        "replacement": "\"Удалить тег…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Executables\"",
+        "replacement": "\"Исполняемые файлы\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Date format\"",
+        "replacement": "\"Формат даты\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Time format\"",
+        "replacement": "\"Формат времени\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"You need to\"",
+        "replacement": "\"Необходимо\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"usage stats\"",
+        "replacement": "\"статистика использования\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"New branch\"",
+        "replacement": "\"Новая ветка\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Local path\"",
+        "replacement": "\"Локальный путь\"",
+        "occurrences": 4
+      },
+      {
+        "needle": "\"No history\"",
+        "replacement": "\"История пуста\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Delete tag\"",
+        "replacement": "\"Удалить тег\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"View stash\"",
+        "replacement": "\"Открыть отложенные изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Formatting\"",
+        "replacement": "\"Форматы\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show diff\"",
+        "replacement": "\"Показать сравнение\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Sign into\"",
+        "replacement": "\"Войти в\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Reasoning\"",
+        "replacement": "\"Рассуждение\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Sign out\"",
+        "replacement": "\"Выйти из аккаунта\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Hang on…\"",
+        "replacement": "\"Подождите…\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Password\"",
+        "replacement": "\"Пароль\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Username\"",
+        "replacement": "\"Имя пользователя\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Explorer\"",
+        "replacement": "\"Проводник\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\" menu or\"",
+        "replacement": "\" или меню\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Warning:\"",
+        "replacement": "\"Предупреждение:\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"You can:\"",
+        "replacement": "\"Можно:\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Copy SHA\"",
+        "replacement": "\"Копировать SHA\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"just now\"",
+        "replacement": "\"только что\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Install \"",
+        "replacement": "\"Установить \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"ProTip!\"",
+        "replacement": "\"Совет!\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Publish\"",
+        "replacement": "\"Опубликовать\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Discard\"",
+        "replacement": "\"Отменить\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Sign in\"",
+        "replacement": "\"Войти\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Not now\"",
+        "replacement": "\"Не сейчас\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"API key\"",
+        "replacement": "\"Ключ API\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Options\"",
+        "replacement": "\"Параметры\"",
+        "occurrences": 5
+      },
+      {
+        "needle": "\"Account\"",
+        "replacement": "\"Аккаунт\"",
+        "occurrences": 5
+      },
+      {
+        "needle": "\"Remove…\"",
+        "replacement": "\"Убрать…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Choose…\"",
+        "replacement": "\"Выбрать…\"",
+        "occurrences": 6
+      },
+      {
+        "needle": "\"enabled\"",
+        "replacement": "\"включены\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Filter\"",
+        "replacement": "\"Фильтр\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Select\"",
+        "replacement": "\"Выбрать\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Update\"",
+        "replacement": "\"Обновить\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Author\"",
+        "replacement": "\"Автор\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"System\"",
+        "replacement": "\"Системная\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Models\"",
+        "replacement": "\"Модели\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Output\"",
+        "replacement": "\"Вывод\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Clear\"",
+        "replacement": "\"Очистить\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Email\"",
+        "replacement": "\"Электронная почта\"",
+        "occurrences": 5
+      },
+      {
+        "needle": "\"Shell\"",
+        "replacement": "\"Терминал\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Hooks\"",
+        "replacement": "\"Хуки\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Theme\"",
+        "replacement": "\"Тема\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Light\"",
+        "replacement": "\"Светлая\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Usage\"",
+        "replacement": "\"Статистика использования\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Input\"",
+        "replacement": "\"Ввод\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Copy\"",
+        "replacement": "\"Копировать\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Back\"",
+        "replacement": "\"Назад\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Done\"",
+        "replacement": "\"Готово\"",
+        "occurrences": 4
+      },
+      {
+        "needle": "\"Dark\"",
+        "replacement": "\"Тёмная\"",
+        "occurrences": 1
+      },
+      {
+        "needle": ". Want to\",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"create a fork\"),\"?\")",
+        "replacement": ". Хотите \",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"создать форк\"),\"?\")",
+        "occurrences": 1
+      },
+      {
+        "needle": ". Want to\",\" \",N().createElement(PO,{onClick:this.onSwitchBranch},\"switch branches\"),\"?\")",
+        "replacement": ". Хотите \",\" \",N().createElement(PO,{onClick:this.onSwitchBranch},\"переключить ветку\"),\"?\")",
+        "occurrences": 3
+      },
+      {
+        "needle": "null!==t?e?\"Amending\":\"Amend\":e?\"Committing\":\"Commit\"",
+        "replacement": "null!==t?e?\"Изменение\":\"Изменить\":e?\"Создание коммита\":\"Создать коммит\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "this.props.cancelButtonText||\"Cancel\"",
+        "replacement": "this.props.cancelButtonText||\"Отмена\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "copilot-byok-provider-badge\"},\"Local\"",
+        "replacement": "copilot-byok-provider-badge\"},\"Локальный\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "e[e.Notifications=5]=\"Notifications\"",
+        "replacement": "e[e.Notifications=5]=\"Уведомления\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "e[e.Accessibility=8]=\"Accessibility\"",
+        "replacement": "e[e.Accessibility=8]=\"Доступность\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "this.renderCostDetailsRow(\"Context\"",
+        "replacement": "this.renderCostDetailsRow(\"Контекст\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "e[e.Integrations=1]=\"Integrations\"",
+        "replacement": "e[e.Integrations=1]=\"Интеграции\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "e[e.Appearance=4]=\"Appearance\"",
+        "replacement": "e[e.Appearance=4]=\"Внешний вид\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "e[e.Accounts=0]=\"Accounts\"",
+        "replacement": "e[e.Accounts=0]=\"Аккаунты\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "e[e.Advanced=7]=\"Advanced\"",
+        "replacement": "e[e.Advanced=7]=\"Дополнительно\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "e[e.Prompts=6]=\"Prompts\"",
+        "replacement": "e[e.Prompts=6]=\"Подтверждения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"aria-label\":\"Close\"",
+        "replacement": "\"aria-label\":\"Закрыть\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "okButtonText:\"Save\"",
+        "replacement": "okButtonText:\"Сохранить\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "label:\"Arguments\"",
+        "replacement": "label:\"Аргументы\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Notifications\"",
+        "replacement": "\"Уведомления\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Accessibility\"",
+        "replacement": "\"Доступность\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Pull requests\"",
+        "replacement": "\"Запросы на слияние\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Integrations\"",
+        "replacement": "\"Интеграции\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Appearance\"",
+        "replacement": "\"Внешний вид\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "label:\"Name\"",
+        "replacement": "label:\"Имя\"",
+        "occurrences": 9
+      },
+      {
+        "needle": "label:\"Path\"",
+        "replacement": "label:\"Путь\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Accounts\"",
+        "replacement": "\"Аккаунты\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Advanced\"",
+        "replacement": "\"Дополнительно\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Branches\"",
+        "replacement": "\"Ветки\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Prompts\"",
+        "replacement": "\"Подтверждения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Changes\"",
+        "replacement": "\"Изменения\"",
+        "occurrences": 4
+      },
+      {
+        "needle": "\"History\"",
+        "replacement": "\"История\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Cancel\"",
+        "replacement": "\"Отмена\"",
+        "occurrences": 6
+      },
+      {
+        "needle": "\"Close\"",
+        "replacement": "\"Закрыть\"",
+        "occurrences": 11
+      },
+      {
+        "needle": "\"Clone\"",
+        "replacement": "\"Клонировать\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Save\"",
+        "replacement": "\"Сохранить\"",
+        "occurrences": 3
+      },
+      {
+        "needle": "\"Name\"",
+        "replacement": "\"Имя\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Add\"",
+        "replacement": "\"Добавить\"",
+        "occurrences": 4
+      }
+    ]
+  }
+}
