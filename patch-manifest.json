@@ -1,5 +1,5 @@
 {
-  "patchVersion": "1.4.4",
+  "patchVersion": "1.4.6",
   "builds": [
     {
       "appDirectory": "app-3.6.11",
@@ -8,8 +8,8 @@
         "renderer": "DF8AC40D0ECA0EBA878D4572929516D5B050F520391BFF7B2E5AA10C238367E7"
       },
       "patchedSha256": {
-        "main": "E48656E766379982F4A27B9DCD3433D3C47AD49D92ADB4976A710F38AF6CDD5D",
-        "renderer": "6FBFBF1BD1F45659AE595F59D11B4045F43B75F555C05EA5FE6D14EDCD4B3B77"
+        "main": "B6943AA43A062658B5A9728E15D930FCD627C32D80E7DEBCF5D4AE2EEEBDA9D6",
+        "renderer": "80982F5EDB91BCF04C959EFC0BBA5238961A5A34BE5283F9087CBAABCD093AAC"
       }
     },
     {
@@ -19,8 +19,8 @@
         "renderer": "3A5B3789B9755FFCD61E2E9CD05F4964364CBBEDF28AB9D5B343E425A7C23CD4"
       },
       "patchedSha256": {
-        "main": "8802581F06E52F7534A1F2DBCBEAE1172464F335C6379A694CE0BB9A4EE0CD4D",
-        "renderer": "975E8DB45D3E5B179CB4D96C120189D43B2BB1F5C2DA87D58FEC1ABBF0903AEE"
+        "main": "B4BFECB8C45CDDB289C03F1D7847F5E1C9B04054F1A361D98191F95D1AC07E3C",
+        "renderer": "FE2AEAA18B36DFAA005EA066EB78A42B9DC50260871B3F2FCC20D7E736CDB33E"
       }
     }
   ],
@@ -570,6 +570,11 @@
         "needle": "\"Cu&t\"",
         "replacement": "\"Вырезать\"",
         "occurrences": 1
+      },
+      {
+        "needle": "(c?\"Hide\":\"Show\")+\" Toggle Chan&ges Filter\"",
+        "replacement": "(c?\"Скрыть\":\"Показать\")+\" фильтр изменений\"",
+        "occurrences": 1
       }
     ],
     "renderer": [
@@ -606,6 +611,11 @@
       {
         "needle": "`${t} ${this.getFilesToBeCommittedButtonText()}to `",
         "replacement": "`${t} ${this.getFilesToBeCommittedButtonText()}в `",
+        "occurrences": 1
+      },
+      {
+        "needle": "`You have the latest version (last checked ${s})`",
+        "replacement": "`Установлена последняя версия (проверено ${s})`",
         "occurrences": 1
       },
       {
@@ -741,6 +751,11 @@
       {
         "needle": "`Push ${t.name}`",
         "replacement": "`Отправить в ${t.name}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Version ${t}`",
+        "replacement": "`Версия ${t}`",
         "occurrences": 1
       },
       {
@@ -1049,6 +1064,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Preview the Pull Request from your current branch\"",
+        "replacement": "\"Просмотр Pull Request из текущей ветки\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Repository URL or GitHub username and repository\"",
         "replacement": "\"URL репозитория или имя пользователя GitHub и репозиторий\"",
         "occurrences": 1
@@ -1071,6 +1091,11 @@
       {
         "needle": "\"Right click on multiple commits to see options.\"",
         "replacement": "\"Щёлкнуть правой кнопкой по нескольким коммитам для просмотра действий.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Create a Pull Request from your current branch\"",
+        "replacement": "\"Создание Pull Request из текущей ветки\"",
         "occurrences": 1
       },
       {
@@ -1101,6 +1126,11 @@
       {
         "needle": "\"Learn more about generating commit messages.\"",
         "replacement": "\"Подробнее о создании описаний коммитов.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Responsible use of Copilot in GitHub Desktop\"",
+        "replacement": "\"Ответственное использование Copilot в GitHub Desktop\"",
         "occurrences": 1
       },
       {
@@ -1139,6 +1169,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"You have the latest version (last checked\"",
+        "replacement": "\"Установлена последняя версия (проверено\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Default branch name for new repositories\"",
         "replacement": "\"Название ветки по умолчанию для новых репозиториев\"",
         "occurrences": 1
@@ -1151,6 +1186,11 @@
       {
         "needle": "\"Show status icons in the repository list\"",
         "replacement": "\"Показывать значки состояния в списке репозиториев\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Initialize this repository with a README\"",
+        "replacement": "\"Создать файл README\"",
         "occurrences": 1
       },
       {
@@ -1294,6 +1334,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Looking for the latest features?\"",
+        "replacement": "\"Ищете новые возможности?\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"You don't have write access to \"",
         "replacement": "\"У вас нет права записи в \"",
         "occurrences": 1
@@ -1307,6 +1352,11 @@
         "needle": "\"Show Copilot model credit costs\"",
         "replacement": "\"Показать стоимость модели Copilot в кредитах\"",
         "occurrences": 1
+      },
+      {
+        "needle": "\"License and Open Source Notices\"",
+        "replacement": "\"Лицензия и сведения об открытом коде\"",
+        "occurrences": 2
       },
       {
         "needle": "\"Return to in progress tutorial\"",
@@ -1479,6 +1529,11 @@
         "occurrences": 2
       },
       {
+        "needle": "\"Add Signed-off-by trailer\"",
+        "replacement": "\"Добавить строку Signed-off-by\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Select branch to compare…\"",
         "replacement": "\"Выберите ветку для сравнения…\"",
         "occurrences": 1
@@ -1496,6 +1551,11 @@
       {
         "needle": "\"View your stashed changes\"",
         "replacement": "\"Показать отложенные изменения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Always show worktree list\"",
+        "replacement": "\"Всегда показывать список рабочих деревьев\"",
         "occurrences": 1
       },
       {
@@ -1597,6 +1657,11 @@
         "needle": "\"This is an example link\"",
         "replacement": "\"Пример ссылки\"",
         "occurrences": 1
+      },
+      {
+        "needle": "\"Create a new repository\"",
+        "replacement": "\"Создать новый репозиторий\"",
+        "occurrences": 2
       },
       {
         "needle": "\"Create new repository…\"",
@@ -1704,6 +1769,11 @@
         "occurrences": 4
       },
       {
+        "needle": "\"Preview Pull Request\"",
+        "replacement": "\"Просмотреть Pull Request\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Loading system theme\"",
         "replacement": "\"Загрузка системной темы\"",
         "occurrences": 1
@@ -1711,6 +1781,11 @@
       {
         "needle": "\"Enable notifications\"",
         "replacement": "\"Включить уведомления\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Terms and Conditions\"",
+        "replacement": "\"Условия использования\"",
         "occurrences": 1
       },
       {
@@ -1729,8 +1804,18 @@
         "occurrences": 2
       },
       {
+        "needle": "\"Bypass Commit hooks\"",
+        "replacement": "\"Пропустить хуки коммита\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"This commit message\"",
         "replacement": "\"Это описание коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Create Pull Request\"",
+        "replacement": "\"Создать Pull Request\"",
         "occurrences": 1
       },
       {
@@ -1796,6 +1881,11 @@
       {
         "needle": "\"Summary (required)\"",
         "replacement": "\"Заголовок коммита (обязательно)\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Allow empty commit\"",
+        "replacement": "\"Разрешить пустой коммит\"",
         "occurrences": 1
       },
       {
@@ -1869,6 +1959,11 @@
         "occurrences": 3
       },
       {
+        "needle": "\"Remove co-authors\"",
+        "replacement": "\"Убрать соавторов\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Pull requests in \"",
         "replacement": "\"Pull Request в \"",
         "occurrences": 1
@@ -1892,6 +1987,16 @@
         "needle": "\"Show credit costs\"",
         "replacement": "\"Показать стоимость в кредитах\"",
         "occurrences": 1
+      },
+      {
+        "needle": "\"Check for Updates\"",
+        "replacement": "\"Проверить обновления\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Create repository\"",
+        "replacement": "\"Создать репозиторий\"",
+        "occurrences": 2
       },
       {
         "needle": "\"Show in Explorer\"",
@@ -1969,6 +2074,11 @@
         "occurrences": 2
       },
       {
+        "needle": "\"Recent branches\"",
+        "replacement": "\"Недавние ветки\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Open in browser\"",
         "replacement": "\"Открыть в браузере\"",
         "occurrences": 3
@@ -2002,6 +2112,16 @@
         "needle": "\"Underline links\"",
         "replacement": "\"Подчёркивать ссылки\"",
         "occurrences": 1
+      },
+      {
+        "needle": "\"repository name\"",
+        "replacement": "\"имя репозитория\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"repository path\"",
+        "replacement": "\"путь к репозиторию\"",
+        "occurrences": 4
       },
       {
         "needle": "\"Failed to push\"",
@@ -2041,6 +2161,11 @@
       {
         "needle": "\"Current branch\"",
         "replacement": "\"Текущая ветка\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Add co-authors\"",
+        "replacement": "\"Добавить соавторов\"",
         "occurrences": 1
       },
       {
@@ -2144,6 +2269,16 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Miscellaneous\"",
+        "replacement": "\"Прочее\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Diff tab size\"",
+        "replacement": "\"Ширина табуляции (симв.)\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Force pushing\"",
         "replacement": "\"Принудительной отправкой\"",
         "occurrences": 1
@@ -2161,6 +2296,16 @@
       {
         "needle": "\"Filter models\"",
         "replacement": "\"Фильтр моделей\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"release notes\"",
+        "replacement": "\"примечания к выпуску\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Check out the\"",
+        "replacement": "\"Загляните в\"",
         "occurrences": 1
       },
       {
@@ -2196,6 +2341,11 @@
       {
         "needle": "\"Cached input\"",
         "replacement": "\"Кэшированный ввод\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Beta Channel\"",
+        "replacement": "\"бета-канал\"",
         "occurrences": 1
       },
       {
@@ -2284,6 +2434,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Git ignore\"",
+        "replacement": "\"Файл .gitignore\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Show diff\"",
         "replacement": "\"Показать сравнение\"",
         "occurrences": 1
@@ -2354,6 +2509,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Version \"",
+        "replacement": "\"Версия \"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"ProTip!\"",
         "replacement": "\"Совет!\"",
         "occurrences": 1
@@ -2407,6 +2567,11 @@
         "needle": "\"enabled\"",
         "replacement": "\"включены\"",
         "occurrences": 2
+      },
+      {
+        "needle": "\"License\"",
+        "replacement": "\"Лицензия\"",
+        "occurrences": 1
       },
       {
         "needle": "\"Filter\"",
@@ -2514,6 +2679,26 @@
         "occurrences": 3
       },
       {
+        "needle": "null,\"Use\",\" \",N().createElement(PO,{uri:\"https://gh.io/gcm\"},\"Git Credential Manager\"",
+        "replacement": "null,\"Используйте\",\" \",N().createElement(PO,{uri:\"https://gh.io/gcm\"},\"Git Credential Manager\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "t.map(e=>N().createElement(\"option\",{key:e.name,value:e.name},e.name))",
+        "replacement": "t.map(e=>N().createElement(\"option\",{key:e.name,value:e.name},\"None\"===e.name?\"Нет\":e.name))",
+        "occurrences": 1
+      },
+      {
+        "needle": "n.map(e=>N().createElement(\"option\",{key:e.name,value:e.name},e.name))",
+        "replacement": "n.map(e=>N().createElement(\"option\",{key:e.name,value:e.name},\"None\"===e.name?\"Нет\":e.name))",
+        "occurrences": 1
+      },
+      {
+        "needle": "t.map(e=>N().createElement(\"option\",{key:e,value:e},e))",
+        "replacement": "t.map(e=>N().createElement(\"option\",{key:e,value:e},\"None\"===e?\"Нет\":e))",
+        "occurrences": 1
+      },
+      {
         "needle": "null!==t?e?\"Amending\":\"Amend\":e?\"Committing\":\"Commit\"",
         "replacement": "null!==t?e?\"Изменение\":\"Изменить\":e?\"Создание коммита\":\"Создать коммит\"",
         "occurrences": 1
@@ -2572,6 +2757,11 @@
         "needle": "\"aria-label\":\"Close\"",
         "replacement": "\"aria-label\":\"Закрыть\"",
         "occurrences": 3
+      },
+      {
+        "needle": "\"h1\",{id:i},\"About \"",
+        "replacement": "\"h1\",{id:i},\"О программе \"",
+        "occurrences": 1
       },
       {
         "needle": "okButtonText:\"Save\"",

@@ -60,7 +60,7 @@ builds.sort((left, right) => {
 });
 
 const manifest = {
-  patchVersion: '1.4.4',
+  patchVersion: '1.4.6',
   builds,
   operations: {
     main: operationsFor(report, 'main.js'),

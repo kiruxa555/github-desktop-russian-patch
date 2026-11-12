@@ -165,7 +165,7 @@ function main() {
   }
 
   const reports = [
-    patchFile(mainPath, maps.main, maps.mainTemplates, null, args.dryRun),
+    patchFile(mainPath, maps.main, maps.mainTemplates, maps.mainFragments, args.dryRun),
     patchFile(rendererPath, maps.renderer, maps.templates, maps.rendererFragments, args.dryRun),
   ];
 

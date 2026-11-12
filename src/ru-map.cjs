@@ -107,8 +107,7 @@ module.exports = {
     "&Stash all changes…": "Отложить все изменения…",
     "&Stash all changes": "Отложить все изменения",
     "H&ide stashed changes": "Скрыть отложенные изменения",
-    "Sho&w stashed changes": "Показать отложенные изменения",
-    "(h?\"Hide\":\"Show\")+\" Toggle Chan&ges Filter\"": "(h?\"Скрыть\":\"Показать\")+\" фильтр изменений\""
+    "Sho&w stashed changes": "Показать отложенные изменения"
   },
   renderer: {
     "Do you want to fork this repository?": "Создать форк этого репозитория?",
@@ -243,6 +242,7 @@ module.exports = {
     "Unknown": "Неизвестно",
     "Unknown user": "Неизвестный пользователь",
     "Default branch": "Ветка по умолчанию",
+    "Recent branches": "Недавние ветки",
     "Initial commit": "Первый коммит",
     "Open in browser": "Открыть в браузере",
     "Unknown repository section": "Неизвестный раздел репозитория",
@@ -323,6 +323,11 @@ module.exports = {
     "Unable to open external editor": "Не удалось открыть внешний редактор",
     "Open the repository page on GitHub in your browser": "Открыть страницу репозитория на GitHub",
     "Summary (required)": "Заголовок коммита (обязательно)",
+    "Add co-authors": "Добавить соавторов",
+    "Remove co-authors": "Убрать соавторов",
+    "Bypass Commit hooks": "Пропустить хуки коммита",
+    "Add Signed-off-by trailer": "Добавить строку Signed-off-by",
+    "Allow empty commit": "Разрешить пустой коммит",
     "Are you sure you want to discard all ": "Точно отменить изменения во всех ",
     " changed files?": " изменённых файлах?",
     "Are you sure you want to discard all changes to:": "Точно отменить все изменения в файле:",
@@ -355,6 +360,10 @@ module.exports = {
     "The current branch (": "Текущая ветка (",
     ") is already published to GitHub. Create a pull request to propose and collaborate on your changes.": ") уже опубликована на GitHub. Создайте Pull Request, чтобы предложить изменения и обсудить их.",
     ") is already published to GitHub. Preview the changes this pull request will have before proposing your changes.": ") уже опубликована на GitHub. Просмотрите будущие изменения Pull Request перед отправкой.",
+    "Preview the Pull Request from your current branch": "Просмотр Pull Request из текущей ветки",
+    "Preview Pull Request": "Просмотреть Pull Request",
+    "Create a Pull Request from your current branch": "Создание Pull Request из текущей ветки",
+    "Create Pull Request": "Создать Pull Request",
     "You have a filter applied. There are": "Включён фильтр. Есть",
     "hidden changes": "скрытые изменения",
     "that will be committed. Are you sure you want to commit these changes?": "которые войдут в коммит. Продолжить?",
@@ -527,6 +536,9 @@ module.exports = {
     "Diff": "Сравнение",
     "Tab Size": "Размер табуляции",
     "Tab size": "Размер табуляции",
+    "Miscellaneous": "Прочее",
+    "Diff tab size": "Ширина табуляции (симв.)",
+    "Always show worktree list": "Всегда показывать список рабочих деревьев",
 
     // Preferences: notifications.
     "Enable notifications": "Включить уведомления",
@@ -615,7 +627,24 @@ module.exports = {
     "No models found.": "Модели не найдены.",
     "Choose a model": "Выбрать модель",
     "Filter models": "Фильтр моделей",
-    "Chat completions (default)": "Chat Completions (по умолчанию)"
+    "Chat completions (default)": "Chat Completions (по умолчанию)",
+    "Version ": "Версия ",
+    "release notes": "примечания к выпуску",
+    "You have the latest version (last checked": "Установлена последняя версия (проверено",
+    "Check for Updates": "Проверить обновления",
+    "Looking for the latest features?": "Ищете новые возможности?",
+    "Check out the": "Загляните в",
+    "Beta Channel": "бета-канал",
+    "Terms and Conditions": "Условия использования",
+    "License and Open Source Notices": "Лицензия и сведения об открытом коде",
+    "Responsible use of Copilot in GitHub Desktop": "Ответственное использование Copilot в GitHub Desktop",
+    "Create a new repository": "Создать новый репозиторий",
+    "Create repository": "Создать репозиторий",
+    "repository name": "имя репозитория",
+    "repository path": "путь к репозиторию",
+    "Initialize this repository with a README": "Создать файл README",
+    "Git ignore": "Файл .gitignore",
+    "License": "Лицензия"
   },
   rendererFragments: {
     ". Want to\",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"create a fork\"),\"?\")": ". Хотите \",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"создать форк\"),\"?\")",
@@ -657,13 +686,19 @@ module.exports = {
     "value??\"Unavailable\"": "value??\"Недоступно\"",
     "this.renderCostDetailsRow(\"Context\"": "this.renderCostDetailsRow(\"Контекст\"",
     "n?\"правильно настроены\":\"enabled\"": "n?\"правильно настроены\":\"включены\"",
-    "null,\"Use\",\" \",Re.createElement(ZL,{uri:\"https://gh.io/gcm\"}": "null,\"Использовать\",\" \",Re.createElement(ZL,{uri:\"https://gh.io/gcm\"}",
+    "null,\"Use\",\" \",N().createElement(PO,{uri:\"https://gh.io/gcm\"},\"Git Credential Manager\"": "null,\"Используйте\",\" \",N().createElement(PO,{uri:\"https://gh.io/gcm\"},\"Git Credential Manager\"",
     "SR(\"en-US\",{numeric:\"auto\"})": "SR(\"ru-RU\",{numeric:\"auto\"})",
     "null!==t?e?\"Amending\":\"Amend\":e?\"Committing\":\"Commit\"": "null!==t?e?\"Изменение\":\"Изменить\":e?\"Создание коммита\":\"Создать коммит\"",
     "Re.createElement(\"div\",{className:\"file-list-header\"},e,\" changed \",t)": "Re.createElement(\"div\",{className:\"file-list-header\"},\"Изменено файлов: \",e)",
-    "\"Choose a branch to merge into \",Re.createElement(\"strong\",null,e.name)": "\"Выберите ветку для объединения с \",Re.createElement(\"strong\",null,e.name)"
+    "\"Choose a branch to merge into \",Re.createElement(\"strong\",null,e.name)": "\"Выберите ветку для объединения с \",Re.createElement(\"strong\",null,e.name)",
+    "\"h1\",{id:i},\"About \"": "\"h1\",{id:i},\"О программе \"",
+    "t.map(e=>N().createElement(\"option\",{key:e,value:e},e))": "t.map(e=>N().createElement(\"option\",{key:e,value:e},\"None\"===e?\"Нет\":e))",
+    "t.map(e=>N().createElement(\"option\",{key:e.name,value:e.name},e.name))": "t.map(e=>N().createElement(\"option\",{key:e.name,value:e.name},\"None\"===e.name?\"Нет\":e.name))",
+    "n.map(e=>N().createElement(\"option\",{key:e.name,value:e.name},e.name))": "n.map(e=>N().createElement(\"option\",{key:e.name,value:e.name},\"None\"===e.name?\"Нет\":e.name))"
   },
   templates: {
+    "Version ${t}": "Версия ${t}",
+    "You have the latest version (last checked ${s})": "Установлена последняя версия (проверено ${s})",
     "${e} (default)": "${e} (по умолчанию)",
     "${e.name} (default)": "${e.name} (по умолчанию)",
     "Pull ${WE(n.behind)} ${1===n.behind?\"commit\":\"commits\"} from the ${t.name} remote": "Получить ${WE(n.behind)} ${1===n.behind?\"коммит\":\"коммитов\"} из ${t.name}",
@@ -715,5 +750,8 @@ module.exports = {
     "&Update from ${i}": "Получить изменения из ${i}",
     "&Open in ${e??\"external editor\"}": "Открыть в ${e??\"внешнем редакторе\"}",
     "O&pen in ${t??\"shell\"}": "Открыть в ${\"Command Prompt\"===t?\"Командной строке\":t??\"терминале\"}"
+  },
+  mainFragments: {
+    "(c?\"Hide\":\"Show\")+\" Toggle Chan&ges Filter\"": "(c?\"Скрыть\":\"Показать\")+\" фильтр изменений\""
   }
 };
