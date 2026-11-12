@@ -1,5 +1,5 @@
 {
-  "patchVersion": "1.4.6",
+  "patchVersion": "1.4.7",
   "builds": [
     {
       "appDirectory": "app-3.6.11",
@@ -8,8 +8,8 @@
         "renderer": "DF8AC40D0ECA0EBA878D4572929516D5B050F520391BFF7B2E5AA10C238367E7"
       },
       "patchedSha256": {
-        "main": "B6943AA43A062658B5A9728E15D930FCD627C32D80E7DEBCF5D4AE2EEEBDA9D6",
-        "renderer": "80982F5EDB91BCF04C959EFC0BBA5238961A5A34BE5283F9087CBAABCD093AAC"
+        "main": "A7757113D84487C0336A0B77AC642C87E467FF10E9D91A6DC1EC05E241BFFAAC",
+        "renderer": "2BF3E547BAEEB492F245E1B9A728DE3ABB99BEACB4E27D2BC3D73CD986F52038"
       }
     },
     {
@@ -19,8 +19,8 @@
         "renderer": "3A5B3789B9755FFCD61E2E9CD05F4964364CBBEDF28AB9D5B343E425A7C23CD4"
       },
       "patchedSha256": {
-        "main": "B4BFECB8C45CDDB289C03F1D7847F5E1C9B04054F1A361D98191F95D1AC07E3C",
-        "renderer": "FE2AEAA18B36DFAA005EA066EB78A42B9DC50260871B3F2FCC20D7E736CDB33E"
+        "main": "C1F767BA31A9E06920F0E8A1D836B7950B3021427F0DEA60CCDA2A3B8A5E1A54",
+        "renderer": "7D2A7C59EABC780AA6586FD0116EF0E060750FF2F3C592849F60E7C11B549620"
       }
     }
   ],
@@ -138,7 +138,7 @@
       },
       {
         "needle": "\"R&ebase current branch…\"",
-        "replacement": "\"Перебазировать текущую ветку…\"",
+        "replacement": "\"Перенести коммиты текущей ветки…\"",
         "occurrences": 1
       },
       {
@@ -654,6 +654,11 @@
         "occurrences": 1
       },
       {
+        "needle": "`${t.slice(0,-1).join(\", \")}, and ${e}`",
+        "replacement": "`${t.slice(0,-1).join(\", \")} и ${e}`",
+        "occurrences": 1
+      },
+      {
         "needle": "`Behind (${JR(e.aheadBehind.behind)})`",
         "replacement": "`Отстаёт (${JR(e.aheadBehind.behind)})`",
         "occurrences": 1
@@ -684,13 +689,28 @@
         "occurrences": 1
       },
       {
+        "needle": "`Excluded from commit (${i})`",
+        "replacement": "`Исключённые из коммита (${i})`",
+        "occurrences": 1
+      },
+      {
         "needle": "`${e} ${e>1?\"files\":\"file\"} `",
         "replacement": "`Файлов: ${e} `",
         "occurrences": 1
       },
       {
+        "needle": "`Included in commit (${r})`",
+        "replacement": "`Включённые в коммит (${r})`",
+        "occurrences": 1
+      },
+      {
         "needle": "`Cherry-pick ${t} commits…`",
         "replacement": "`Перенести коммиты (${t})…`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`${o} commit${o>1?\"s\":\"\"}`",
+        "replacement": "`${o} ${1===o?\"коммит\":\"коммитов\"}`",
         "occurrences": 1
       },
       {
@@ -704,8 +724,18 @@
         "occurrences": 1
       },
       {
+        "needle": "`Modified files (${n})`",
+        "replacement": "`Изменённые файлы (${n})`",
+        "occurrences": 1
+      },
+      {
         "needle": "`Reorder ${t} commits…`",
         "replacement": "`Изменить порядок коммитов (${t})…`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Deleted files (${s})`",
+        "replacement": "`Удалённые файлы (${s})`",
         "occurrences": 1
       },
       {
@@ -724,6 +754,11 @@
         "occurrences": 1
       },
       {
+        "needle": "`${t[0]} and ${t[1]}`",
+        "replacement": "`${t[0]} и ${t[1]}`",
+        "occurrences": 1
+      },
+      {
         "needle": "`Cloning into ${t}`",
         "replacement": "`Клонирование в ${t}`",
         "occurrences": 2
@@ -731,6 +766,11 @@
       {
         "needle": "`after commit ${t}`",
         "replacement": "`после коммита ${t}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`New files (${t})`",
+        "replacement": "`Новые файлы (${t})`",
         "occurrences": 1
       },
       {
@@ -746,6 +786,11 @@
       {
         "needle": "`Pull ${t.name}`",
         "replacement": "`Получить из ${t.name}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`(${e} applied)`",
+        "replacement": "`(применено: ${e})`",
         "occurrences": 1
       },
       {
@@ -895,12 +940,17 @@
       },
       {
         "needle": "\"The commits from the selected branch will be rebased and added to the current branch.\"",
-        "replacement": "\"Коммиты выбранной ветки будут перебазированы и добавлены в текущую ветку.\"",
+        "replacement": "\"Коммиты выбранной ветки будут перенесены и добавлены в текущую ветку.\"",
         "occurrences": 2
       },
       {
         "needle": "\"Always available in the toolbar when there are local commits waiting to be pushed or \"",
         "replacement": "\"Всегда доступно на панели, когда есть неотправленные локальные коммиты, или \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Interacting with individual lines or hunks will be disabled while hiding whitespace.\"",
+        "replacement": "\"Пока различия в пробелах скрыты, нельзя выбирать отдельные строки и блоки.\"",
         "occurrences": 1
       },
       {
@@ -1266,6 +1316,11 @@
       {
         "needle": "\"and get going on your next project?\"",
         "replacement": "\"и начать работу над следующей задачей?\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"No files match your current filters\"",
+        "replacement": "\"Нет файлов по текущим фильтрам\"",
         "occurrences": 1
       },
       {
@@ -1729,6 +1784,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"There are no changes.\"",
+        "replacement": "\"Изменений нет.\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Open in command line,\"",
         "replacement": "\"Откройте в терминале,\"",
         "occurrences": 1
@@ -1754,6 +1814,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Excluded from commit\"",
+        "replacement": "\"Исключённые из коммита\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Empty commit message\"",
         "replacement": "\"Описание коммита не заполнено\"",
         "occurrences": 2
@@ -1771,6 +1836,11 @@
       {
         "needle": "\"Preview Pull Request\"",
         "replacement": "\"Просмотреть Pull Request\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Choose a base branch\"",
+        "replacement": "\"Выберите базовую ветку\"",
         "occurrences": 1
       },
       {
@@ -1819,6 +1889,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Open a pull request\"",
+        "replacement": "\"Открыть Pull Request\"",
+        "occurrences": 2
+      },
+      {
         "needle": "\"Committing changes…\"",
         "replacement": "\"Создание коммита…\"",
         "occurrences": 1
@@ -1852,6 +1927,11 @@
         "needle": "\"Publish repository\"",
         "replacement": "\"Опубликовать репозиторий\"",
         "occurrences": 4
+      },
+      {
+        "needle": "\"Included in commit\"",
+        "replacement": "\"Включённые в коммит\"",
+        "occurrences": 1
       },
       {
         "needle": "\"Checking out files\"",
@@ -2064,6 +2144,11 @@
         "occurrences": 3
       },
       {
+        "needle": "\"Filter Options \"",
+        "replacement": "\"Параметры фильтра \"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Continue rebase\"",
         "replacement": "\"Продолжить перебазирование\"",
         "occurrences": 2
@@ -2144,6 +2229,16 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Filter Options\"",
+        "replacement": "\"Параметры фильтра\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Modified files\"",
+        "replacement": "\"Изменённые файлы\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"GitHub Copilot\"",
         "replacement": "\"GitHub Copilot\"",
         "occurrences": 8
@@ -2152,6 +2247,11 @@
         "needle": "\"Default branch\"",
         "replacement": "\"Ветка по умолчанию\"",
         "occurrences": 2
+      },
+      {
+        "needle": "\"Other branches\"",
+        "replacement": "\"Другие ветки\"",
+        "occurrences": 1
       },
       {
         "needle": "\"Initial commit\"",
@@ -2212,6 +2312,11 @@
         "needle": "\"Clear filters\"",
         "replacement": "\"Сбросить фильтры\"",
         "occurrences": 2
+      },
+      {
+        "needle": "\"Deleted files\"",
+        "replacement": "\"Удалённые файлы\"",
+        "occurrences": 1
       },
       {
         "needle": "\"New worktree…\"",
@@ -2314,6 +2419,11 @@
         "occurrences": 2
       },
       {
+        "needle": "\"Diff display\"",
+        "replacement": "\"Вид сравнения\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Open options\"",
         "replacement": "\"Открыть параметры\"",
         "occurrences": 3
@@ -2409,6 +2519,11 @@
         "occurrences": 3
       },
       {
+        "needle": "\"Whitespace\"",
+        "replacement": "\"Пробелы\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Local path\"",
         "replacement": "\"Локальный путь\"",
         "occurrences": 4
@@ -2441,6 +2556,11 @@
       {
         "needle": "\"Show diff\"",
         "replacement": "\"Показать сравнение\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"New files\"",
+        "replacement": "\"Новые файлы\"",
         "occurrences": 1
       },
       {
@@ -2669,6 +2789,16 @@
         "occurrences": 1
       },
       {
+        "needle": "o=e?\"View\":\" Create\",a=`${o} pull request on GitHub${r&&r.endpoint!==Wr()?\" Enterprise\":\"\"}.`,l=N().createElement(N().Fragment,null,e&&N().createElement(aa,{symbol:zh}),`${o} pull request`)",
+        "replacement": "o=e?\"Открыть\":\" Создать\",a=`${o} Pull Request на GitHub${r&&r.endpoint!==Wr()?\" Enterprise\":\"\"}.`,l=N().createElement(N().Fragment,null,e&&N().createElement(aa,{symbol:zh}),`${o} Pull Request`)",
+        "occurrences": 1
+      },
+      {
+        "needle": "t=\"Squash\"===this.props.operation?\"Squash and \":null;return Kt()().createElement(Kt()().Fragment,null,t,\"Merge into \",Kt()().createElement(\"strong\",null,e))",
+        "replacement": "t=\"Squash\"===this.props.operation?\"Объединить коммиты и влить в \":\"Влить в \";return Kt()().createElement(Kt()().Fragment,null,t,Kt()().createElement(\"strong\",null,e))",
+        "occurrences": 1
+      },
+      {
         "needle": ". Want to\",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"create a fork\"),\"?\")",
         "replacement": ". Хотите \",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"создать форк\"),\"?\")",
         "occurrences": 1
@@ -2679,8 +2809,28 @@
         "occurrences": 3
       },
       {
+        "needle": "N().createElement(\"span\",{className:\"popover-dropdown-button-label\"},\"base:\"),o?.name??\"\"",
+        "replacement": "o?.name??\"\"",
+        "occurrences": 1
+      },
+      {
         "needle": "null,\"Use\",\" \",N().createElement(PO,{uri:\"https://gh.io/gcm\"},\"Git Credential Manager\"",
         "replacement": "null,\"Используйте\",\" \",N().createElement(PO,{uri:\"https://gh.io/gcm\"},\"Git Credential Manager\"",
+        "occurrences": 1
+      },
+      {
+        "needle": ",\" and \",N().createElement(hF,null,t.name),\" are entirely different commit histories.\"",
+        "replacement": ",\" и \",N().createElement(hF,null,t.name),\" — это разные истории коммитов.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Choose a branch to merge into \",N().createElement(\"strong\",null,e.name)",
+        "replacement": "\"Выберите ветку для объединения с \",N().createElement(\"strong\",null,e.name)",
+        "occurrences": 1
+      },
+      {
+        "needle": "N().createElement(\"div\",{className:\"file-list-header\"},e,\" changed \",t)",
+        "replacement": "N().createElement(\"div\",{className:\"file-list-header\"},\"Изменено файлов: \",e)",
         "occurrences": 1
       },
       {
@@ -2701,6 +2851,21 @@
       {
         "needle": "null!==t?e?\"Amending\":\"Amend\":e?\"Committing\":\"Commit\"",
         "replacement": "null!==t?e?\"Изменение\":\"Изменить\":e?\"Создание коммита\":\"Создать коммит\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "null,\"Rebase \",Kt()().createElement(\"strong\",null,e)",
+        "replacement": "null,\"Перенести коммиты \",Kt()().createElement(\"strong\",null,e)",
+        "occurrences": 1
+      },
+      {
+        "needle": ",\" \",\"from \",N().createElement(hF,null,t.name),\".\"",
+        "replacement": ",\" \",\"из \",N().createElement(hF,null,t.name),\".\"",
+        "occurrences": 1
+      },
+      {
+        "needle": ",\" is up to date with all commits from\",\" \"",
+        "replacement": ",\" уже содержит все коммиты из\",\" \"",
         "occurrences": 1
       },
       {
@@ -2739,6 +2904,11 @@
         "occurrences": 1
       },
       {
+        "needle": "{label:\"Rebase\",description:",
+        "replacement": "{label:\"Перенести коммиты\",description:",
+        "occurrences": 2
+      },
+      {
         "needle": "e[e.Accounts=0]=\"Accounts\"",
         "replacement": "e[e.Accounts=0]=\"Аккаунты\"",
         "occurrences": 1
@@ -2769,9 +2939,24 @@
         "occurrences": 2
       },
       {
+        "needle": "\"div\",null,\"Split\"",
+        "replacement": "\"div\",null,\"Раздельный вид\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Merge \",u,\" into\"",
+        "replacement": "\"Объединить \",u,\" с веткой\"",
+        "occurrences": 1
+      },
+      {
         "needle": "label:\"Arguments\"",
         "replacement": "label:\"Аргументы\"",
         "occurrences": 1
+      },
+      {
+        "needle": "\" removed lines\"",
+        "replacement": "\" удалено строк\"",
+        "occurrences": 2
       },
       {
         "needle": "\"Notifications\"",
@@ -2789,9 +2974,19 @@
         "occurrences": 1
       },
       {
+        "needle": "label:\"Unified\"",
+        "replacement": "label:\"Единый вид\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Integrations\"",
         "replacement": "\"Интеграции\"",
         "occurrences": 1
+      },
+      {
+        "needle": "\" added lines\"",
+        "replacement": "\" добавлено строк\"",
+        "occurrences": 2
       },
       {
         "needle": "\"Appearance\"",
