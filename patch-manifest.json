@@ -1,5 +1,5 @@
 {
-  "patchVersion": "1.4.10",
+  "patchVersion": "1.4.11",
   "builds": [
     {
       "appDirectory": "app-3.6.11",
@@ -9,7 +9,7 @@
       },
       "patchedSha256": {
         "main": "A7757113D84487C0336A0B77AC642C87E467FF10E9D91A6DC1EC05E241BFFAAC",
-        "renderer": "B37A75AD5957D77E943D72C9F33622DE02AB6D61775C92644896A464281B50C0"
+        "renderer": "E1DEE17B364E2B09695E12DED539870C1CF95AAF18034657EEA739F8DE0BC688"
       }
     },
     {
@@ -20,7 +20,7 @@
       },
       "patchedSha256": {
         "main": "C1F767BA31A9E06920F0E8A1D836B7950B3021427F0DEA60CCDA2A3B8A5E1A54",
-        "renderer": "9F0E580ACD24D07238034CEC7B5319538EFDB0049FE0C0E6BDF9F0A26A18C846"
+        "renderer": "654E62044D1B9AE6E041BA789CCAA83178592C1F11E6C557A28E7EA0AA343EA2"
       }
     }
   ],
@@ -759,6 +759,11 @@
         "occurrences": 1
       },
       {
+        "needle": "`Pushing to ${t.name}`",
+        "replacement": "`Отправка в ${t.name}`",
+        "occurrences": 1
+      },
+      {
         "needle": "`before commit ${t+1}`",
         "replacement": "`перед коммитом ${t+1}`",
         "occurrences": 1
@@ -779,9 +784,24 @@
         "occurrences": 1
       },
       {
+        "needle": "`Fetching ${t.name}`",
+        "replacement": "`Проверка ${t.name}`",
+        "occurrences": 1
+      },
+      {
         "needle": "`Cloning into ${t}`",
         "replacement": "`Клонирование в ${t}`",
         "occurrences": 2
+      },
+      {
+        "needle": "`Pulling ${n.name}`",
+        "replacement": "`Получение ${n.name}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Pulling ${t.name}`",
+        "replacement": "`Получение ${t.name}`",
+        "occurrences": 1
       },
       {
         "needle": "`after commit ${t}`",
@@ -791,6 +811,11 @@
       {
         "needle": "`New files (${t})`",
         "replacement": "`Новые файлы (${t})`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Pushing to ${i}`",
+        "replacement": "`Отправка в ${i}`",
         "occurrences": 1
       },
       {
@@ -851,6 +876,11 @@
       {
         "needle": "`Pull ${e}`",
         "replacement": "`Получить ${e}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Push ${e}`",
+        "replacement": "`Отправить в ${e}`",
         "occurrences": 1
       },
       {
