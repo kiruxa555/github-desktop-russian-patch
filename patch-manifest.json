@@ -1,5 +1,5 @@
 {
-  "patchVersion": "1.4.8",
+  "patchVersion": "1.4.9",
   "builds": [
     {
       "appDirectory": "app-3.6.11",
@@ -9,7 +9,7 @@
       },
       "patchedSha256": {
         "main": "A7757113D84487C0336A0B77AC642C87E467FF10E9D91A6DC1EC05E241BFFAAC",
-        "renderer": "5C2BCD86B9873387691DC6B3CE36101C91F08414CC21AD8831E6D86840E75D68"
+        "renderer": "C325F2B4380A5D40512C6064D388632FC4FC1D8912FCCC4BC1E3584702D4421E"
       }
     },
     {
@@ -20,7 +20,7 @@
       },
       "patchedSha256": {
         "main": "C1F767BA31A9E06920F0E8A1D836B7950B3021427F0DEA60CCDA2A3B8A5E1A54",
-        "renderer": "C705CF0C8B2B70467B1819F4514500435A7D8B79BBB24DA0B131819F838FEAAE"
+        "renderer": "E3B15B4C3A2DE818BAABEE41DD1B83B5E7659D0E06CE35575FB3F95631C4CDDE"
       }
     }
   ],
@@ -955,7 +955,7 @@
       },
       {
         "needle": "\"If you are using GitHub Enterprise at work, sign in to it to get access to your repositories.\"",
-        "replacement": "\"Если на работе используется GitHub Enterprise, войдите, чтобы получить доступ к репозиториям.\"",
+        "replacement": "\"Если вы используете GitHub Enterprise для работы, войдите в него, чтобы получить доступ к своим репозиториям.\"",
         "occurrences": 3
       },
       {
@@ -2199,6 +2199,11 @@
         "occurrences": 3
       },
       {
+        "needle": "\"Committing with \"",
+        "replacement": "\"Коммит от \"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"No local changes\"",
         "replacement": "\"Нет локальных изменений\"",
         "occurrences": 1
@@ -2387,6 +2392,11 @@
         "needle": "\"Initial commit\"",
         "replacement": "\"Первый коммит\"",
         "occurrences": 2
+      },
+      {
+        "needle": "\"Committing as \"",
+        "replacement": "\"Коммит от имени \"",
+        "occurrences": 1
       },
       {
         "needle": "\"Current branch\"",
@@ -3004,6 +3014,11 @@
         "occurrences": 1
       },
       {
+        "needle": "renderGitConfigPopover(){const{user:e}=this.props,{isGitConfigLocal:t}=this.state,n=t?\"local\":\"global\",s=t?\"for your repository\":\"\",i=t?\"repository settings\":\"git options\";return Kt()().createElement(Kt()().Fragment,null,Kt()().createElement(\"p\",null,e&&e.name&&`Email: ${e.email}`),Kt()().createElement(\"p\",null,\"You can update your \",n,\" git configuration \",s,\" in your \",i,\".\"),!t&&Kt()().createElement(\"p\",{className:\"secondary-text\"},\"You can also set an email local to this repository from the\",\" \",Kt()().createElement(PO,{onClick:this.onRepositorySettingsClick},\"repository settings\"),\".\"),Kt()().createElement(vO,{className:\"button-row\"},Kt()().createElement(JB,{okButtonText:\"Open git settings\",onOkButtonClick:this.onOpenGitSettings,onCancelButtonClick:this.onIgnoreClick})))}",
+        "replacement": "renderGitConfigPopover(){const{user:e}=this.props,{isGitConfigLocal:t}=this.state;return Kt()().createElement(Kt()().Fragment,null,Kt()().createElement(\"p\",null,e&&e.name&&`Электронная почта: ${e.email}`),Kt()().createElement(\"p\",null,t?\"Локальные настройки Git для этого репозитория можно изменить в параметрах репозитория.\":\"Глобальные настройки Git можно изменить в параметрах Git.\"),!t&&Kt()().createElement(\"p\",{className:\"secondary-text\"},\"Адрес почты только для этого репозитория можно задать в\",\" \",Kt()().createElement(PO,{onClick:this.onRepositorySettingsClick},\"параметрах репозитория\"),\".\"),Kt()().createElement(vO,{className:\"button-row\"},Kt()().createElement(JB,{okButtonText:\"Открыть настройки Git\",onOkButtonClick:this.onOpenGitSettings,onCancelButtonClick:this.onIgnoreClick})))}",
+        "occurrences": 1
+      },
+      {
         "needle": "o=e?\"View\":\" Create\",a=`${o} pull request on GitHub${r&&r.endpoint!==Wr()?\" Enterprise\":\"\"}.`,l=N().createElement(N().Fragment,null,e&&N().createElement(aa,{symbol:zh}),`${o} pull request`)",
         "replacement": "o=e?\"Открыть\":\" Создать\",a=`${o} Pull Request на GitHub${r&&r.endpoint!==Wr()?\" Enterprise\":\"\"}.`,l=N().createElement(N().Fragment,null,e&&N().createElement(aa,{symbol:zh}),`${o} Pull Request`)",
         "occurrences": 1
@@ -3076,6 +3091,11 @@
       {
         "needle": "n.map(e=>N().createElement(\"option\",{key:e.name,value:e.name},e.name))",
         "replacement": "n.map(e=>N().createElement(\"option\",{key:e.name,value:e.name},\"None\"===e.name?\"Нет\":e.name))",
+        "occurrences": 1
+      },
+      {
+        "needle": "label:\"Отменить коммит\",value:this.state.confirmUndoCommit",
+        "replacement": "label:\"Отменой коммита\",value:this.state.confirmUndoCommit",
         "occurrences": 1
       },
       {

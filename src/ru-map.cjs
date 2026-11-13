@@ -269,6 +269,8 @@ module.exports = {
     "Open in browser": "Открыть в браузере",
     "Unknown repository section": "Неизвестный раздел репозитория",
     "Commit": "Коммит",
+    "Committing as ": "Коммит от имени ",
+    "Committing with ": "Коммит от ",
     "Add": "Добавить",
     "Remove": "Убрать",
     "Rename": "Переименовать",
@@ -532,7 +534,7 @@ module.exports = {
     "Sign Into": "Войти в",
     "Sign into": "Войти в",
     "Sign in to your GitHub.com account to access your repositories.": "Войдите в аккаунт GitHub.com, чтобы получить доступ к репозиториям.",
-    "If you are using GitHub Enterprise at work, sign in to it to get access to your repositories.": "Если на работе используется GitHub Enterprise, войдите, чтобы получить доступ к репозиториям.",
+    "If you are using GitHub Enterprise at work, sign in to it to get access to your repositories.": "Если вы используете GitHub Enterprise для работы, войдите в него, чтобы получить доступ к своим репозиториям.",
     "Sign Into GitHub Enterprise": "Войти в GitHub Enterprise",
     "Sign into GitHub Enterprise": "Войти в GitHub Enterprise",
 
@@ -768,7 +770,9 @@ module.exports = {
     "\"\u00a0as determined by your\",\" \",N().createElement(PO,{onClick:this.onForkSettingsClick},\"fork behavior settings\")": "\" согласно \",N().createElement(PO,{onClick:this.onForkSettingsClick},\"параметрам поведения форка\")",
     "getGroupLabel(e){const t=\"worktree\";return\"main\"===e?`Main ${t}`:`Linked ${t}s`}": "getGroupLabel(e){return\"main\"===e?\"Основное рабочее дерево\":\"Связанные рабочие деревья\"}",
     "symbol:Ad}),\"Remote\"": "symbol:Ad}),\"Удалённый\"",
-    "okButtonText:\"Open\"": "okButtonText:\"Открыть\""
+    "okButtonText:\"Open\"": "okButtonText:\"Открыть\"",
+    "label:\"Отменить коммит\",value:this.state.confirmUndoCommit": "label:\"Отменой коммита\",value:this.state.confirmUndoCommit",
+    "renderGitConfigPopover(){const{user:e}=this.props,{isGitConfigLocal:t}=this.state,n=t?\"local\":\"global\",s=t?\"for your repository\":\"\",i=t?\"repository settings\":\"git options\";return Kt()().createElement(Kt()().Fragment,null,Kt()().createElement(\"p\",null,e&&e.name&&`Email: ${e.email}`),Kt()().createElement(\"p\",null,\"You can update your \",n,\" git configuration \",s,\" in your \",i,\".\"),!t&&Kt()().createElement(\"p\",{className:\"secondary-text\"},\"You can also set an email local to this repository from the\",\" \",Kt()().createElement(PO,{onClick:this.onRepositorySettingsClick},\"repository settings\"),\".\"),Kt()().createElement(vO,{className:\"button-row\"},Kt()().createElement(JB,{okButtonText:\"Open git settings\",onOkButtonClick:this.onOpenGitSettings,onCancelButtonClick:this.onIgnoreClick})))}": "renderGitConfigPopover(){const{user:e}=this.props,{isGitConfigLocal:t}=this.state;return Kt()().createElement(Kt()().Fragment,null,Kt()().createElement(\"p\",null,e&&e.name&&`Электронная почта: ${e.email}`),Kt()().createElement(\"p\",null,t?\"Локальные настройки Git для этого репозитория можно изменить в параметрах репозитория.\":\"Глобальные настройки Git можно изменить в параметрах Git.\"),!t&&Kt()().createElement(\"p\",{className:\"secondary-text\"},\"Адрес почты только для этого репозитория можно задать в\",\" \",Kt()().createElement(PO,{onClick:this.onRepositorySettingsClick},\"параметрах репозитория\"),\".\"),Kt()().createElement(vO,{className:\"button-row\"},Kt()().createElement(JB,{okButtonText:\"Открыть настройки Git\",onOkButtonClick:this.onOpenGitSettings,onCancelButtonClick:this.onIgnoreClick})))}"
   },
   templates: {
     "Current worktree is ${i}": "Текущее рабочее дерево: ${i}",
