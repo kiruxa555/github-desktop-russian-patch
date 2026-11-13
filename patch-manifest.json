@@ -1,5 +1,5 @@
 {
-  "patchVersion": "1.4.9",
+  "patchVersion": "1.4.10",
   "builds": [
     {
       "appDirectory": "app-3.6.11",
@@ -9,7 +9,7 @@
       },
       "patchedSha256": {
         "main": "A7757113D84487C0336A0B77AC642C87E467FF10E9D91A6DC1EC05E241BFFAAC",
-        "renderer": "C325F2B4380A5D40512C6064D388632FC4FC1D8912FCCC4BC1E3584702D4421E"
+        "renderer": "B37A75AD5957D77E943D72C9F33622DE02AB6D61775C92644896A464281B50C0"
       }
     },
     {
@@ -20,7 +20,7 @@
       },
       "patchedSha256": {
         "main": "C1F767BA31A9E06920F0E8A1D836B7950B3021427F0DEA60CCDA2A3B8A5E1A54",
-        "renderer": "E3B15B4C3A2DE818BAABEE41DD1B83B5E7659D0E06CE35575FB3F95631C4CDDE"
+        "renderer": "9F0E580ACD24D07238034CEC7B5319538EFDB0049FE0C0E6BDF9F0A26A18C846"
       }
     }
   ],
@@ -609,6 +609,11 @@
         "occurrences": 1
       },
       {
+        "needle": "`Ignore ${l.length} selected files (add to .gitignore)`",
+        "replacement": "`Игнорировать выбранные файлы: ${l.length} (добавить в .gitignore)`",
+        "occurrences": 1
+      },
+      {
         "needle": "`${t} ${this.getFilesToBeCommittedButtonText()}to `",
         "replacement": "`${t} ${this.getFilesToBeCommittedButtonText()}в `",
         "occurrences": 1
@@ -649,8 +654,13 @@
         "occurrences": 1
       },
       {
+        "needle": "`Ignore all ${e} files (add to .gitignore)`",
+        "replacement": "`Игнорировать все файлы ${e} (добавить в .gitignore)`",
+        "occurrences": 1
+      },
+      {
         "needle": "`View the files of your repository in ${e}`",
-        "replacement": "`Просмотреть файлы репозитория в ${e}`",
+        "replacement": "`Просмотреть файлы репозитория в проводнике`",
         "occurrences": 1
       },
       {
@@ -1109,6 +1119,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Undo is disabled while the repository is being updated\"",
+        "replacement": "\"Отмена недоступна, пока репозиторий обновляется.\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\" Do you want to create a fork of this repository at \"",
         "replacement": "\" Создать форк этого репозитория в \"",
         "occurrences": 1
@@ -1399,6 +1414,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Refresh the list of pull requests\"",
+        "replacement": "\"Обновить список запросов на слияние\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Sign in to your GitHub Enterprise\"",
         "replacement": "\"Войти в GitHub Enterprise\"",
         "occurrences": 2
@@ -1416,6 +1436,11 @@
       {
         "needle": "\"Publish this repository to GitHub\"",
         "replacement": "\"Опубликовать этот репозиторий на GitHub\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Ignore folder (add to .gitignore)\"",
+        "replacement": "\"Игнорировать папку (добавить в .gitignore)\"",
         "occurrences": 1
       },
       {
@@ -1477,6 +1502,11 @@
         "needle": "\"License and Open Source Notices\"",
         "replacement": "\"Лицензия и сведения об открытом коде\"",
         "occurrences": 2
+      },
+      {
+        "needle": "\"Ignore file (add to .gitignore)\"",
+        "replacement": "\"Игнорировать файл (добавить в .gitignore)\"",
+        "occurrences": 1
       },
       {
         "needle": "\"Return to in progress tutorial\"",
@@ -1769,6 +1799,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Collapse commit details\"",
+        "replacement": "\"Свернуть сведения о коммите\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Create branch based on…\"",
         "replacement": "\"Создать ветку на основе…\"",
         "occurrences": 1
@@ -1849,6 +1884,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Expand commit details\"",
+        "replacement": "\"Развернуть сведения о коммите\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Refreshing repository\"",
         "replacement": "\"Обновление репозитория\"",
         "occurrences": 4
@@ -1899,6 +1939,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"View Branch on GitHub\"",
+        "replacement": "\"Открыть ветку на GitHub\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Fork this repository\"",
         "replacement": "\"Создать форк\"",
         "occurrences": 1
@@ -1911,6 +1956,11 @@
       {
         "needle": "\"Excluded from commit\"",
         "replacement": "\"Исключённые из коммита\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Collapse description\"",
+        "replacement": "\"Свернуть описание\"",
         "occurrences": 1
       },
       {
@@ -2036,6 +2086,11 @@
       {
         "needle": "\"No worktrees found\"",
         "replacement": "\"Рабочие деревья не найдены\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Expand description\"",
+        "replacement": "\"Развернуть описание\"",
         "occurrences": 1
       },
       {
@@ -2249,6 +2304,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Copy branch name\"",
+        "replacement": "\"Копировать имя ветки\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Create a branch\"",
         "replacement": "\"Создать ветку\"",
         "occurrences": 2
@@ -2441,6 +2501,11 @@
       {
         "needle": "\"Choose a model\"",
         "replacement": "\"Выбрать модель\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Show worktrees\"",
+        "replacement": "\"Показать рабочие деревья\"",
         "occurrences": 1
       },
       {
@@ -2779,6 +2844,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Copy tags\"",
+        "replacement": "\"Копировать теги\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Sign out\"",
         "replacement": "\"Выйти из аккаунта\"",
         "occurrences": 1
@@ -2849,6 +2919,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Copy tag\"",
+        "replacement": "\"Копировать тег\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"ProTip!\"",
         "replacement": "\"Совет!\"",
         "occurrences": 1
@@ -2906,6 +2981,11 @@
       {
         "needle": "\"enabled\"",
         "replacement": "\"включены\"",
+        "occurrences": 2
+      },
+      {
+        "needle": "\"Rename…\"",
+        "replacement": "\"Переименовать…\"",
         "occurrences": 2
       },
       {
@@ -3034,6 +3114,11 @@
         "occurrences": 1
       },
       {
+        "needle": "case bm.New:case bm.Untracked:return\"New\";case bm.Modified:return\"Modified\";case bm.Deleted:return\"Deleted\";case bm.Renamed:return\"Renamed\"",
+        "replacement": "case bm.New:case bm.Untracked:return\"Новый\";case bm.Modified:return\"Изменён\";case bm.Deleted:return\"Удалён\";case bm.Renamed:return\"Переименован\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Your new branch will be based on the commit '\",n.summary,\"' (\",n.sha.substring(0,7),\") from your repository.\"",
         "replacement": "\"Новая ветка будет создана на основе коммита «\",n.summary,\"» (\",n.sha.substring(0,7),\") из этого репозитория.\"",
         "occurrences": 1
@@ -3099,6 +3184,11 @@
         "occurrences": 1
       },
       {
+        "needle": "tooltip:this.state.isSubheaderExpanded?\"Collapse\":\"Expand\"",
+        "replacement": "tooltip:this.state.isSubheaderExpanded?\"Свернуть\":\"Развернуть\"",
+        "occurrences": 1
+      },
+      {
         "needle": "t.map(e=>N().createElement(\"option\",{key:e,value:e},e))",
         "replacement": "t.map(e=>N().createElement(\"option\",{key:e,value:e},\"None\"===e?\"Нет\":e))",
         "occurrences": 1
@@ -3121,6 +3211,11 @@
       {
         "needle": ",\" is up to date with all commits from\",\" \"",
         "replacement": ",\" уже содержит все коммиты из\",\" \"",
+        "occurrences": 1
+      },
+      {
+        "needle": "(null==t.alias?\"Create\":\"Change\")+\" alias\"",
+        "replacement": "(null==t.alias?\"Создать\":\"Изменить\")+\" псевдоним\"",
         "occurrences": 1
       },
       {
@@ -3156,6 +3251,11 @@
       {
         "needle": "e[e.Appearance=4]=\"Appearance\"",
         "replacement": "e[e.Appearance=4]=\"Внешний вид\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "tooltip:t?\"Collapse\":\"Expand\"",
+        "replacement": "tooltip:t?\"Свернуть\":\"Развернуть\"",
         "occurrences": 1
       },
       {
@@ -3244,6 +3344,11 @@
         "occurrences": 1
       },
       {
+        "needle": "label:\"Delete…\"",
+        "replacement": "label:\"Удалить…\"",
+        "occurrences": 2
+      },
+      {
         "needle": "\"Integrations\"",
         "replacement": "\"Интеграции\"",
         "occurrences": 1
@@ -3302,6 +3407,11 @@
         "needle": "\"Cancel\"",
         "replacement": "\"Отмена\"",
         "occurrences": 6
+      },
+      {
+        "needle": "},\"Undo\"",
+        "replacement": "},\"Отменить\"",
+        "occurrences": 3
       },
       {
         "needle": "\"Close\"",
