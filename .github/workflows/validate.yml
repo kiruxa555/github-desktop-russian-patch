@@ -41,7 +41,7 @@ jobs:
           if ($errors.Count -gt 0) { throw ($errors | Out-String) }
 
           $manifest = Get-Content -Raw '.\patch-manifest.json' | ConvertFrom-Json
-          if ($manifest.patchVersion -ne '1.4.12') {
+          if ($manifest.patchVersion -ne '1.4.13') {
             throw "Неожиданная версия патча: $($manifest.patchVersion)"
           }
           $appDirectories = @($manifest.builds | ForEach-Object { [string]$_.appDirectory } | Sort-Object)

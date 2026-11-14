@@ -1,5 +1,5 @@
 {
-  "patchVersion": "1.4.12",
+  "patchVersion": "1.4.13",
   "builds": [
     {
       "appDirectory": "app-3.6.11",
@@ -9,7 +9,7 @@
       },
       "patchedSha256": {
         "main": "A7757113D84487C0336A0B77AC642C87E467FF10E9D91A6DC1EC05E241BFFAAC",
-        "renderer": "549D3506BA19A22F8CF861D02D0BABFA1881D5F0BA3FA24352C8A80D9CE8B1AD"
+        "renderer": "3A81733B552B72DFC25D939D48B027F231F04902FAF08CE4A13648DAF42E7FD7"
       }
     },
     {
@@ -20,7 +20,7 @@
       },
       "patchedSha256": {
         "main": "C1F767BA31A9E06920F0E8A1D836B7950B3021427F0DEA60CCDA2A3B8A5E1A54",
-        "renderer": "044FF4F63B5BE17AC601075A31031A09D0E94B681E317A8AE368318EB61ECBF3"
+        "renderer": "7179B9F97BDB98071F621CD718EC56B93B509B851D342A36525CA24CF7229F5E"
       }
     }
   ],
@@ -3144,6 +3144,11 @@
         "occurrences": 1
       },
       {
+        "needle": "n.ahead>0&&(a.push(\"commits\"),l.push(1===n.ahead?\"1 local commit\":`${JR(n.ahead)} local commits`)),null!==s&&s.length>0&&(a.push(\"tags\"),l.push(1===s.length?\"1 tag\":`${JR(s.length)} tags`))",
+        "replacement": "n.ahead>0&&(a.push(\"коммиты\"),l.push(1===n.ahead?\"1 локальный коммит\":`${JR(n.ahead)} ${n.ahead%10===1&&n.ahead%100!==11?\"локальный коммит\":n.ahead%10>=2&&n.ahead%10<=4&&(n.ahead%100<10||n.ahead%100>=20)?\"локальных коммита\":\"локальных коммитов\"}`)),null!==s&&s.length>0&&(a.push(\"теги\"),l.push(1===s.length?\"1 тег\":`${JR(s.length)} ${s.length%10===1&&s.length%100!==11?\"тег\":s.length%10>=2&&s.length%10<=4&&(s.length%100<10||s.length%100>=20)?\"тега\":\"тегов\"}`))",
+        "occurrences": 1
+      },
+      {
         "needle": "t=\"Squash\"===this.props.operation?\"Squash and \":null;return Kt()().createElement(Kt()().Fragment,null,t,\"Merge into \",Kt()().createElement(\"strong\",null,e))",
         "replacement": "t=\"Squash\"===this.props.operation?\"Объединить коммиты и влить в \":\"Влить в \";return Kt()().createElement(Kt()().Fragment,null,t,Kt()().createElement(\"strong\",null,e))",
         "occurrences": 1
@@ -3157,6 +3162,11 @@
         "needle": "case bm.New:case bm.Untracked:return\"New\";case bm.Modified:return\"Modified\";case bm.Deleted:return\"Deleted\";case bm.Renamed:return\"Renamed\"",
         "replacement": "case bm.New:case bm.Untracked:return\"Новый\";case bm.Modified:return\"Изменён\";case bm.Deleted:return\"Удалён\";case bm.Renamed:return\"Переименован\"",
         "occurrences": 1
+      },
+      {
+        "needle": "\"Текущая выбранная ветка:\"+(n?` ${Vm(n)} behind `:\"\")+(n&&t?\"and\":\"\")+(t?` ${Vm(t)} ahead of `:\"\")+\"its tracked branch.\"",
+        "replacement": "\"Текущая выбранная ветка \"+(n&&!t?`отстаёт на ${Vm(n)} от отслеживаемой ветки.`:\"\")+(t&&!n?`опережает отслеживаемую ветку на ${Vm(t)}.`:\"\")+(n&&t?`отстаёт на ${Vm(n)} и опережает на ${Vm(t)} отслеживаемую ветку.`:\"\")",
+        "occurrences": 2
       },
       {
         "needle": "\"Your new branch will be based on the commit '\",n.summary,\"' (\",n.sha.substring(0,7),\") from your repository.\"",
@@ -3286,6 +3296,11 @@
       {
         "needle": "e[e.Integrations=1]=\"Integrations\"",
         "replacement": "e[e.Integrations=1]=\"Интеграции\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "Vm=e=>`${e} commit${e>1?\"s\":\"\"}`",
+        "replacement": "Vm=e=>`${e} ${e%10===1&&e%100!==11?\"коммит\":e%10>=2&&e%10<=4&&(e%100<10||e%100>=20)?\"коммита\":\"коммитов\"}`",
         "occurrences": 1
       },
       {
