@@ -384,7 +384,7 @@ module.exports = {
     "An optimized version of GitHub Desktop is available for your": "Для вашего устройства доступна оптимизированная версия GitHub Desktop",
     " machine and will be installed at the next launch or": " и будет установлена при следующем запуске, или",
     "Base URL must be an https URL, or an http URL pointing at the local machine.": "Базовый URL должен использовать HTTPS или указывать по HTTP на локальный компьютер.",
-    "Pull requests in ": "Pull Request в ",
+    "Pull requests in ": "Запросы на слияние в ",
     "Pull requests targeting ": "Pull Request для ",
     "will be shown in the pull request list.": "будут показаны в списке Pull Request.",
     "The current branch (": "Текущая ветка (",
@@ -788,6 +788,7 @@ module.exports = {
     "tooltip:this.state.isSubheaderExpanded?\"Collapse\":\"Expand\"": "tooltip:this.state.isSubheaderExpanded?\"Свернуть\":\"Развернуть\"",
     "label:\"Delete…\"": "label:\"Удалить…\"",
     "(null==t.alias?\"Create\":\"Change\")+\" alias\"": "(null==t.alias?\"Создать\":\"Изменить\")+\" псевдоним\"",
+    "\"Текущая ветка (\",N().createElement(hF,null,e.branch.name),\") has\",\" \",1===n.behind?\"a commit\":\"commits\",\" on\",\" \",r?\"GitHub\":\"the remote\",\" that\",\" \",1===n.behind?\"does not\":\"do not\",\" exist on your machine.\"": "\"В текущей ветке (\",N().createElement(hF,null,e.branch.name),\") \",1===n.behind?\"есть коммит\":\"есть коммиты\",\" на \",r?\"GitHub\":\"удалённом репозитории\",1===n.behind?\", которого нет на этом компьютере.\":\", которых нет на этом компьютере.\"",
     "renderGitConfigPopover(){const{user:e}=this.props,{isGitConfigLocal:t}=this.state,n=t?\"local\":\"global\",s=t?\"for your repository\":\"\",i=t?\"repository settings\":\"git options\";return Kt()().createElement(Kt()().Fragment,null,Kt()().createElement(\"p\",null,e&&e.name&&`Email: ${e.email}`),Kt()().createElement(\"p\",null,\"You can update your \",n,\" git configuration \",s,\" in your \",i,\".\"),!t&&Kt()().createElement(\"p\",{className:\"secondary-text\"},\"You can also set an email local to this repository from the\",\" \",Kt()().createElement(PO,{onClick:this.onRepositorySettingsClick},\"repository settings\"),\".\"),Kt()().createElement(vO,{className:\"button-row\"},Kt()().createElement(JB,{okButtonText:\"Open git settings\",onOkButtonClick:this.onOpenGitSettings,onCancelButtonClick:this.onIgnoreClick})))}": "renderGitConfigPopover(){const{user:e}=this.props,{isGitConfigLocal:t}=this.state;return Kt()().createElement(Kt()().Fragment,null,Kt()().createElement(\"p\",null,e&&e.name&&`Электронная почта: ${e.email}`),Kt()().createElement(\"p\",null,t?\"Локальные настройки Git для этого репозитория можно изменить в параметрах репозитория.\":\"Глобальные настройки Git можно изменить в параметрах Git.\"),!t&&Kt()().createElement(\"p\",{className:\"secondary-text\"},\"Адрес почты только для этого репозитория можно задать в\",\" \",Kt()().createElement(PO,{onClick:this.onRepositorySettingsClick},\"параметрах репозитория\"),\".\"),Kt()().createElement(vO,{className:\"button-row\"},Kt()().createElement(JB,{okButtonText:\"Открыть настройки Git\",onOkButtonClick:this.onOpenGitSettings,onCancelButtonClick:this.onIgnoreClick})))}"
   },
   templates: {
@@ -798,6 +799,7 @@ module.exports = {
     "${e} (default)": "${e} (по умолчанию)",
     "${e.name} (default)": "${e.name} (по умолчанию)",
     "Pull ${WE(n.behind)} ${1===n.behind?\"commit\":\"commits\"} from the ${t.name} remote": "Получить ${WE(n.behind)} ${1===n.behind?\"коммит\":\"коммитов\"} из ${t.name}",
+    "Pull ${JR(n.behind)} ${1===n.behind?\"commit\":\"commits\"} from the ${t.name} remote": "Получить ${JR(n.behind)} ${1===n.behind?\"коммит\":n.behind%10>=2&&n.behind%10<=4&&(n.behind%100<10||n.behind%100>=20)?\"коммита\":\"коммитов\"} из ${t.name}",
     "Pull ${e} with rebase": "Получить ${e} с перебазированием",
     "Pull ${e}": "Получить ${e}",
     "Pull ${t.name}": "Получить из ${t.name}",
@@ -826,7 +828,7 @@ module.exports = {
     "${t} to ${e}": "${t} в ${e}",
     "${this.getButtonVerb()} last commit": "${this.getButtonVerb()} последний коммит",
     "You have ${l.join(\" and \")} waiting to be pushed to ${o?\"GitHub\":\"the remote\"}.": "Ожидают отправки в ${o?\"GitHub\":\"удалённый репозиторий\"}: ${l.join(\" и \")}.",
-    "Pull requests in ${this.getRepositoryName()}": "Pull Request в ${this.getRepositoryName()}",
+    "Pull requests in ${this.getRepositoryName()}": "Запросы на слияние в ${this.getRepositoryName()}",
     "Create ${r}": "Создать ${r}",
     "Delete ${r}": "Удалить ${r}",
     "Update ${r}": "Обновить ${r}",
