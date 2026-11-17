@@ -1,5 +1,5 @@
 {
-  "patchVersion": "1.4.13",
+  "patchVersion": "1.4.14",
   "builds": [
     {
       "appDirectory": "app-3.6.11",
@@ -9,7 +9,7 @@
       },
       "patchedSha256": {
         "main": "A7757113D84487C0336A0B77AC642C87E467FF10E9D91A6DC1EC05E241BFFAAC",
-        "renderer": "3A81733B552B72DFC25D939D48B027F231F04902FAF08CE4A13648DAF42E7FD7"
+        "renderer": "4F1BD6972E517F53DA746B6B94847E97A81D7A0F3B9FE8E898B356BA75ED401A"
       }
     },
     {
@@ -20,7 +20,7 @@
       },
       "patchedSha256": {
         "main": "C1F767BA31A9E06920F0E8A1D836B7950B3021427F0DEA60CCDA2A3B8A5E1A54",
-        "renderer": "7179B9F97BDB98071F621CD718EC56B93B509B851D342A36525CA24CF7229F5E"
+        "renderer": "A781B47D1C5B98680E581CB2820D0C9A6D0A8E8DCE60E120CEC2BB20A59A0AB8"
       }
     }
   ],
@@ -3131,6 +3131,11 @@
       {
         "needle": "renderGitConfigPopover(){const{user:e}=this.props,{isGitConfigLocal:t}=this.state,n=t?\"local\":\"global\",s=t?\"for your repository\":\"\",i=t?\"repository settings\":\"git options\";return Kt()().createElement(Kt()().Fragment,null,Kt()().createElement(\"p\",null,e&&e.name&&`Email: ${e.email}`),Kt()().createElement(\"p\",null,\"You can update your \",n,\" git configuration \",s,\" in your \",i,\".\"),!t&&Kt()().createElement(\"p\",{className:\"secondary-text\"},\"You can also set an email local to this repository from the\",\" \",Kt()().createElement(PO,{onClick:this.onRepositorySettingsClick},\"repository settings\"),\".\"),Kt()().createElement(vO,{className:\"button-row\"},Kt()().createElement(JB,{okButtonText:\"Open git settings\",onOkButtonClick:this.onOpenGitSettings,onCancelButtonClick:this.onIgnoreClick})))}",
         "replacement": "renderGitConfigPopover(){const{user:e}=this.props,{isGitConfigLocal:t}=this.state;return Kt()().createElement(Kt()().Fragment,null,Kt()().createElement(\"p\",null,e&&e.name&&`Электронная почта: ${e.email}`),Kt()().createElement(\"p\",null,t?\"Локальные настройки Git для этого репозитория можно изменить в параметрах репозитория.\":\"Глобальные настройки Git можно изменить в параметрах Git.\"),!t&&Kt()().createElement(\"p\",{className:\"secondary-text\"},\"Адрес почты только для этого репозитория можно задать в\",\" \",Kt()().createElement(PO,{onClick:this.onRepositorySettingsClick},\"параметрах репозитория\"),\".\"),Kt()().createElement(vO,{className:\"button-row\"},Kt()().createElement(JB,{okButtonText:\"Открыть настройки Git\",onOkButtonClick:this.onOpenGitSettings,onCancelButtonClick:this.onIgnoreClick})))}",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"This file uses '\",t.from,\"' line endings, but\",\" \",Kt()().createElement(PO,{uri:\"https://docs.github.com/get-started/git-basics/configuring-git-to-handle-line-endings\"},\"Git is configured to convert them\"),\" \",\"to '\",t.to,\"' the next time the file is checked out.\"",
+        "replacement": "\"В этом файле используются окончания строк '\",t.from,\"', но\",\" \",Kt()().createElement(PO,{uri:\"https://docs.github.com/get-started/git-basics/configuring-git-to-handle-line-endings\"},\"Git настроен преобразовывать их\"),\" \",\"в '\",t.to,\"' при следующем извлечении файла.\"",
         "occurrences": 1
       },
       {
