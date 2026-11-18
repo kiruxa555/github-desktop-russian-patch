@@ -711,7 +711,10 @@ module.exports = {
     "Copy tag": "Копировать тег",
     "Copy tags": "Копировать теги",
     "Show worktrees": "Показать рабочие деревья",
-    "License": "Лицензия"
+    "License": "Лицензия",
+    "Expand Up": "Развернуть вверх",
+    "Expand Down": "Развернуть вниз",
+    "Expand All": "Развернуть всё"
   },
   rendererFragments: {
     ". Want to\",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"create a fork\"),\"?\")": ". Хотите \",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"создать форк\"),\"?\")",

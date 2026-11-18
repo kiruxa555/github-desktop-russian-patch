@@ -1,5 +1,5 @@
 {
-  "patchVersion": "1.4.14",
+  "patchVersion": "1.4.15",
   "builds": [
     {
       "appDirectory": "app-3.6.11",
@@ -9,7 +9,7 @@
       },
       "patchedSha256": {
         "main": "A7757113D84487C0336A0B77AC642C87E467FF10E9D91A6DC1EC05E241BFFAAC",
-        "renderer": "4F1BD6972E517F53DA746B6B94847E97A81D7A0F3B9FE8E898B356BA75ED401A"
+        "renderer": "4FCB6831BFF19FD3C1E023B05B7F5BF9EAD8AFB5988FB8DAFE224A91A8EEBA98"
       }
     },
     {
@@ -20,7 +20,7 @@
       },
       "patchedSha256": {
         "main": "C1F767BA31A9E06920F0E8A1D836B7950B3021427F0DEA60CCDA2A3B8A5E1A54",
-        "renderer": "A781B47D1C5B98680E581CB2820D0C9A6D0A8E8DCE60E120CEC2BB20A59A0AB8"
+        "renderer": "D9CF3C45358BEC2D2680518EA6445B073F9298905F59FDB5822421A7C64D1E1D"
       }
     }
   ],
@@ -2804,6 +2804,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Expand Down\"",
+        "replacement": "\"Развернуть вниз\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"New branch\"",
         "replacement": "\"Новая ветка\"",
         "occurrences": 3
@@ -2859,6 +2864,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Expand All\"",
+        "replacement": "\"Развернуть всё\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Show diff\"",
         "replacement": "\"Показать сравнение\"",
         "occurrences": 1
@@ -2881,6 +2891,11 @@
       {
         "needle": "\"Copy tags\"",
         "replacement": "\"Копировать теги\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Expand Up\"",
+        "replacement": "\"Развернуть вверх\"",
         "occurrences": 1
       },
       {
