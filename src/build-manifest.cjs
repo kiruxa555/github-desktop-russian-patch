@@ -4,10 +4,10 @@ const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
-const [reportPath, outputPath, ...variantArgs] = process.argv.slice(2);
-if (!reportPath || !outputPath || variantArgs.length < 3 || variantArgs.length % 3 !== 0) {
+const [outputPath, ...variantArgs] = process.argv.slice(2);
+if (!outputPath || variantArgs.length < 4 || variantArgs.length % 4 !== 0) {
   throw new Error(
-    'Usage: node build-manifest.cjs <report.json> <output.json> <app-directory> <original-dir> <patched-dir> [<app-directory> <original-dir> <patched-dir> ...]'
+    'Usage: node build-manifest.cjs <output.json> <app-directory> <original-dir> <patched-dir> <report.json> [<app-directory> <original-dir> <patched-dir> <report.json> ...]'
   );
 }
 
@@ -31,10 +31,10 @@ function versionOf(appDirectory) {
   return appDirectory.replace(/^app-/, '').split('.').map(part => Number(part));
 }
 
-const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
 const builds = [];
-for (let index = 0; index < variantArgs.length; index += 3) {
-  const [appDirectory, originalDirectory, patchedDirectory] = variantArgs.slice(index, index + 3);
+for (let index = 0; index < variantArgs.length; index += 4) {
+  const [appDirectory, originalDirectory, patchedDirectory, reportPath] = variantArgs.slice(index, index + 4);
+  const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
   builds.push({
     appDirectory,
     originalSha256: {
@@ -44,6 +44,10 @@ for (let index = 0; index < variantArgs.length; index += 3) {
     patchedSha256: {
       main: hash(path.join(patchedDirectory, 'main.js')),
       renderer: hash(path.join(patchedDirectory, 'renderer.js')),
+    },
+    operations: {
+      main: operationsFor(report, 'main.js'),
+      renderer: operationsFor(report, 'renderer.js'),
     },
   });
 }
@@ -60,12 +64,9 @@ builds.sort((left, right) => {
 });
 
 const manifest = {
-  patchVersion: '1.4.15',
+  patchVersion: '1.4.17',
   builds,
-  operations: {
-    main: operationsFor(report, 'main.js'),
-    renderer: operationsFor(report, 'renderer.js'),
-  },
+  operations: builds[0].operations,
 };
 
 fs.writeFileSync(outputPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');

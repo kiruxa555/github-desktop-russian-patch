@@ -159,8 +159,9 @@ Copy-Item -LiteralPath $mainFile -Destination (Join-Path $stageAppDir 'main.js')
 Copy-Item -LiteralPath $rendererFile -Destination (Join-Path $stageAppDir 'renderer.js')
 
 try {
-    Invoke-FilePatch -FilePath (Join-Path $stageAppDir 'main.js') -Operations @($manifest.operations.main)
-    Invoke-FilePatch -FilePath (Join-Path $stageAppDir 'renderer.js') -Operations @($manifest.operations.renderer)
+    $operations = if ($variant.operations) { $variant.operations } else { $manifest.operations }
+    Invoke-FilePatch -FilePath (Join-Path $stageAppDir 'main.js') -Operations @($operations.main)
+    Invoke-FilePatch -FilePath (Join-Path $stageAppDir 'renderer.js') -Operations @($operations.renderer)
 
     $stagedMainHash = (Get-FileHash -LiteralPath (Join-Path $stageAppDir 'main.js') -Algorithm SHA256).Hash
     $stagedRendererHash = (Get-FileHash -LiteralPath (Join-Path $stageAppDir 'renderer.js') -Algorithm SHA256).Hash
@@ -171,9 +172,9 @@ try {
         throw 'Контрольные суммы подготовленных файлов не совпали с эталоном. Установка остановлена.'
     }
 
-    $appliedKeys = @($manifest.operations.main).Count + @($manifest.operations.renderer).Count
+    $appliedKeys = @($operations.main).Count + @($operations.renderer).Count
     $appliedOccurrences = 0
-    foreach ($operation in @($manifest.operations.main) + @($manifest.operations.renderer)) {
+    foreach ($operation in @($operations.main) + @($operations.renderer)) {
         $appliedOccurrences += [int]$operation.occurrences
     }
     Write-Host "Переведено ключей: $appliedKeys"

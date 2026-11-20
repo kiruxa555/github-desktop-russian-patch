@@ -1,4 +1,4 @@
-// Russian UI mapping for GitHub Desktop 3.6.10 and 3.6.11.
+// Russian UI mapping for GitHub Desktop 3.6.10, 3.6.11 and 3.7.0.
 // Exact-string replacements only. Missing strings are left in English.
 module.exports = {
   main: {
@@ -107,7 +107,8 @@ module.exports = {
     "&Stash all changes…": "Отложить все изменения…",
     "&Stash all changes": "Отложить все изменения",
     "H&ide stashed changes": "Скрыть отложенные изменения",
-    "Sho&w stashed changes": "Показать отложенные изменения"
+    "Sho&w stashed changes": "Показать отложенные изменения",
+    "Open in GitHub &Copilot": "Открыть в GitHub &Copilot"
   },
   renderer: {
     "Do you want to fork this repository?": "Создать форк этого репозитория?",
@@ -355,9 +356,11 @@ module.exports = {
     "Summary (required)": "Заголовок коммита (обязательно)",
     "Add co-authors": "Добавить соавторов",
     "Remove co-authors": "Убрать соавторов",
+    "Co-Authors\u00a0": "Соавторы\u00a0",
     "Bypass Commit hooks": "Пропустить хуки коммита",
     "Add Signed-off-by trailer": "Добавить строку Signed-off-by",
     "Allow empty commit": "Разрешить пустой коммит",
+    "Push after committing": "Отправить после создания коммита",
     "Are you sure you want to discard all ": "Точно отменить изменения во всех ",
     " changed files?": " изменённых файлах?",
     "Are you sure you want to discard all changes to:": "Точно отменить все изменения в файле:",
@@ -651,6 +654,10 @@ module.exports = {
     "When enabled, check marks will be displayed along side the line numbers and groups of line numbers in the diff when committing. When disabled, the line number controls will be less prominent.": "При создании коммита рядом с номерами строк и группами строк будут показаны отметки. Если отключить параметр, элементы выбора строк станут менее заметными.",
 
     // Preferences: Copilot.
+    "Experience agent-driven development built natively on GitHub.": "Разрабатывайте с агентами прямо на GitHub.",
+    "Learn more about GitHub Copilot": "Подробнее о GitHub Copilot",
+    "App location": "Расположение приложения",
+    "path to github.exe": "путь к github.exe",
     "Models": "Модели",
     "Providers": "Провайдеры",
     "Sign in to an account with a Copilot license to configure Copilot settings.": "Войдите в аккаунт с лицензией Copilot, чтобы настроить Copilot.",
@@ -714,7 +721,12 @@ module.exports = {
     "License": "Лицензия",
     "Expand Up": "Развернуть вверх",
     "Expand Down": "Развернуть вниз",
-    "Expand All": "Развернуть всё"
+    "Expand All": "Развернуть всё",
+    "An updated version of GitHub Desktop is available and will be installed at the next launch. See": "Доступна новая версия GitHub Desktop. Она будет установлена при следующем запуске. Смотрите",
+    "what's new": "что нового",
+    "restart GitHub Desktop": "перезапустить GitHub Desktop",
+    "An update has been downloaded and is ready to be installed.": "Обновление скачано и готово к установке.",
+    "Quit and Install Update": "Выйти и установить обновление"
   },
   rendererFragments: {
     ". Want to\",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"create a fork\"),\"?\")": ". Хотите \",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"создать форк\"),\"?\")",
@@ -796,7 +808,34 @@ module.exports = {
     "Vm=e=>`${e} commit${e>1?\"s\":\"\"}`": "Vm=e=>`${e} ${e%10===1&&e%100!==11?\"коммит\":e%10>=2&&e%10<=4&&(e%100<10||e%100>=20)?\"коммита\":\"коммитов\"}`",
     "\"Текущая выбранная ветка:\"+(n?` ${Vm(n)} behind `:\"\")+(n&&t?\"and\":\"\")+(t?` ${Vm(t)} ahead of `:\"\")+\"its tracked branch.\"": "\"Текущая выбранная ветка \"+(n&&!t?`отстаёт на ${Vm(n)} от отслеживаемой ветки.`:\"\")+(t&&!n?`опережает отслеживаемую ветку на ${Vm(t)}.`:\"\")+(n&&t?`отстаёт на ${Vm(n)} и опережает на ${Vm(t)} отслеживаемую ветку.`:\"\")",
     "\"This file uses '\",t.from,\"' line endings, but\",\" \",Kt()().createElement(PO,{uri:\"https://docs.github.com/get-started/git-basics/configuring-git-to-handle-line-endings\"},\"Git is configured to convert them\"),\" \",\"to '\",t.to,\"' the next time the file is checked out.\"": "\"В этом файле используются окончания строк '\",t.from,\"', но\",\" \",Kt()().createElement(PO,{uri:\"https://docs.github.com/get-started/git-basics/configuring-git-to-handle-line-endings\"},\"Git настроен преобразовывать их\"),\" \",\"в '\",t.to,\"' при следующем извлечении файла.\"",
+    "\"This file uses '\",t.from,\"' line endings, but\",\" \",Kt()().createElement(OB,{uri:\"https://docs.github.com/get-started/git-basics/configuring-git-to-handle-line-endings\"},\"Git is configured to convert them\"),\" \",\"to '\",t.to,\"' the next time the file is checked out.\"": "\"В этом файле используются окончания строк '\",t.from,\"', но\",\" \",Kt()().createElement(OB,{uri:\"https://docs.github.com/get-started/git-basics/configuring-git-to-handle-line-endings\"},\"Git настроен преобразовывать их\"),\" \",\"в '\",t.to,\"' при следующем извлечении файла.\"",
+    ",\" or\",\" \"": ",\" или \",\" \"",
     "renderGitConfigPopover(){const{user:e}=this.props,{isGitConfigLocal:t}=this.state,n=t?\"local\":\"global\",s=t?\"for your repository\":\"\",i=t?\"repository settings\":\"git options\";return Kt()().createElement(Kt()().Fragment,null,Kt()().createElement(\"p\",null,e&&e.name&&`Email: ${e.email}`),Kt()().createElement(\"p\",null,\"You can update your \",n,\" git configuration \",s,\" in your \",i,\".\"),!t&&Kt()().createElement(\"p\",{className:\"secondary-text\"},\"You can also set an email local to this repository from the\",\" \",Kt()().createElement(PO,{onClick:this.onRepositorySettingsClick},\"repository settings\"),\".\"),Kt()().createElement(vO,{className:\"button-row\"},Kt()().createElement(JB,{okButtonText:\"Open git settings\",onOkButtonClick:this.onOpenGitSettings,onCancelButtonClick:this.onIgnoreClick})))}": "renderGitConfigPopover(){const{user:e}=this.props,{isGitConfigLocal:t}=this.state;return Kt()().createElement(Kt()().Fragment,null,Kt()().createElement(\"p\",null,e&&e.name&&`Электронная почта: ${e.email}`),Kt()().createElement(\"p\",null,t?\"Локальные настройки Git для этого репозитория можно изменить в параметрах репозитория.\":\"Глобальные настройки Git можно изменить в параметрах Git.\"),!t&&Kt()().createElement(\"p\",{className:\"secondary-text\"},\"Адрес почты только для этого репозитория можно задать в\",\" \",Kt()().createElement(PO,{onClick:this.onRepositorySettingsClick},\"параметрах репозитория\"),\".\"),Kt()().createElement(vO,{className:\"button-row\"},Kt()().createElement(JB,{okButtonText:\"Открыть настройки Git\",onOkButtonClick:this.onOpenGitSettings,onCancelButtonClick:this.onIgnoreClick})))}"
+,
+    "symbol:Qd}),\"Remote\"": "symbol:Qd}),\"Удалённый\"",
+    "case Vm.New:case Vm.Untracked:return\"New\";case Vm.Modified:return\"Modified\";case Vm.Deleted:return\"Deleted\";case Vm.Renamed:return\"Renamed\"": "case Vm.New:case Vm.Untracked:return\"Новый\";case Vm.Modified:return\"Изменён\";case Vm.Deleted:return\"Удалён\";case Vm.Renamed:return\"Переименован\"",
+    "\"Текущая ветка (\",N().createElement(pU,null,e.branch.name),\") has\",\" \",1===n.behind?\"a commit\":\"commits\",\" on\",\" \",r?\"GitHub\":\"the remote\",\" that\",\" \",1===n.behind?\"does not\":\"do not\",\" exist on your machine.\"": "\"В текущей ветке (\",N().createElement(pU,null,e.branch.name),\") \",1===n.behind?\"есть коммит\":\"есть коммиты\",\" на \",r?\"GitHub\":\"удалённом репозитории\",1===n.behind?\", которого нет на этом компьютере.\":\", которых нет на этом компьютере.\"",
+    "n.ahead>0&&(a.push(\"commits\"),l.push(1===n.ahead?\"1 local commit\":`${KA(n.ahead)} local commits`)),null!==s&&s.length>0&&(a.push(\"tags\"),l.push(1===s.length?\"1 tag\":`${KA(s.length)} tags`))": "n.ahead>0&&(a.push(\"коммиты\"),l.push(1===n.ahead?\"1 локальный коммит\":`${KA(n.ahead)} ${n.ahead%10===1&&n.ahead%100!==11?\"локальный коммит\":n.ahead%10>=2&&n.ahead%10<=4&&(n.ahead%100<10||n.ahead%100>=20)?\"локальных коммита\":\"локальных коммитов\"}`)),null!==s&&s.length>0&&(a.push(\"теги\"),l.push(1===s.length?\"1 тег\":`${KA(s.length)} ${s.length%10===1&&s.length%100!==11?\"тег\":s.length%10>=2&&s.length%10<=4&&(s.length%100<10||s.length%100>=20)?\"тега\":\"тегов\"}`))",
+    "wf=e=>`${e} commit${e>1?\"s\":\"\"}`": "wf=e=>`${e} ${e%10===1&&e%100!==11?\"коммит\":e%10>=2&&e%10<=4&&(e%100<10||e%100>=20)?\"коммита\":\"коммитов\"}`",
+    "\"Текущая выбранная ветка:\"+(n?` ${wf(n)} behind `:\"\")+(n&&t?\"and\":\"\")+(t?` ${wf(t)} ahead of `:\"\")+\"its tracked branch.\"": "\"Текущая выбранная ветка \"+(n&&!t?`отстаёт на ${wf(n)} от отслеживаемой ветки.`:\"\")+(t&&!n?`опережает отслеживаемую ветку на ${wf(t)}.`:\"\")+(n&&t?`отстаёт на ${wf(n)} и опережает на ${wf(t)} отслеживаемую ветку.`:\"\")",
+    ". Want to\",\" \",N().createElement(OB,{onClick:this.props.onShowCreateForkDialog},\"create a fork\"),\"?\")": ". Хотите \",\" \",N().createElement(OB,{onClick:this.props.onShowCreateForkDialog},\"создать форк\"),\"?\")",
+    ". Want to\",\" \",N().createElement(OB,{onClick:this.onSwitchBranch},\"switch branches\"),\"?\")": ". Хотите \",\" \",N().createElement(OB,{onClick:this.onSwitchBranch},\"переключить ветку\"),\"?\")",
+    "null,\"Use\",\" \",N().createElement(OB,{uri:\"https://gh.io/gcm\"},\"Git Credential Manager\",\" \")": "null,\"Используйте\",\" \",N().createElement(OB,{uri:\"https://gh.io/gcm\"},\"Git Credential Manager\",\" \")",
+    ",\" and \",N().createElement(pU,null,t.name),\" are entirely different commit histories.\"": ",\" и \",N().createElement(pU,null,t.name),\" — это разные истории коммитов.\"",
+    ",\" \",\"from \",N().createElement(pU,null,t.name),\".\"": ",\" \",\"из \",N().createElement(pU,null,t.name),\".\"",
+    "null!==e?t?\"Amending\":\"Amend\":t?\"Committing\":\"Commit\"": "null!==e?t?\"Изменение\":\"Изменить\":t?\"Создание коммита\":\"Создать коммит\"",
+    "o=e?\"View\":\" Create\",a=`${o} pull request on GitHub${r&&r.endpoint!==Jr()?\" Enterprise\":\"\"}.`,l=N().createElement(N().Fragment,null,e&&N().createElement(Ia,{symbol:vu}),`${o} pull request`)": "o=e?\"Открыть\":\" Создать\",a=`${o} Pull Request на GitHub${r&&r.endpoint!==Jr()?\" Enterprise\":\"\"}.`,l=N().createElement(N().Fragment,null,e&&N().createElement(Ia,{symbol:vu}),`${o} Pull Request`)",
+    "\"Your default branch source is determined by your\",\" \",N().createElement(OB,{onClick:this.onForkSettingsClick},\"fork behavior settings\"),\".\"": "\"Источник ветки по умолчанию задаётся в \",N().createElement(OB,{onClick:this.onForkSettingsClick},\"параметрах поведения форка\"),\".\"",
+    "\" as determined by your\",\" \",N().createElement(OB,{onClick:this.onForkSettingsClick},\"fork behavior settings\")": "\" согласно \",N().createElement(OB,{onClick:this.onForkSettingsClick},\"параметрам поведения форка\")",
+    "renderGitConfigPopover(){const{user:e}=this.props,{isGitConfigLocal:t}=this.state,n=t?\"local\":\"global\",s=t?\"for your repository\":\"\",i=t?\"repository settings\":\"git options\";return Kt()().createElement(Kt()().Fragment,null,Kt()().createElement(\"p\",null,e&&e.name&&`Email: ${e.email}`),Kt()().createElement(\"p\",null,\"You can update your \",n,\" git configuration \",s,\" in your \",i,\".\"),!t&&Kt()().createElement(\"p\",{className:\"secondary-text\"},\"You can also set an email local to this repository from the\",\" \",Kt()().createElement(OB,{onClick:this.onRepositorySettingsClick},\"repository settings\"),\".\"),Kt()().createElement(bB,{className:\"button-row\"},Kt()().createElement(nU,{okButtonText:\"Open git settings\",onOkButtonClick:this.onOpenGitSettings,onCancelButtonClick:this.onIgnoreClick})))}": "renderGitConfigPopover(){const{user:e}=this.props,{isGitConfigLocal:t}=this.state;return Kt()().createElement(Kt()().Fragment,null,Kt()().createElement(\"p\",null,e&&e.name&&`Электронная почта: ${e.email}`),Kt()().createElement(\"p\",null,t?\"Локальные настройки Git для этого репозитория можно изменить в параметрах репозитория.\":\"Глобальные настройки Git можно изменить в параметрах Git.\"),!t&&Kt()().createElement(\"p\",{className:\"secondary-text\"},\"Адрес почты только для этого репозитория можно задать в\",\" \",Kt()().createElement(OB,{onClick:this.onRepositorySettingsClick},\"параметрах репозитория\"),\".\"),Kt()().createElement(bB,{className:\"button-row\"},Kt()().createElement(nU,{okButtonText:\"Открыть настройки Git\",onOkButtonClick:this.onOpenGitSettings,onCancelButtonClick:this.onIgnoreClick})))}"
+,
+    "\"ago\"},\"Committed \"": "\"ago\"},\"Коммит \"",
+    "cI(\"en-US\",{numeric:\"auto\"})": "cI(\"ru-RU\",{numeric:\"auto\"})",
+    "GT(\"en-US\",{numeric:\"auto\"})": "GT(\"ru-RU\",{numeric:\"auto\"})",
+    "relativeText:\"just now\"": "relativeText:\"только что\""
+,
+    "function ki(e,{date:t=!0,time:n=!0,dateStyle:s,timeStyle:i}={}){if(isNaN(e.valueOf()))return\"Invalid date\";let r;if(t&&n)r=`${gi()} ${yi()}`;else if(t)r=gi();else{if(!n)return\"\";r=yi()}try{return Ys(e,r)}catch(t){return log.error(`Error formatting date with format string \"${r}\"`,t),e.toISOString()}}": "function ki(e,{date:t=!0,time:n=!0,dateStyle:s,timeStyle:i}={}){if(isNaN(e.valueOf()))return\"Некорректная дата\";try{const o={};s?o.dateStyle=s:t&&(o.year=\"numeric\",o.month=\"short\",o.day=\"numeric\");i?o.timeStyle=i:n&&(o.hour=\"numeric\",o.minute=\"2-digit\");return Object.keys(o).length?new Intl.DateTimeFormat(\"ru-RU\",o).format(e):\"\"}catch(t){return e.toISOString()}}",
+    "function di(e,{date:t=!0,time:n=!0,dateStyle:s,timeStyle:i}={}){if(isNaN(e.valueOf()))return\"Invalid date\";let r;if(t&&n)r=`${ii()} ${ri()}`;else if(t)r=ii();else{if(!n)return\"\";r=ri()}try{return Bs(e,r)}catch(t){return log.error(`Error formatting date with format string \"${r}\"`,t),e.toISOString()}}": "function di(e,{date:t=!0,time:n=!0,dateStyle:s,timeStyle:i}={}){if(isNaN(e.valueOf()))return\"Некорректная дата\";try{const o={};s?o.dateStyle=s:t&&(o.year=\"numeric\",o.month=\"short\",o.day=\"numeric\");i?o.timeStyle=i:n&&(o.hour=\"numeric\",o.minute=\"2-digit\");return Object.keys(o).length?new Intl.DateTimeFormat(\"ru-RU\",o).format(e):\"\"}catch(t){return e.toISOString()}}"
   },
   templates: {
     "Current worktree is ${i}": "Текущее рабочее дерево: ${i}",
@@ -867,6 +906,13 @@ module.exports = {
     "Cherry-pick ${t} commits…": "Перенести коммиты (${t})…",
     "Squash ${t} commits…": "Объединить коммиты (${t})…",
     "Reorder ${t} commits…": "Изменить порядок коммитов (${t})…"
+,
+    "Pull ${KA(n.behind)} ${1===n.behind?\"commit\":\"commits\"} from the ${t.name} remote": "Получить ${KA(n.behind)} ${1===n.behind?\"коммит\":n.behind%10>=2&&n.behind%10<=4&&(n.behind%100<10||n.behind%100>=20)?\"коммита\":\"коммитов\"} из ${t.name}",
+    "${KA(e.length)} changed file${oG(e.length)}": "Изменено файлов: ${KA(e.length)}",
+    "${i!==s.length?`${KA(i)} of `:\"\"}\\n    ${KA(s.length)} changed file${oG(s.length)}": "${i!==s.length?`${KA(i)} из `:\"\"}\\n    изменено файлов: ${KA(s.length)}",
+    "Behind (${KA(e.aheadBehind.behind)})": "Отстаёт (${KA(e.aheadBehind.behind)})",
+    "Ahead (${KA(e.aheadBehind.ahead)})": "Опережает (${KA(e.aheadBehind.ahead)})",
+    "Pushing to ${n.name}": "Отправка в ${n.name}"
   },
   mainTemplates: {
     "&Update from ${i}": "Получить изменения из ${i}",
