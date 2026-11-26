@@ -1,5 +1,5 @@
 {
-  "patchVersion": "1.4.26",
+  "patchVersion": "1.4.28",
   "builds": [
     {
       "appDirectory": "app-3.7.0",
@@ -9,7 +9,7 @@
       },
       "patchedSha256": {
         "main": "B9ECDEE6F7930797039853990BE590A691980346EF47DE09B69E9003705A1FDC",
-        "renderer": "AD6C21C9A8A61B59B1B44412C19E60EA77C305F2CE3A1CC1AE351C0CEA274528"
+        "renderer": "039A13D2E269F82F72D465804139A716032B0F1194024CEC55CD96B3CC9FDD5A"
       },
       "operations": {
         "main": [
@@ -3306,8 +3306,18 @@
             "occurrences": 1
           },
           {
+            "needle": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const r=\"progress\"===s.kind?s.details.text:s.text,o=s.percent;n?.progressCallback?.({kind:i,title:e,description:r,value:o,remote:t.name})}",
+            "replacement": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const ruGit=e => {\r\n  const t = [\r\n    ['remote: Counting objects', 'удалённый репозиторий: подсчёт объектов'],\r\n    ['remote: Compressing objects', 'удалённый репозиторий: сжатие объектов'],\r\n    ['remote: Resolving deltas', 'удалённый репозиторий: обработка различий'],\r\n    ['remote: Enumerating objects', 'удалённый репозиторий: перечисление объектов'],\r\n    ['Enumerating objects', 'Перечисление объектов'],\r\n    ['Counting objects', 'Подсчёт объектов'],\r\n    ['Compressing objects', 'Сжатие объектов'],\r\n    ['Writing objects', 'Запись объектов'],\r\n    ['Receiving objects', 'Получение объектов'],\r\n    ['Resolving deltas', 'Обработка различий'],\r\n    ['Checking out files', 'Получение файлов'],\r\n    ['Checking out ', 'Извлечение '],\r\n    [', done.', ', готово.'],\r\n    ['Delta compression using up to ', 'Сжатие различий, потоков: '],\r\n    [' threads', ''],\r\n    ['completed with ', 'завершено, локальных объектов: '],\r\n    [' local objects', ''],\r\n    ['Total ', 'Всего '],\r\n    [' (delta ', ' (различий '],\r\n    ['), reused ', '), повторно '],\r\n    ['), pack-reused ', '), из пакета '],\r\n    ['Uploading ', 'Отправка '],\r\n    ['Downloading ', 'Скачивание '],\r\n    [' out of an estimated ', ' из примерно '],\r\n    [' completed, ', ' завершено, '],\r\n  ];\r\n  let n = e;\r\n  for (const [s, i] of t) n = n.split(s).join(i);\r\n  return n;\r\n};const r=ruGit(\"progress\"===s.kind?s.details.text:s.text),o=s.percent;n?.progressCallback?.({kind:i,title:e,description:r,value:o,remote:t.name})}",
+            "occurrences": 1
+          },
+          {
             "needle": "\"Текущая ветка (\",N().createElement(pU,null,e.branch.name),\") has\",\" \",1===n.behind?\"a commit\":\"commits\",\" on\",\" \",r?\"GitHub\":\"the remote\",\" that\",\" \",1===n.behind?\"does not\":\"do not\",\" exist on your machine.\"",
             "replacement": "\"В текущей ветке (\",N().createElement(pU,null,e.branch.name),\") \",1===n.behind?\"есть коммит\":\"есть коммиты\",\" на \",r?\"GitHub\":\"удалённом репозитории\",1===n.behind?\", которого нет на этом компьютере.\":\", которых нет на этом компьютере.\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const i=\"progress\"===s.kind?s.details.text:s.text,o=s.percent;n({kind:r,title:e,description:i,value:o,remote:t.name})}",
+            "replacement": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const ruGit=e => {\r\n  const t = [\r\n    ['remote: Counting objects', 'удалённый репозиторий: подсчёт объектов'],\r\n    ['remote: Compressing objects', 'удалённый репозиторий: сжатие объектов'],\r\n    ['remote: Resolving deltas', 'удалённый репозиторий: обработка различий'],\r\n    ['remote: Enumerating objects', 'удалённый репозиторий: перечисление объектов'],\r\n    ['Enumerating objects', 'Перечисление объектов'],\r\n    ['Counting objects', 'Подсчёт объектов'],\r\n    ['Compressing objects', 'Сжатие объектов'],\r\n    ['Writing objects', 'Запись объектов'],\r\n    ['Receiving objects', 'Получение объектов'],\r\n    ['Resolving deltas', 'Обработка различий'],\r\n    ['Checking out files', 'Получение файлов'],\r\n    ['Checking out ', 'Извлечение '],\r\n    [', done.', ', готово.'],\r\n    ['Delta compression using up to ', 'Сжатие различий, потоков: '],\r\n    [' threads', ''],\r\n    ['completed with ', 'завершено, локальных объектов: '],\r\n    [' local objects', ''],\r\n    ['Total ', 'Всего '],\r\n    [' (delta ', ' (различий '],\r\n    ['), reused ', '), повторно '],\r\n    ['), pack-reused ', '), из пакета '],\r\n    ['Uploading ', 'Отправка '],\r\n    ['Downloading ', 'Скачивание '],\r\n    [' out of an estimated ', ' из примерно '],\r\n    [' completed, ', ' завершено, '],\r\n  ];\r\n  let n = e;\r\n  for (const [s, i] of t) n = n.split(s).join(i);\r\n  return n;\r\n};const i=ruGit(\"progress\"===s.kind?s.details.text:s.text),o=s.percent;n({kind:r,title:e,description:i,value:o,remote:t.name})}",
             "occurrences": 1
           },
           {
@@ -3318,6 +3328,11 @@
           {
             "needle": "o=e?\"View\":\" Create\",a=`${o} pull request on GitHub${r&&r.endpoint!==Jr()?\" Enterprise\":\"\"}.`,l=N().createElement(N().Fragment,null,e&&N().createElement(Ia,{symbol:vu}),`${o} pull request`)",
             "replacement": "o=e?\"Открыть\":\" Создать\",a=`${o} Pull Request на GitHub${r&&r.endpoint!==Jr()?\" Enterprise\":\"\"}.`,l=N().createElement(N().Fragment,null,e&&N().createElement(Ia,{symbol:vu}),`${o} Pull Request`)",
+            "occurrences": 1
+          },
+          {
+            "needle": "N().createElement(\"span\",null,\"2-up\"),N().createElement(\"span\",null,\"Swipe\"),N().createElement(\"span\",null,\"Onion Skin\"),N().createElement(\"span\",null,\"Difference\")",
+            "replacement": "N().createElement(\"span\",null,\"Два рядом\"),N().createElement(\"span\",null,\"Шторка\"),N().createElement(\"span\",null,\"Наложение\"),N().createElement(\"span\",null,\"Различия\")",
             "occurrences": 1
           },
           {
@@ -3333,6 +3348,11 @@
           {
             "needle": "case Vm.New:case Vm.Untracked:return\"New\";case Vm.Modified:return\"Modified\";case Vm.Deleted:return\"Deleted\";case Vm.Renamed:return\"Renamed\"",
             "replacement": "case Vm.New:case Vm.Untracked:return\"Новый\";case Vm.Modified:return\"Изменён\";case Vm.Deleted:return\"Удалён\";case Vm.Renamed:return\"Переименован\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "i=>{const r=\"progress\"===i.kind?i.details.text:i.text,a=i.percent;o({kind:s,title:e,description:r,value:a,remote:t.name,branch:n})}",
+            "replacement": "i=>{const ruGit=e => {\r\n  const t = [\r\n    ['remote: Counting objects', 'удалённый репозиторий: подсчёт объектов'],\r\n    ['remote: Compressing objects', 'удалённый репозиторий: сжатие объектов'],\r\n    ['remote: Resolving deltas', 'удалённый репозиторий: обработка различий'],\r\n    ['remote: Enumerating objects', 'удалённый репозиторий: перечисление объектов'],\r\n    ['Enumerating objects', 'Перечисление объектов'],\r\n    ['Counting objects', 'Подсчёт объектов'],\r\n    ['Compressing objects', 'Сжатие объектов'],\r\n    ['Writing objects', 'Запись объектов'],\r\n    ['Receiving objects', 'Получение объектов'],\r\n    ['Resolving deltas', 'Обработка различий'],\r\n    ['Checking out files', 'Получение файлов'],\r\n    ['Checking out ', 'Извлечение '],\r\n    [', done.', ', готово.'],\r\n    ['Delta compression using up to ', 'Сжатие различий, потоков: '],\r\n    [' threads', ''],\r\n    ['completed with ', 'завершено, локальных объектов: '],\r\n    [' local objects', ''],\r\n    ['Total ', 'Всего '],\r\n    [' (delta ', ' (различий '],\r\n    ['), reused ', '), повторно '],\r\n    ['), pack-reused ', '), из пакета '],\r\n    ['Uploading ', 'Отправка '],\r\n    ['Downloading ', 'Скачивание '],\r\n    [' out of an estimated ', ' из примерно '],\r\n    [' completed, ', ' завершено, '],\r\n  ];\r\n  let n = e;\r\n  for (const [s, i] of t) n = n.split(s).join(i);\r\n  return n;\r\n};const r=ruGit(\"progress\"===i.kind?i.details.text:i.text),a=i.percent;o({kind:s,title:e,description:r,value:a,remote:t.name,branch:n})}",
             "occurrences": 1
           },
           {
@@ -3706,7 +3726,7 @@
       },
       "patchedSha256": {
         "main": "9A401C84AE6D413EAC6328DFFB194FD8AE8DD3E4669ACADF00D6E0D80C67DA67",
-        "renderer": "87A7DDAEFF105E15546CBB4F8F99DB077A29507F10549C8AF9BEB9C8F66ED9A8"
+        "renderer": "A92B6F3577FF49F10DF2A69F0AFD2C78DA230598851DD978FFFE0ABBA8E7451B"
       },
       "operations": {
         "main": [
@@ -6978,8 +6998,18 @@
             "occurrences": 1
           },
           {
+            "needle": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const r=\"progress\"===s.kind?s.details.text:s.text,o=s.percent;n?.progressCallback?.({kind:i,title:e,description:r,value:o,remote:t.name})}",
+            "replacement": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const ruGit=e => {\r\n  const t = [\r\n    ['remote: Counting objects', 'удалённый репозиторий: подсчёт объектов'],\r\n    ['remote: Compressing objects', 'удалённый репозиторий: сжатие объектов'],\r\n    ['remote: Resolving deltas', 'удалённый репозиторий: обработка различий'],\r\n    ['remote: Enumerating objects', 'удалённый репозиторий: перечисление объектов'],\r\n    ['Enumerating objects', 'Перечисление объектов'],\r\n    ['Counting objects', 'Подсчёт объектов'],\r\n    ['Compressing objects', 'Сжатие объектов'],\r\n    ['Writing objects', 'Запись объектов'],\r\n    ['Receiving objects', 'Получение объектов'],\r\n    ['Resolving deltas', 'Обработка различий'],\r\n    ['Checking out files', 'Получение файлов'],\r\n    ['Checking out ', 'Извлечение '],\r\n    [', done.', ', готово.'],\r\n    ['Delta compression using up to ', 'Сжатие различий, потоков: '],\r\n    [' threads', ''],\r\n    ['completed with ', 'завершено, локальных объектов: '],\r\n    [' local objects', ''],\r\n    ['Total ', 'Всего '],\r\n    [' (delta ', ' (различий '],\r\n    ['), reused ', '), повторно '],\r\n    ['), pack-reused ', '), из пакета '],\r\n    ['Uploading ', 'Отправка '],\r\n    ['Downloading ', 'Скачивание '],\r\n    [' out of an estimated ', ' из примерно '],\r\n    [' completed, ', ' завершено, '],\r\n  ];\r\n  let n = e;\r\n  for (const [s, i] of t) n = n.split(s).join(i);\r\n  return n;\r\n};const r=ruGit(\"progress\"===s.kind?s.details.text:s.text),o=s.percent;n?.progressCallback?.({kind:i,title:e,description:r,value:o,remote:t.name})}",
+            "occurrences": 1
+          },
+          {
             "needle": "\"Текущая ветка (\",N().createElement(hF,null,e.branch.name),\") has\",\" \",1===n.behind?\"a commit\":\"commits\",\" on\",\" \",r?\"GitHub\":\"the remote\",\" that\",\" \",1===n.behind?\"does not\":\"do not\",\" exist on your machine.\"",
             "replacement": "\"В текущей ветке (\",N().createElement(hF,null,e.branch.name),\") \",1===n.behind?\"есть коммит\":\"есть коммиты\",\" на \",r?\"GitHub\":\"удалённом репозитории\",1===n.behind?\", которого нет на этом компьютере.\":\", которых нет на этом компьютере.\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const i=\"progress\"===s.kind?s.details.text:s.text,o=s.percent;n({kind:r,title:e,description:i,value:o,remote:t.name})}",
+            "replacement": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const ruGit=e => {\r\n  const t = [\r\n    ['remote: Counting objects', 'удалённый репозиторий: подсчёт объектов'],\r\n    ['remote: Compressing objects', 'удалённый репозиторий: сжатие объектов'],\r\n    ['remote: Resolving deltas', 'удалённый репозиторий: обработка различий'],\r\n    ['remote: Enumerating objects', 'удалённый репозиторий: перечисление объектов'],\r\n    ['Enumerating objects', 'Перечисление объектов'],\r\n    ['Counting objects', 'Подсчёт объектов'],\r\n    ['Compressing objects', 'Сжатие объектов'],\r\n    ['Writing objects', 'Запись объектов'],\r\n    ['Receiving objects', 'Получение объектов'],\r\n    ['Resolving deltas', 'Обработка различий'],\r\n    ['Checking out files', 'Получение файлов'],\r\n    ['Checking out ', 'Извлечение '],\r\n    [', done.', ', готово.'],\r\n    ['Delta compression using up to ', 'Сжатие различий, потоков: '],\r\n    [' threads', ''],\r\n    ['completed with ', 'завершено, локальных объектов: '],\r\n    [' local objects', ''],\r\n    ['Total ', 'Всего '],\r\n    [' (delta ', ' (различий '],\r\n    ['), reused ', '), повторно '],\r\n    ['), pack-reused ', '), из пакета '],\r\n    ['Uploading ', 'Отправка '],\r\n    ['Downloading ', 'Скачивание '],\r\n    [' out of an estimated ', ' из примерно '],\r\n    [' completed, ', ' завершено, '],\r\n  ];\r\n  let n = e;\r\n  for (const [s, i] of t) n = n.split(s).join(i);\r\n  return n;\r\n};const i=ruGit(\"progress\"===s.kind?s.details.text:s.text),o=s.percent;n({kind:r,title:e,description:i,value:o,remote:t.name})}",
             "occurrences": 1
           },
           {
@@ -6990,6 +7020,11 @@
           {
             "needle": "n.ahead>0&&(a.push(\"commits\"),l.push(1===n.ahead?\"1 local commit\":`${JR(n.ahead)} local commits`)),null!==s&&s.length>0&&(a.push(\"tags\"),l.push(1===s.length?\"1 tag\":`${JR(s.length)} tags`))",
             "replacement": "n.ahead>0&&(a.push(\"коммиты\"),l.push(1===n.ahead?\"1 локальный коммит\":`${JR(n.ahead)} ${n.ahead%10===1&&n.ahead%100!==11?\"локальный коммит\":n.ahead%10>=2&&n.ahead%10<=4&&(n.ahead%100<10||n.ahead%100>=20)?\"локальных коммита\":\"локальных коммитов\"}`)),null!==s&&s.length>0&&(a.push(\"теги\"),l.push(1===s.length?\"1 тег\":`${JR(s.length)} ${s.length%10===1&&s.length%100!==11?\"тег\":s.length%10>=2&&s.length%10<=4&&(s.length%100<10||s.length%100>=20)?\"тега\":\"тегов\"}`))",
+            "occurrences": 1
+          },
+          {
+            "needle": "N().createElement(\"span\",null,\"2-up\"),N().createElement(\"span\",null,\"Swipe\"),N().createElement(\"span\",null,\"Onion Skin\"),N().createElement(\"span\",null,\"Difference\")",
+            "replacement": "N().createElement(\"span\",null,\"Два рядом\"),N().createElement(\"span\",null,\"Шторка\"),N().createElement(\"span\",null,\"Наложение\"),N().createElement(\"span\",null,\"Различия\")",
             "occurrences": 1
           },
           {
@@ -7005,6 +7040,11 @@
           {
             "needle": "case bm.New:case bm.Untracked:return\"New\";case bm.Modified:return\"Modified\";case bm.Deleted:return\"Deleted\";case bm.Renamed:return\"Renamed\"",
             "replacement": "case bm.New:case bm.Untracked:return\"Новый\";case bm.Modified:return\"Изменён\";case bm.Deleted:return\"Удалён\";case bm.Renamed:return\"Переименован\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "i=>{const r=\"progress\"===i.kind?i.details.text:i.text,a=i.percent;o({kind:s,title:e,description:r,value:a,remote:t.name,branch:n})}",
+            "replacement": "i=>{const ruGit=e => {\r\n  const t = [\r\n    ['remote: Counting objects', 'удалённый репозиторий: подсчёт объектов'],\r\n    ['remote: Compressing objects', 'удалённый репозиторий: сжатие объектов'],\r\n    ['remote: Resolving deltas', 'удалённый репозиторий: обработка различий'],\r\n    ['remote: Enumerating objects', 'удалённый репозиторий: перечисление объектов'],\r\n    ['Enumerating objects', 'Перечисление объектов'],\r\n    ['Counting objects', 'Подсчёт объектов'],\r\n    ['Compressing objects', 'Сжатие объектов'],\r\n    ['Writing objects', 'Запись объектов'],\r\n    ['Receiving objects', 'Получение объектов'],\r\n    ['Resolving deltas', 'Обработка различий'],\r\n    ['Checking out files', 'Получение файлов'],\r\n    ['Checking out ', 'Извлечение '],\r\n    [', done.', ', готово.'],\r\n    ['Delta compression using up to ', 'Сжатие различий, потоков: '],\r\n    [' threads', ''],\r\n    ['completed with ', 'завершено, локальных объектов: '],\r\n    [' local objects', ''],\r\n    ['Total ', 'Всего '],\r\n    [' (delta ', ' (различий '],\r\n    ['), reused ', '), повторно '],\r\n    ['), pack-reused ', '), из пакета '],\r\n    ['Uploading ', 'Отправка '],\r\n    ['Downloading ', 'Скачивание '],\r\n    [' out of an estimated ', ' из примерно '],\r\n    [' completed, ', ' завершено, '],\r\n  ];\r\n  let n = e;\r\n  for (const [s, i] of t) n = n.split(s).join(i);\r\n  return n;\r\n};const r=ruGit(\"progress\"===i.kind?i.details.text:i.text),a=i.percent;o({kind:s,title:e,description:r,value:a,remote:t.name,branch:n})}",
             "occurrences": 1
           },
           {
@@ -7378,7 +7418,7 @@
       },
       "patchedSha256": {
         "main": "9AAC4A14946B97526BCDCEABF4DED6E68695EE0F3A53A83AEAC185824170777B",
-        "renderer": "EDAB10B5C1BB318A893B093744F7930F400CD164077BC5008B960DD8B7F9C44C"
+        "renderer": "38D045E6AC27253FA5B30D44ABFBE899585E719BB14275B7F2159BA00AEEB65D"
       },
       "operations": {
         "main": [
@@ -10650,8 +10690,18 @@
             "occurrences": 1
           },
           {
+            "needle": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const r=\"progress\"===s.kind?s.details.text:s.text,o=s.percent;n?.progressCallback?.({kind:i,title:e,description:r,value:o,remote:t.name})}",
+            "replacement": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const ruGit=e => {\r\n  const t = [\r\n    ['remote: Counting objects', 'удалённый репозиторий: подсчёт объектов'],\r\n    ['remote: Compressing objects', 'удалённый репозиторий: сжатие объектов'],\r\n    ['remote: Resolving deltas', 'удалённый репозиторий: обработка различий'],\r\n    ['remote: Enumerating objects', 'удалённый репозиторий: перечисление объектов'],\r\n    ['Enumerating objects', 'Перечисление объектов'],\r\n    ['Counting objects', 'Подсчёт объектов'],\r\n    ['Compressing objects', 'Сжатие объектов'],\r\n    ['Writing objects', 'Запись объектов'],\r\n    ['Receiving objects', 'Получение объектов'],\r\n    ['Resolving deltas', 'Обработка различий'],\r\n    ['Checking out files', 'Получение файлов'],\r\n    ['Checking out ', 'Извлечение '],\r\n    [', done.', ', готово.'],\r\n    ['Delta compression using up to ', 'Сжатие различий, потоков: '],\r\n    [' threads', ''],\r\n    ['completed with ', 'завершено, локальных объектов: '],\r\n    [' local objects', ''],\r\n    ['Total ', 'Всего '],\r\n    [' (delta ', ' (различий '],\r\n    ['), reused ', '), повторно '],\r\n    ['), pack-reused ', '), из пакета '],\r\n    ['Uploading ', 'Отправка '],\r\n    ['Downloading ', 'Скачивание '],\r\n    [' out of an estimated ', ' из примерно '],\r\n    [' completed, ', ' завершено, '],\r\n  ];\r\n  let n = e;\r\n  for (const [s, i] of t) n = n.split(s).join(i);\r\n  return n;\r\n};const r=ruGit(\"progress\"===s.kind?s.details.text:s.text),o=s.percent;n?.progressCallback?.({kind:i,title:e,description:r,value:o,remote:t.name})}",
+            "occurrences": 1
+          },
+          {
             "needle": "\"Текущая ветка (\",N().createElement(hF,null,e.branch.name),\") has\",\" \",1===n.behind?\"a commit\":\"commits\",\" on\",\" \",r?\"GitHub\":\"the remote\",\" that\",\" \",1===n.behind?\"does not\":\"do not\",\" exist on your machine.\"",
             "replacement": "\"В текущей ветке (\",N().createElement(hF,null,e.branch.name),\") \",1===n.behind?\"есть коммит\":\"есть коммиты\",\" на \",r?\"GitHub\":\"удалённом репозитории\",1===n.behind?\", которого нет на этом компьютере.\":\", которых нет на этом компьютере.\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const i=\"progress\"===s.kind?s.details.text:s.text,o=s.percent;n({kind:r,title:e,description:i,value:o,remote:t.name})}",
+            "replacement": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const ruGit=e => {\r\n  const t = [\r\n    ['remote: Counting objects', 'удалённый репозиторий: подсчёт объектов'],\r\n    ['remote: Compressing objects', 'удалённый репозиторий: сжатие объектов'],\r\n    ['remote: Resolving deltas', 'удалённый репозиторий: обработка различий'],\r\n    ['remote: Enumerating objects', 'удалённый репозиторий: перечисление объектов'],\r\n    ['Enumerating objects', 'Перечисление объектов'],\r\n    ['Counting objects', 'Подсчёт объектов'],\r\n    ['Compressing objects', 'Сжатие объектов'],\r\n    ['Writing objects', 'Запись объектов'],\r\n    ['Receiving objects', 'Получение объектов'],\r\n    ['Resolving deltas', 'Обработка различий'],\r\n    ['Checking out files', 'Получение файлов'],\r\n    ['Checking out ', 'Извлечение '],\r\n    [', done.', ', готово.'],\r\n    ['Delta compression using up to ', 'Сжатие различий, потоков: '],\r\n    [' threads', ''],\r\n    ['completed with ', 'завершено, локальных объектов: '],\r\n    [' local objects', ''],\r\n    ['Total ', 'Всего '],\r\n    [' (delta ', ' (различий '],\r\n    ['), reused ', '), повторно '],\r\n    ['), pack-reused ', '), из пакета '],\r\n    ['Uploading ', 'Отправка '],\r\n    ['Downloading ', 'Скачивание '],\r\n    [' out of an estimated ', ' из примерно '],\r\n    [' completed, ', ' завершено, '],\r\n  ];\r\n  let n = e;\r\n  for (const [s, i] of t) n = n.split(s).join(i);\r\n  return n;\r\n};const i=ruGit(\"progress\"===s.kind?s.details.text:s.text),o=s.percent;n({kind:r,title:e,description:i,value:o,remote:t.name})}",
             "occurrences": 1
           },
           {
@@ -10662,6 +10712,11 @@
           {
             "needle": "n.ahead>0&&(a.push(\"commits\"),l.push(1===n.ahead?\"1 local commit\":`${JR(n.ahead)} local commits`)),null!==s&&s.length>0&&(a.push(\"tags\"),l.push(1===s.length?\"1 tag\":`${JR(s.length)} tags`))",
             "replacement": "n.ahead>0&&(a.push(\"коммиты\"),l.push(1===n.ahead?\"1 локальный коммит\":`${JR(n.ahead)} ${n.ahead%10===1&&n.ahead%100!==11?\"локальный коммит\":n.ahead%10>=2&&n.ahead%10<=4&&(n.ahead%100<10||n.ahead%100>=20)?\"локальных коммита\":\"локальных коммитов\"}`)),null!==s&&s.length>0&&(a.push(\"теги\"),l.push(1===s.length?\"1 тег\":`${JR(s.length)} ${s.length%10===1&&s.length%100!==11?\"тег\":s.length%10>=2&&s.length%10<=4&&(s.length%100<10||s.length%100>=20)?\"тега\":\"тегов\"}`))",
+            "occurrences": 1
+          },
+          {
+            "needle": "N().createElement(\"span\",null,\"2-up\"),N().createElement(\"span\",null,\"Swipe\"),N().createElement(\"span\",null,\"Onion Skin\"),N().createElement(\"span\",null,\"Difference\")",
+            "replacement": "N().createElement(\"span\",null,\"Два рядом\"),N().createElement(\"span\",null,\"Шторка\"),N().createElement(\"span\",null,\"Наложение\"),N().createElement(\"span\",null,\"Различия\")",
             "occurrences": 1
           },
           {
@@ -10677,6 +10732,11 @@
           {
             "needle": "case bm.New:case bm.Untracked:return\"New\";case bm.Modified:return\"Modified\";case bm.Deleted:return\"Deleted\";case bm.Renamed:return\"Renamed\"",
             "replacement": "case bm.New:case bm.Untracked:return\"Новый\";case bm.Modified:return\"Изменён\";case bm.Deleted:return\"Удалён\";case bm.Renamed:return\"Переименован\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "i=>{const r=\"progress\"===i.kind?i.details.text:i.text,a=i.percent;o({kind:s,title:e,description:r,value:a,remote:t.name,branch:n})}",
+            "replacement": "i=>{const ruGit=e => {\r\n  const t = [\r\n    ['remote: Counting objects', 'удалённый репозиторий: подсчёт объектов'],\r\n    ['remote: Compressing objects', 'удалённый репозиторий: сжатие объектов'],\r\n    ['remote: Resolving deltas', 'удалённый репозиторий: обработка различий'],\r\n    ['remote: Enumerating objects', 'удалённый репозиторий: перечисление объектов'],\r\n    ['Enumerating objects', 'Перечисление объектов'],\r\n    ['Counting objects', 'Подсчёт объектов'],\r\n    ['Compressing objects', 'Сжатие объектов'],\r\n    ['Writing objects', 'Запись объектов'],\r\n    ['Receiving objects', 'Получение объектов'],\r\n    ['Resolving deltas', 'Обработка различий'],\r\n    ['Checking out files', 'Получение файлов'],\r\n    ['Checking out ', 'Извлечение '],\r\n    [', done.', ', готово.'],\r\n    ['Delta compression using up to ', 'Сжатие различий, потоков: '],\r\n    [' threads', ''],\r\n    ['completed with ', 'завершено, локальных объектов: '],\r\n    [' local objects', ''],\r\n    ['Total ', 'Всего '],\r\n    [' (delta ', ' (различий '],\r\n    ['), reused ', '), повторно '],\r\n    ['), pack-reused ', '), из пакета '],\r\n    ['Uploading ', 'Отправка '],\r\n    ['Downloading ', 'Скачивание '],\r\n    [' out of an estimated ', ' из примерно '],\r\n    [' completed, ', ' завершено, '],\r\n  ];\r\n  let n = e;\r\n  for (const [s, i] of t) n = n.split(s).join(i);\r\n  return n;\r\n};const r=ruGit(\"progress\"===i.kind?i.details.text:i.text),a=i.percent;o({kind:s,title:e,description:r,value:a,remote:t.name,branch:n})}",
             "occurrences": 1
           },
           {
@@ -14338,8 +14398,18 @@
         "occurrences": 1
       },
       {
+        "needle": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const r=\"progress\"===s.kind?s.details.text:s.text,o=s.percent;n?.progressCallback?.({kind:i,title:e,description:r,value:o,remote:t.name})}",
+        "replacement": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const ruGit=e => {\r\n  const t = [\r\n    ['remote: Counting objects', 'удалённый репозиторий: подсчёт объектов'],\r\n    ['remote: Compressing objects', 'удалённый репозиторий: сжатие объектов'],\r\n    ['remote: Resolving deltas', 'удалённый репозиторий: обработка различий'],\r\n    ['remote: Enumerating objects', 'удалённый репозиторий: перечисление объектов'],\r\n    ['Enumerating objects', 'Перечисление объектов'],\r\n    ['Counting objects', 'Подсчёт объектов'],\r\n    ['Compressing objects', 'Сжатие объектов'],\r\n    ['Writing objects', 'Запись объектов'],\r\n    ['Receiving objects', 'Получение объектов'],\r\n    ['Resolving deltas', 'Обработка различий'],\r\n    ['Checking out files', 'Получение файлов'],\r\n    ['Checking out ', 'Извлечение '],\r\n    [', done.', ', готово.'],\r\n    ['Delta compression using up to ', 'Сжатие различий, потоков: '],\r\n    [' threads', ''],\r\n    ['completed with ', 'завершено, локальных объектов: '],\r\n    [' local objects', ''],\r\n    ['Total ', 'Всего '],\r\n    [' (delta ', ' (различий '],\r\n    ['), reused ', '), повторно '],\r\n    ['), pack-reused ', '), из пакета '],\r\n    ['Uploading ', 'Отправка '],\r\n    ['Downloading ', 'Скачивание '],\r\n    [' out of an estimated ', ' из примерно '],\r\n    [' completed, ', ' завершено, '],\r\n  ];\r\n  let n = e;\r\n  for (const [s, i] of t) n = n.split(s).join(i);\r\n  return n;\r\n};const r=ruGit(\"progress\"===s.kind?s.details.text:s.text),o=s.percent;n?.progressCallback?.({kind:i,title:e,description:r,value:o,remote:t.name})}",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Текущая ветка (\",N().createElement(pU,null,e.branch.name),\") has\",\" \",1===n.behind?\"a commit\":\"commits\",\" on\",\" \",r?\"GitHub\":\"the remote\",\" that\",\" \",1===n.behind?\"does not\":\"do not\",\" exist on your machine.\"",
         "replacement": "\"В текущей ветке (\",N().createElement(pU,null,e.branch.name),\") \",1===n.behind?\"есть коммит\":\"есть коммиты\",\" на \",r?\"GitHub\":\"удалённом репозитории\",1===n.behind?\", которого нет на этом компьютере.\":\", которых нет на этом компьютере.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const i=\"progress\"===s.kind?s.details.text:s.text,o=s.percent;n({kind:r,title:e,description:i,value:o,remote:t.name})}",
+        "replacement": "s=>{if(\"context\"===s.kind&&!s.text.startsWith(\"remote: Counting objects\"))return;const ruGit=e => {\r\n  const t = [\r\n    ['remote: Counting objects', 'удалённый репозиторий: подсчёт объектов'],\r\n    ['remote: Compressing objects', 'удалённый репозиторий: сжатие объектов'],\r\n    ['remote: Resolving deltas', 'удалённый репозиторий: обработка различий'],\r\n    ['remote: Enumerating objects', 'удалённый репозиторий: перечисление объектов'],\r\n    ['Enumerating objects', 'Перечисление объектов'],\r\n    ['Counting objects', 'Подсчёт объектов'],\r\n    ['Compressing objects', 'Сжатие объектов'],\r\n    ['Writing objects', 'Запись объектов'],\r\n    ['Receiving objects', 'Получение объектов'],\r\n    ['Resolving deltas', 'Обработка различий'],\r\n    ['Checking out files', 'Получение файлов'],\r\n    ['Checking out ', 'Извлечение '],\r\n    [', done.', ', готово.'],\r\n    ['Delta compression using up to ', 'Сжатие различий, потоков: '],\r\n    [' threads', ''],\r\n    ['completed with ', 'завершено, локальных объектов: '],\r\n    [' local objects', ''],\r\n    ['Total ', 'Всего '],\r\n    [' (delta ', ' (различий '],\r\n    ['), reused ', '), повторно '],\r\n    ['), pack-reused ', '), из пакета '],\r\n    ['Uploading ', 'Отправка '],\r\n    ['Downloading ', 'Скачивание '],\r\n    [' out of an estimated ', ' из примерно '],\r\n    [' completed, ', ' завершено, '],\r\n  ];\r\n  let n = e;\r\n  for (const [s, i] of t) n = n.split(s).join(i);\r\n  return n;\r\n};const i=ruGit(\"progress\"===s.kind?s.details.text:s.text),o=s.percent;n({kind:r,title:e,description:i,value:o,remote:t.name})}",
         "occurrences": 1
       },
       {
@@ -14350,6 +14420,11 @@
       {
         "needle": "o=e?\"View\":\" Create\",a=`${o} pull request on GitHub${r&&r.endpoint!==Jr()?\" Enterprise\":\"\"}.`,l=N().createElement(N().Fragment,null,e&&N().createElement(Ia,{symbol:vu}),`${o} pull request`)",
         "replacement": "o=e?\"Открыть\":\" Создать\",a=`${o} Pull Request на GitHub${r&&r.endpoint!==Jr()?\" Enterprise\":\"\"}.`,l=N().createElement(N().Fragment,null,e&&N().createElement(Ia,{symbol:vu}),`${o} Pull Request`)",
+        "occurrences": 1
+      },
+      {
+        "needle": "N().createElement(\"span\",null,\"2-up\"),N().createElement(\"span\",null,\"Swipe\"),N().createElement(\"span\",null,\"Onion Skin\"),N().createElement(\"span\",null,\"Difference\")",
+        "replacement": "N().createElement(\"span\",null,\"Два рядом\"),N().createElement(\"span\",null,\"Шторка\"),N().createElement(\"span\",null,\"Наложение\"),N().createElement(\"span\",null,\"Различия\")",
         "occurrences": 1
       },
       {
@@ -14365,6 +14440,11 @@
       {
         "needle": "case Vm.New:case Vm.Untracked:return\"New\";case Vm.Modified:return\"Modified\";case Vm.Deleted:return\"Deleted\";case Vm.Renamed:return\"Renamed\"",
         "replacement": "case Vm.New:case Vm.Untracked:return\"Новый\";case Vm.Modified:return\"Изменён\";case Vm.Deleted:return\"Удалён\";case Vm.Renamed:return\"Переименован\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "i=>{const r=\"progress\"===i.kind?i.details.text:i.text,a=i.percent;o({kind:s,title:e,description:r,value:a,remote:t.name,branch:n})}",
+        "replacement": "i=>{const ruGit=e => {\r\n  const t = [\r\n    ['remote: Counting objects', 'удалённый репозиторий: подсчёт объектов'],\r\n    ['remote: Compressing objects', 'удалённый репозиторий: сжатие объектов'],\r\n    ['remote: Resolving deltas', 'удалённый репозиторий: обработка различий'],\r\n    ['remote: Enumerating objects', 'удалённый репозиторий: перечисление объектов'],\r\n    ['Enumerating objects', 'Перечисление объектов'],\r\n    ['Counting objects', 'Подсчёт объектов'],\r\n    ['Compressing objects', 'Сжатие объектов'],\r\n    ['Writing objects', 'Запись объектов'],\r\n    ['Receiving objects', 'Получение объектов'],\r\n    ['Resolving deltas', 'Обработка различий'],\r\n    ['Checking out files', 'Получение файлов'],\r\n    ['Checking out ', 'Извлечение '],\r\n    [', done.', ', готово.'],\r\n    ['Delta compression using up to ', 'Сжатие различий, потоков: '],\r\n    [' threads', ''],\r\n    ['completed with ', 'завершено, локальных объектов: '],\r\n    [' local objects', ''],\r\n    ['Total ', 'Всего '],\r\n    [' (delta ', ' (различий '],\r\n    ['), reused ', '), повторно '],\r\n    ['), pack-reused ', '), из пакета '],\r\n    ['Uploading ', 'Отправка '],\r\n    ['Downloading ', 'Скачивание '],\r\n    [' out of an estimated ', ' из примерно '],\r\n    [' completed, ', ' завершено, '],\r\n  ];\r\n  let n = e;\r\n  for (const [s, i] of t) n = n.split(s).join(i);\r\n  return n;\r\n};const r=ruGit(\"progress\"===i.kind?i.details.text:i.text),a=i.percent;o({kind:s,title:e,description:r,value:a,remote:t.name,branch:n})}",
         "occurrences": 1
       },
       {
