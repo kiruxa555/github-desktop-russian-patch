@@ -64,7 +64,7 @@ builds.sort((left, right) => {
 });
 
 const manifest = {
-  patchVersion: '1.4.17',
+  patchVersion: '1.4.26',
   builds,
   operations: builds[0].operations,
 };

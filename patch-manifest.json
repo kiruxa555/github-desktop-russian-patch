@@ -1,5 +1,5 @@
 {
-  "patchVersion": "1.4.17",
+  "patchVersion": "1.4.26",
   "builds": [
     {
       "appDirectory": "app-3.7.0",
@@ -8,8 +8,8 @@
         "renderer": "2205B9EF6ABB65E8DFDAE4FBEFCF943BC8E9F0D07F3979A4B602444E9F31A754"
       },
       "patchedSha256": {
-        "main": "F7D95B9512EF5F08C37530440819BB3AA0DD063673FFB10BB5B0C0E865AB0E90",
-        "renderer": "2ED37BBFD607BAC2C7D3F8F72941938037C7FC2EC74E54E90A0D68B97E0D8DE8"
+        "main": "B9ECDEE6F7930797039853990BE590A691980346EF47DE09B69E9003705A1FDC",
+        "renderer": "AD6C21C9A8A61B59B1B44412C19E60EA77C305F2CE3A1CC1AE351C0CEA274528"
       },
       "operations": {
         "main": [
@@ -561,6 +561,11 @@
           {
             "needle": "\"Cu&t\"",
             "replacement": "\"Вырезать\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "function vn(){const e=le().Menu.buildFromTemplate([{role:\"editMenu\"}]).items[0];return(e&&e.submenu?e.submenu.items:[]).filter(e=>!yn(e.role,\"pasteandmatchstyle\"))}",
+            "replacement": "function vn(){const e=le().Menu.buildFromTemplate([{role:\"editMenu\"}]).items[0],t={undo:\"Отменить\",redo:\"Повторить\",cut:\"Вырезать\",copy:\"Копировать\",paste:\"Вставить\",delete:\"Удалить\",selectall:\"Выбрать всё\"};return(e&&e.submenu?e.submenu.items:[]).filter(e=>!yn(e.role,\"pasteandmatchstyle\")).map(e=>{const n=t[(e.role||\"\").toLowerCase()];return n?new(le().MenuItem)({label:n,type:e.type,role:e.role,enabled:e.enabled}):e})}",
             "occurrences": 1
           },
           {
@@ -861,6 +866,21 @@
             "occurrences": 2
           },
           {
+            "needle": "`Create ${s}`",
+            "replacement": "`Создать ${s}`",
+            "occurrences": 1
+          },
+          {
+            "needle": "`Delete ${s}`",
+            "replacement": "`Удалить ${s}`",
+            "occurrences": 1
+          },
+          {
+            "needle": "`Update ${s}`",
+            "replacement": "`Обновить ${s}`",
+            "occurrences": 1
+          },
+          {
             "needle": "`Fetch ${e}`",
             "replacement": "`Проверить ${e}`",
             "occurrences": 1
@@ -946,6 +966,11 @@
             "occurrences": 1
           },
           {
+            "needle": "\"The account used for GitHub API requests and HTTPS authentication. This does not change your Git author name or email.\"",
+            "replacement": "\"Аккаунт для запросов к API GitHub и аутентификации по HTTPS. Имя и почта автора Git при этом не меняются.\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\"Your current branch is unborn (does not contain any commits). Creating a new branch will rename the current branch.\"",
             "replacement": "\"Текущая ветка ещё не содержит коммитов. Создание новой ветки переименует её.\"",
             "occurrences": 1
@@ -963,6 +988,11 @@
           {
             "needle": "\"There are no uncommitted changes in this repository. Here are some friendly suggestions for what to do next.\"",
             "replacement": "\"В репозитории нет незакоммиченных изменений. Вот что можно сделать дальше.\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "\"This will create a stash with your current changes. You can recover them by restoring the stash afterwards.\"",
+            "replacement": "\"Текущие изменения будут отложены. Их можно вернуть, восстановив отложенные изменения.\"",
             "occurrences": 1
           },
           {
@@ -1046,6 +1076,11 @@
             "occurrences": 1
           },
           {
+            "needle": "\"When a stash exists, access it at the bottom of the Changes tab to the left.\"",
+            "replacement": "\"Отложенные изменения находятся внизу вкладки «Изменения» слева.\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\"Sign in to an account with a Copilot license to configure Copilot settings.\"",
             "replacement": "\"Войдите в аккаунт с лицензией Copilot, чтобы настроить Copilot.\"",
             "occurrences": 1
@@ -1113,6 +1148,11 @@
           {
             "needle": "\"An optimized version of GitHub Desktop is available for your\"",
             "replacement": "\"Для вашего устройства доступна оптимизированная версия GitHub Desktop\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "\"You can stash your changes now and recover them afterwards.\"",
+            "replacement": "\"Сейчас изменения можно отложить и потом вернуть.\"",
             "occurrences": 1
           },
           {
@@ -1316,8 +1356,18 @@
             "occurrences": 1
           },
           {
+            "needle": "\" The following files would be overwritten:\"",
+            "replacement": "\" Следующие файлы будут перезаписаны:\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\"If I have changes and I switch branches...\"",
             "replacement": "\"Если есть изменения и я переключаю ветку…\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "\" when changes are present on your branch.\"",
+            "replacement": "\", пока в текущей ветке есть незафиксированные изменения.\"",
             "occurrences": 1
           },
           {
@@ -1691,6 +1741,11 @@
             "occurrences": 2
           },
           {
+            "needle": "\"Stash changes and continue\"",
+            "replacement": "\"Отложить изменения и продолжить\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\" for GitHub Desktop in the\"",
             "replacement": "\" для GitHub Desktop в\"",
             "occurrences": 2
@@ -1734,6 +1789,11 @@
             "needle": "\"Cherry-pick to new branch\"",
             "replacement": "\"Перенести коммиты в новую ветку\"",
             "occurrences": 2
+          },
+          {
+            "needle": "\"Disable commit spellcheck\"",
+            "replacement": "\"Отключить проверку орфографии\"",
+            "occurrences": 1
           },
           {
             "needle": "\"Add Signed-off-by trailer\"",
@@ -1799,6 +1859,11 @@
             "needle": "\"Configure custom editor…\"",
             "replacement": "\"Настроить другой редактор…\"",
             "occurrences": 2
+          },
+          {
+            "needle": "\"Enable commit spellcheck\"",
+            "replacement": "\"Включить проверку орфографии\"",
+            "occurrences": 1
           },
           {
             "needle": "\"Pull requests targeting \"",
@@ -1913,6 +1978,11 @@
           {
             "needle": "\"Use a local Git config\"",
             "replacement": "\"Использовать локальные настройки Git\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "\"Add GitHub.com account\"",
+            "replacement": "\"Добавить аккаунт GitHub.com\"",
             "occurrences": 1
           },
           {
@@ -2048,6 +2118,11 @@
           {
             "needle": "\"Choose a base branch\"",
             "replacement": "\"Выберите базовую ветку\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "\"Repository settings…\"",
+            "replacement": "\"Параметры репозитория…\"",
             "occurrences": 1
           },
           {
@@ -2451,6 +2526,11 @@
             "occurrences": 1
           },
           {
+            "needle": "\"Stashed Changes\"",
+            "replacement": "\"Отложенные изменения\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\"discard changes\"",
             "replacement": "\"отменить изменения\"",
             "occurrences": 1
@@ -2479,6 +2559,11 @@
             "needle": "\"Publish branch\"",
             "replacement": "\"Опубликовать ветку\"",
             "occurrences": 4
+          },
+          {
+            "needle": "\"Discard stash?\"",
+            "replacement": "\"Удалить отложенные изменения?\"",
+            "occurrences": 1
           },
           {
             "needle": "\"View on GitHub\"",
@@ -2881,6 +2966,11 @@
             "occurrences": 1
           },
           {
+            "needle": "\"Unable to \"",
+            "replacement": "\"Невозможно \"",
+            "occurrences": 1
+          },
+          {
             "needle": "\"Git config\"",
             "replacement": "\"Настройки Git\"",
             "occurrences": 1
@@ -3032,7 +3122,7 @@
           },
           {
             "needle": "\"Discard\"",
-            "replacement": "\"Отменить\"",
+            "replacement": "\"Удалить\"",
             "occurrences": 2
           },
           {
@@ -3201,6 +3291,11 @@
             "occurrences": 1
           },
           {
+            "needle": "getRetryActionName(){switch(this.props.retryAction.type){case Fn.Checkout:return\"checkout\";case Fn.Pull:return\"pull\";case Fn.Merge:return\"merge\";case Fn.Rebase:return\"rebase\";case Fn.Clone:return\"clone\";case Fn.Fetch:return\"fetch\";case Fn.Push:return\"push\";case Fn.CherryPick:case Fn.CreateBranchForCherryPick:return\"cherry-pick\";case Fn.Squash:return\"squash\";case Fn.Reorder:return\"reorder\";case Fn.DiscardChanges:return\"отменить изменения\";case Fn.PopStash:return\"восстановить отложенные изменения\";default:Dn(this.props.retryAction,`Unknown retryAction: ${this.props.retryAction}`)}}",
+            "replacement": "getRetryActionName(){switch(this.props.retryAction.type){case Fn.Checkout:return\"переключить ветку\";case Fn.Pull:return\"получить изменения\";case Fn.Merge:return\"объединить ветки\";case Fn.Rebase:return\"перенести коммиты\";case Fn.Clone:return\"клонировать\";case Fn.Fetch:return\"проверить обновления\";case Fn.Push:return\"отправить изменения\";case Fn.CherryPick:case Fn.CreateBranchForCherryPick:return\"перенести выбранные коммиты\";case Fn.Squash:return\"объединить коммиты\";case Fn.Reorder:return\"изменить порядок коммитов\";case Fn.DiscardChanges:return\"отменить изменения\";case Fn.PopStash:return\"восстановить отложенные изменения\";default:Dn(this.props.retryAction,`Unknown retryAction: ${this.props.retryAction}`)}}",
+            "occurrences": 1
+          },
+          {
             "needle": "function ki(e,{date:t=!0,time:n=!0,dateStyle:s,timeStyle:i}={}){if(isNaN(e.valueOf()))return\"Invalid date\";let r;if(t&&n)r=`${gi()} ${yi()}`;else if(t)r=gi();else{if(!n)return\"\";r=yi()}try{return Ys(e,r)}catch(t){return log.error(`Error formatting date with format string \"${r}\"`,t),e.toISOString()}}",
             "replacement": "function ki(e,{date:t=!0,time:n=!0,dateStyle:s,timeStyle:i}={}){if(isNaN(e.valueOf()))return\"Некорректная дата\";try{const o={};s?o.dateStyle=s:t&&(o.year=\"numeric\",o.month=\"short\",o.day=\"numeric\");i?o.timeStyle=i:n&&(o.hour=\"numeric\",o.minute=\"2-digit\");return Object.keys(o).length?new Intl.DateTimeFormat(\"ru-RU\",o).format(e):\"\"}catch(t){return e.toISOString()}}",
             "occurrences": 1
@@ -3263,6 +3358,11 @@
           {
             "needle": "null,\"Use\",\" \",N().createElement(OB,{uri:\"https://gh.io/gcm\"},\"Git Credential Manager\",\" \")",
             "replacement": "null,\"Используйте\",\" \",N().createElement(OB,{uri:\"https://gh.io/gcm\"},\"Git Credential Manager\",\" \")",
+            "occurrences": 1
+          },
+          {
+            "needle": "\"You have \",i,\" \",1===i?\"change\":\"changes\",\" in progress that you have not yet committed.\"",
+            "replacement": "`Есть ${i} ${i%10===1&&i%100!==11?\"незафиксированное изменение\":i%10>=2&&i%10<=4&&(i%100<10||i%100>=20)?\"незафиксированных изменения\":\"незафиксированных изменений\"}.`",
             "occurrences": 1
           },
           {
@@ -3333,6 +3433,11 @@
           {
             "needle": ",\" \",\"from \",N().createElement(pU,null,t.name),\".\"",
             "replacement": ",\" \",\"из \",N().createElement(pU,null,t.name),\".\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "{title:\"Error\",id:\"local-changes-overwritten\"",
+            "replacement": "{title:\"Ошибка\",id:\"local-changes-overwritten\"",
             "occurrences": 1
           },
           {
@@ -3413,6 +3518,11 @@
           {
             "needle": "e[e.Prompts=6]=\"Prompts\"",
             "replacement": "e[e.Prompts=6]=\"Подтверждения\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "placeholder:\"Search…\"",
+            "replacement": "placeholder:\"Поиск…\"",
             "occurrences": 1
           },
           {
@@ -3595,8 +3705,8 @@
         "renderer": "DF8AC40D0ECA0EBA878D4572929516D5B050F520391BFF7B2E5AA10C238367E7"
       },
       "patchedSha256": {
-        "main": "5541768462AC3114C456371542B682589AB9706EA5348275F19045E07ECC16E0",
-        "renderer": "A572C90C4292E0879730CFA956B7E6127720CCC11753F1B8D43DD5B2A4128178"
+        "main": "9A401C84AE6D413EAC6328DFFB194FD8AE8DD3E4669ACADF00D6E0D80C67DA67",
+        "renderer": "87A7DDAEFF105E15546CBB4F8F99DB077A29507F10549C8AF9BEB9C8F66ED9A8"
       },
       "operations": {
         "main": [
@@ -4151,6 +4261,11 @@
             "occurrences": 1
           },
           {
+            "needle": "function _n(){const e=le().Menu.buildFromTemplate([{role:\"editMenu\"}]).items[0];return(e&&e.submenu?e.submenu.items:[]).filter(e=>!vn(e.role,\"pasteandmatchstyle\"))}",
+            "replacement": "function _n(){const e=le().Menu.buildFromTemplate([{role:\"editMenu\"}]).items[0],t={undo:\"Отменить\",redo:\"Повторить\",cut:\"Вырезать\",copy:\"Копировать\",paste:\"Вставить\",delete:\"Удалить\",selectall:\"Выбрать всё\"};return(e&&e.submenu?e.submenu.items:[]).filter(e=>!vn(e.role,\"pasteandmatchstyle\")).map(e=>{const n=t[(e.role||\"\").toLowerCase()];return n?new(le().MenuItem)({label:n,type:e.type,role:e.role,enabled:e.enabled}):e})}",
+            "occurrences": 1
+          },
+          {
             "needle": "(c?\"Hide\":\"Show\")+\" Toggle Chan&ges Filter\"",
             "replacement": "(c?\"Скрыть\":\"Показать\")+\" фильтр изменений\"",
             "occurrences": 1
@@ -4448,6 +4563,21 @@
             "occurrences": 2
           },
           {
+            "needle": "`Create ${s}`",
+            "replacement": "`Создать ${s}`",
+            "occurrences": 1
+          },
+          {
+            "needle": "`Delete ${s}`",
+            "replacement": "`Удалить ${s}`",
+            "occurrences": 1
+          },
+          {
+            "needle": "`Update ${s}`",
+            "replacement": "`Обновить ${s}`",
+            "occurrences": 1
+          },
+          {
             "needle": "`Fetch ${e}`",
             "replacement": "`Проверить ${e}`",
             "occurrences": 1
@@ -4553,6 +4683,11 @@
             "occurrences": 1
           },
           {
+            "needle": "\"This will create a stash with your current changes. You can recover them by restoring the stash afterwards.\"",
+            "replacement": "\"Текущие изменения будут отложены. Их можно вернуть, восстановив отложенные изменения.\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\") is already published to GitHub. Create a pull request to propose and collaborate on your changes.\"",
             "replacement": "\") уже опубликована на GitHub. Создайте Pull Request, чтобы предложить изменения и обсудить их.\"",
             "occurrences": 1
@@ -4633,6 +4768,11 @@
             "occurrences": 1
           },
           {
+            "needle": "\"When a stash exists, access it at the bottom of the Changes tab to the left.\"",
+            "replacement": "\"Отложенные изменения находятся внизу вкладки «Изменения» слева.\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\"Sign in to an account with a Copilot license to configure Copilot settings.\"",
             "replacement": "\"Войдите в аккаунт с лицензией Copilot, чтобы настроить Copilot.\"",
             "occurrences": 1
@@ -4700,6 +4840,11 @@
           {
             "needle": "\"An optimized version of GitHub Desktop is available for your\"",
             "replacement": "\"Для вашего устройства доступна оптимизированная версия GitHub Desktop\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "\"You can stash your changes now and recover them afterwards.\"",
+            "replacement": "\"Сейчас изменения можно отложить и потом вернуть.\"",
             "occurrences": 1
           },
           {
@@ -4903,8 +5048,18 @@
             "occurrences": 1
           },
           {
+            "needle": "\" The following files would be overwritten:\"",
+            "replacement": "\" Следующие файлы будут перезаписаны:\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\"If I have changes and I switch branches...\"",
             "replacement": "\"Если есть изменения и я переключаю ветку…\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "\" when changes are present on your branch.\"",
+            "replacement": "\", пока в текущей ветке есть незафиксированные изменения.\"",
             "occurrences": 1
           },
           {
@@ -5278,6 +5433,11 @@
             "occurrences": 2
           },
           {
+            "needle": "\"Stash changes and continue\"",
+            "replacement": "\"Отложить изменения и продолжить\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\" for GitHub Desktop in the\"",
             "replacement": "\" для GitHub Desktop в\"",
             "occurrences": 2
@@ -5321,6 +5481,11 @@
             "needle": "\"Cherry-pick to new branch\"",
             "replacement": "\"Перенести коммиты в новую ветку\"",
             "occurrences": 2
+          },
+          {
+            "needle": "\"Disable commit spellcheck\"",
+            "replacement": "\"Отключить проверку орфографии\"",
+            "occurrences": 1
           },
           {
             "needle": "\"Add Signed-off-by trailer\"",
@@ -5386,6 +5551,11 @@
             "needle": "\"Configure custom editor…\"",
             "replacement": "\"Настроить другой редактор…\"",
             "occurrences": 2
+          },
+          {
+            "needle": "\"Enable commit spellcheck\"",
+            "replacement": "\"Включить проверку орфографии\"",
+            "occurrences": 1
           },
           {
             "needle": "\"Pull requests targeting \"",
@@ -6033,6 +6203,11 @@
             "occurrences": 1
           },
           {
+            "needle": "\"Stashed Changes\"",
+            "replacement": "\"Отложенные изменения\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\"discard changes\"",
             "replacement": "\"отменить изменения\"",
             "occurrences": 1
@@ -6061,6 +6236,11 @@
             "needle": "\"Publish branch\"",
             "replacement": "\"Опубликовать ветку\"",
             "occurrences": 4
+          },
+          {
+            "needle": "\"Discard stash?\"",
+            "replacement": "\"Удалить отложенные изменения?\"",
+            "occurrences": 1
           },
           {
             "needle": "\"View on GitHub\"",
@@ -6463,6 +6643,11 @@
             "occurrences": 1
           },
           {
+            "needle": "\"Unable to \"",
+            "replacement": "\"Невозможно \"",
+            "occurrences": 1
+          },
+          {
             "needle": "\"Git config\"",
             "replacement": "\"Настройки Git\"",
             "occurrences": 1
@@ -6614,7 +6799,7 @@
           },
           {
             "needle": "\"Discard\"",
-            "replacement": "\"Отменить\"",
+            "replacement": "\"Удалить\"",
             "occurrences": 2
           },
           {
@@ -6778,6 +6963,11 @@
             "occurrences": 1
           },
           {
+            "needle": "getRetryActionName(){switch(this.props.retryAction.type){case Bn.Checkout:return\"checkout\";case Bn.Pull:return\"pull\";case Bn.Merge:return\"merge\";case Bn.Rebase:return\"rebase\";case Bn.Clone:return\"clone\";case Bn.Fetch:return\"fetch\";case Bn.Push:return\"push\";case Bn.CherryPick:case Bn.CreateBranchForCherryPick:return\"cherry-pick\";case Bn.Squash:return\"squash\";case Bn.Reorder:return\"reorder\";case Bn.DiscardChanges:return\"отменить изменения\";case Bn.PopStash:return\"восстановить отложенные изменения\";default:Mn(this.props.retryAction,`Unknown retryAction: ${this.props.retryAction}`)}}",
+            "replacement": "getRetryActionName(){switch(this.props.retryAction.type){case Bn.Checkout:return\"переключить ветку\";case Bn.Pull:return\"получить изменения\";case Bn.Merge:return\"объединить ветки\";case Bn.Rebase:return\"перенести коммиты\";case Bn.Clone:return\"клонировать\";case Bn.Fetch:return\"проверить обновления\";case Bn.Push:return\"отправить изменения\";case Bn.CherryPick:case Bn.CreateBranchForCherryPick:return\"перенести выбранные коммиты\";case Bn.Squash:return\"объединить коммиты\";case Bn.Reorder:return\"изменить порядок коммитов\";case Bn.DiscardChanges:return\"отменить изменения\";case Bn.PopStash:return\"восстановить отложенные изменения\";default:Mn(this.props.retryAction,`Unknown retryAction: ${this.props.retryAction}`)}}",
+            "occurrences": 1
+          },
+          {
             "needle": "function di(e,{date:t=!0,time:n=!0,dateStyle:s,timeStyle:i}={}){if(isNaN(e.valueOf()))return\"Invalid date\";let r;if(t&&n)r=`${ii()} ${ri()}`;else if(t)r=ii();else{if(!n)return\"\";r=ri()}try{return Bs(e,r)}catch(t){return log.error(`Error formatting date with format string \"${r}\"`,t),e.toISOString()}}",
             "replacement": "function di(e,{date:t=!0,time:n=!0,dateStyle:s,timeStyle:i}={}){if(isNaN(e.valueOf()))return\"Некорректная дата\";try{const o={};s?o.dateStyle=s:t&&(o.year=\"numeric\",o.month=\"short\",o.day=\"numeric\");i?o.timeStyle=i:n&&(o.hour=\"numeric\",o.minute=\"2-digit\");return Object.keys(o).length?new Intl.DateTimeFormat(\"ru-RU\",o).format(e):\"\"}catch(t){return e.toISOString()}}",
             "occurrences": 1
@@ -6835,6 +7025,11 @@
           {
             "needle": ". Want to\",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"create a fork\"),\"?\")",
             "replacement": ". Хотите \",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"создать форк\"),\"?\")",
+            "occurrences": 1
+          },
+          {
+            "needle": "\"You have \",i,\" \",1===i?\"change\":\"changes\",\" in progress that you have not yet committed.\"",
+            "replacement": "`Есть ${i} ${i%10===1&&i%100!==11?\"незафиксированное изменение\":i%10>=2&&i%10<=4&&(i%100<10||i%100>=20)?\"незафиксированных изменения\":\"незафиксированных изменений\"}.`",
             "occurrences": 1
           },
           {
@@ -6910,6 +7105,11 @@
           {
             "needle": ",\" \",\"from \",N().createElement(hF,null,t.name),\".\"",
             "replacement": ",\" \",\"из \",N().createElement(hF,null,t.name),\".\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "{title:\"Error\",id:\"local-changes-overwritten\"",
+            "replacement": "{title:\"Ошибка\",id:\"local-changes-overwritten\"",
             "occurrences": 1
           },
           {
@@ -6990,6 +7190,11 @@
           {
             "needle": "e[e.Prompts=6]=\"Prompts\"",
             "replacement": "e[e.Prompts=6]=\"Подтверждения\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "placeholder:\"Search…\"",
+            "replacement": "placeholder:\"Поиск…\"",
             "occurrences": 1
           },
           {
@@ -7172,8 +7377,8 @@
         "renderer": "3A5B3789B9755FFCD61E2E9CD05F4964364CBBEDF28AB9D5B343E425A7C23CD4"
       },
       "patchedSha256": {
-        "main": "CEF57DD772C6E8CB8A18DC0A4CFF611B61836A9D62C41C054E6F448A651CDEEF",
-        "renderer": "A35D4E6026CA2C8D1411A8FD0F98F6FB88E2C6AE6586CC81E5EA38BDD8FA4F19"
+        "main": "9AAC4A14946B97526BCDCEABF4DED6E68695EE0F3A53A83AEAC185824170777B",
+        "renderer": "EDAB10B5C1BB318A893B093744F7930F400CD164077BC5008B960DD8B7F9C44C"
       },
       "operations": {
         "main": [
@@ -7728,6 +7933,11 @@
             "occurrences": 1
           },
           {
+            "needle": "function _n(){const e=le().Menu.buildFromTemplate([{role:\"editMenu\"}]).items[0];return(e&&e.submenu?e.submenu.items:[]).filter(e=>!vn(e.role,\"pasteandmatchstyle\"))}",
+            "replacement": "function _n(){const e=le().Menu.buildFromTemplate([{role:\"editMenu\"}]).items[0],t={undo:\"Отменить\",redo:\"Повторить\",cut:\"Вырезать\",copy:\"Копировать\",paste:\"Вставить\",delete:\"Удалить\",selectall:\"Выбрать всё\"};return(e&&e.submenu?e.submenu.items:[]).filter(e=>!vn(e.role,\"pasteandmatchstyle\")).map(e=>{const n=t[(e.role||\"\").toLowerCase()];return n?new(le().MenuItem)({label:n,type:e.type,role:e.role,enabled:e.enabled}):e})}",
+            "occurrences": 1
+          },
+          {
             "needle": "(c?\"Hide\":\"Show\")+\" Toggle Chan&ges Filter\"",
             "replacement": "(c?\"Скрыть\":\"Показать\")+\" фильтр изменений\"",
             "occurrences": 1
@@ -8025,6 +8235,21 @@
             "occurrences": 2
           },
           {
+            "needle": "`Create ${s}`",
+            "replacement": "`Создать ${s}`",
+            "occurrences": 1
+          },
+          {
+            "needle": "`Delete ${s}`",
+            "replacement": "`Удалить ${s}`",
+            "occurrences": 1
+          },
+          {
+            "needle": "`Update ${s}`",
+            "replacement": "`Обновить ${s}`",
+            "occurrences": 1
+          },
+          {
             "needle": "`Fetch ${e}`",
             "replacement": "`Проверить ${e}`",
             "occurrences": 1
@@ -8130,6 +8355,11 @@
             "occurrences": 1
           },
           {
+            "needle": "\"This will create a stash with your current changes. You can recover them by restoring the stash afterwards.\"",
+            "replacement": "\"Текущие изменения будут отложены. Их можно вернуть, восстановив отложенные изменения.\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\") is already published to GitHub. Create a pull request to propose and collaborate on your changes.\"",
             "replacement": "\") уже опубликована на GitHub. Создайте Pull Request, чтобы предложить изменения и обсудить их.\"",
             "occurrences": 1
@@ -8210,6 +8440,11 @@
             "occurrences": 1
           },
           {
+            "needle": "\"When a stash exists, access it at the bottom of the Changes tab to the left.\"",
+            "replacement": "\"Отложенные изменения находятся внизу вкладки «Изменения» слева.\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\"Sign in to an account with a Copilot license to configure Copilot settings.\"",
             "replacement": "\"Войдите в аккаунт с лицензией Copilot, чтобы настроить Copilot.\"",
             "occurrences": 1
@@ -8277,6 +8512,11 @@
           {
             "needle": "\"An optimized version of GitHub Desktop is available for your\"",
             "replacement": "\"Для вашего устройства доступна оптимизированная версия GitHub Desktop\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "\"You can stash your changes now and recover them afterwards.\"",
+            "replacement": "\"Сейчас изменения можно отложить и потом вернуть.\"",
             "occurrences": 1
           },
           {
@@ -8480,8 +8720,18 @@
             "occurrences": 1
           },
           {
+            "needle": "\" The following files would be overwritten:\"",
+            "replacement": "\" Следующие файлы будут перезаписаны:\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\"If I have changes and I switch branches...\"",
             "replacement": "\"Если есть изменения и я переключаю ветку…\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "\" when changes are present on your branch.\"",
+            "replacement": "\", пока в текущей ветке есть незафиксированные изменения.\"",
             "occurrences": 1
           },
           {
@@ -8855,6 +9105,11 @@
             "occurrences": 2
           },
           {
+            "needle": "\"Stash changes and continue\"",
+            "replacement": "\"Отложить изменения и продолжить\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\" for GitHub Desktop in the\"",
             "replacement": "\" для GitHub Desktop в\"",
             "occurrences": 2
@@ -8898,6 +9153,11 @@
             "needle": "\"Cherry-pick to new branch\"",
             "replacement": "\"Перенести коммиты в новую ветку\"",
             "occurrences": 2
+          },
+          {
+            "needle": "\"Disable commit spellcheck\"",
+            "replacement": "\"Отключить проверку орфографии\"",
+            "occurrences": 1
           },
           {
             "needle": "\"Add Signed-off-by trailer\"",
@@ -8963,6 +9223,11 @@
             "needle": "\"Configure custom editor…\"",
             "replacement": "\"Настроить другой редактор…\"",
             "occurrences": 2
+          },
+          {
+            "needle": "\"Enable commit spellcheck\"",
+            "replacement": "\"Включить проверку орфографии\"",
+            "occurrences": 1
           },
           {
             "needle": "\"Pull requests targeting \"",
@@ -9610,6 +9875,11 @@
             "occurrences": 1
           },
           {
+            "needle": "\"Stashed Changes\"",
+            "replacement": "\"Отложенные изменения\"",
+            "occurrences": 1
+          },
+          {
             "needle": "\"discard changes\"",
             "replacement": "\"отменить изменения\"",
             "occurrences": 1
@@ -9638,6 +9908,11 @@
             "needle": "\"Publish branch\"",
             "replacement": "\"Опубликовать ветку\"",
             "occurrences": 4
+          },
+          {
+            "needle": "\"Discard stash?\"",
+            "replacement": "\"Удалить отложенные изменения?\"",
+            "occurrences": 1
           },
           {
             "needle": "\"View on GitHub\"",
@@ -10040,6 +10315,11 @@
             "occurrences": 1
           },
           {
+            "needle": "\"Unable to \"",
+            "replacement": "\"Невозможно \"",
+            "occurrences": 1
+          },
+          {
             "needle": "\"Git config\"",
             "replacement": "\"Настройки Git\"",
             "occurrences": 1
@@ -10191,7 +10471,7 @@
           },
           {
             "needle": "\"Discard\"",
-            "replacement": "\"Отменить\"",
+            "replacement": "\"Удалить\"",
             "occurrences": 2
           },
           {
@@ -10355,6 +10635,11 @@
             "occurrences": 1
           },
           {
+            "needle": "getRetryActionName(){switch(this.props.retryAction.type){case Bn.Checkout:return\"checkout\";case Bn.Pull:return\"pull\";case Bn.Merge:return\"merge\";case Bn.Rebase:return\"rebase\";case Bn.Clone:return\"clone\";case Bn.Fetch:return\"fetch\";case Bn.Push:return\"push\";case Bn.CherryPick:case Bn.CreateBranchForCherryPick:return\"cherry-pick\";case Bn.Squash:return\"squash\";case Bn.Reorder:return\"reorder\";case Bn.DiscardChanges:return\"отменить изменения\";case Bn.PopStash:return\"восстановить отложенные изменения\";default:Mn(this.props.retryAction,`Unknown retryAction: ${this.props.retryAction}`)}}",
+            "replacement": "getRetryActionName(){switch(this.props.retryAction.type){case Bn.Checkout:return\"переключить ветку\";case Bn.Pull:return\"получить изменения\";case Bn.Merge:return\"объединить ветки\";case Bn.Rebase:return\"перенести коммиты\";case Bn.Clone:return\"клонировать\";case Bn.Fetch:return\"проверить обновления\";case Bn.Push:return\"отправить изменения\";case Bn.CherryPick:case Bn.CreateBranchForCherryPick:return\"перенести выбранные коммиты\";case Bn.Squash:return\"объединить коммиты\";case Bn.Reorder:return\"изменить порядок коммитов\";case Bn.DiscardChanges:return\"отменить изменения\";case Bn.PopStash:return\"восстановить отложенные изменения\";default:Mn(this.props.retryAction,`Unknown retryAction: ${this.props.retryAction}`)}}",
+            "occurrences": 1
+          },
+          {
             "needle": "function di(e,{date:t=!0,time:n=!0,dateStyle:s,timeStyle:i}={}){if(isNaN(e.valueOf()))return\"Invalid date\";let r;if(t&&n)r=`${ii()} ${ri()}`;else if(t)r=ii();else{if(!n)return\"\";r=ri()}try{return Bs(e,r)}catch(t){return log.error(`Error formatting date with format string \"${r}\"`,t),e.toISOString()}}",
             "replacement": "function di(e,{date:t=!0,time:n=!0,dateStyle:s,timeStyle:i}={}){if(isNaN(e.valueOf()))return\"Некорректная дата\";try{const o={};s?o.dateStyle=s:t&&(o.year=\"numeric\",o.month=\"short\",o.day=\"numeric\");i?o.timeStyle=i:n&&(o.hour=\"numeric\",o.minute=\"2-digit\");return Object.keys(o).length?new Intl.DateTimeFormat(\"ru-RU\",o).format(e):\"\"}catch(t){return e.toISOString()}}",
             "occurrences": 1
@@ -10412,6 +10697,11 @@
           {
             "needle": ". Want to\",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"create a fork\"),\"?\")",
             "replacement": ". Хотите \",\" \",N().createElement(PO,{onClick:this.props.onShowCreateForkDialog},\"создать форк\"),\"?\")",
+            "occurrences": 1
+          },
+          {
+            "needle": "\"You have \",i,\" \",1===i?\"change\":\"changes\",\" in progress that you have not yet committed.\"",
+            "replacement": "`Есть ${i} ${i%10===1&&i%100!==11?\"незафиксированное изменение\":i%10>=2&&i%10<=4&&(i%100<10||i%100>=20)?\"незафиксированных изменения\":\"незафиксированных изменений\"}.`",
             "occurrences": 1
           },
           {
@@ -10487,6 +10777,11 @@
           {
             "needle": ",\" \",\"from \",N().createElement(hF,null,t.name),\".\"",
             "replacement": ",\" \",\"из \",N().createElement(hF,null,t.name),\".\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "{title:\"Error\",id:\"local-changes-overwritten\"",
+            "replacement": "{title:\"Ошибка\",id:\"local-changes-overwritten\"",
             "occurrences": 1
           },
           {
@@ -10567,6 +10862,11 @@
           {
             "needle": "e[e.Prompts=6]=\"Prompts\"",
             "replacement": "e[e.Prompts=6]=\"Подтверждения\"",
+            "occurrences": 1
+          },
+          {
+            "needle": "placeholder:\"Search…\"",
+            "replacement": "placeholder:\"Поиск…\"",
             "occurrences": 1
           },
           {
@@ -11296,6 +11596,11 @@
         "occurrences": 1
       },
       {
+        "needle": "function vn(){const e=le().Menu.buildFromTemplate([{role:\"editMenu\"}]).items[0];return(e&&e.submenu?e.submenu.items:[]).filter(e=>!yn(e.role,\"pasteandmatchstyle\"))}",
+        "replacement": "function vn(){const e=le().Menu.buildFromTemplate([{role:\"editMenu\"}]).items[0],t={undo:\"Отменить\",redo:\"Повторить\",cut:\"Вырезать\",copy:\"Копировать\",paste:\"Вставить\",delete:\"Удалить\",selectall:\"Выбрать всё\"};return(e&&e.submenu?e.submenu.items:[]).filter(e=>!yn(e.role,\"pasteandmatchstyle\")).map(e=>{const n=t[(e.role||\"\").toLowerCase()];return n?new(le().MenuItem)({label:n,type:e.type,role:e.role,enabled:e.enabled}):e})}",
+        "occurrences": 1
+      },
+      {
         "needle": "(c?\"Hide\":\"Show\")+\" Toggle Chan&ges Filter\"",
         "replacement": "(c?\"Скрыть\":\"Показать\")+\" фильтр изменений\"",
         "occurrences": 1
@@ -11593,6 +11898,21 @@
         "occurrences": 2
       },
       {
+        "needle": "`Create ${s}`",
+        "replacement": "`Создать ${s}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Delete ${s}`",
+        "replacement": "`Удалить ${s}`",
+        "occurrences": 1
+      },
+      {
+        "needle": "`Update ${s}`",
+        "replacement": "`Обновить ${s}`",
+        "occurrences": 1
+      },
+      {
         "needle": "`Fetch ${e}`",
         "replacement": "`Проверить ${e}`",
         "occurrences": 1
@@ -11678,6 +11998,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"The account used for GitHub API requests and HTTPS authentication. This does not change your Git author name or email.\"",
+        "replacement": "\"Аккаунт для запросов к API GitHub и аутентификации по HTTPS. Имя и почта автора Git при этом не меняются.\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Your current branch is unborn (does not contain any commits). Creating a new branch will rename the current branch.\"",
         "replacement": "\"Текущая ветка ещё не содержит коммитов. Создание новой ветки переименует её.\"",
         "occurrences": 1
@@ -11695,6 +12020,11 @@
       {
         "needle": "\"There are no uncommitted changes in this repository. Here are some friendly suggestions for what to do next.\"",
         "replacement": "\"В репозитории нет незакоммиченных изменений. Вот что можно сделать дальше.\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"This will create a stash with your current changes. You can recover them by restoring the stash afterwards.\"",
+        "replacement": "\"Текущие изменения будут отложены. Их можно вернуть, восстановив отложенные изменения.\"",
         "occurrences": 1
       },
       {
@@ -11778,6 +12108,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"When a stash exists, access it at the bottom of the Changes tab to the left.\"",
+        "replacement": "\"Отложенные изменения находятся внизу вкладки «Изменения» слева.\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Sign in to an account with a Copilot license to configure Copilot settings.\"",
         "replacement": "\"Войдите в аккаунт с лицензией Copilot, чтобы настроить Copilot.\"",
         "occurrences": 1
@@ -11845,6 +12180,11 @@
       {
         "needle": "\"An optimized version of GitHub Desktop is available for your\"",
         "replacement": "\"Для вашего устройства доступна оптимизированная версия GitHub Desktop\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"You can stash your changes now and recover them afterwards.\"",
+        "replacement": "\"Сейчас изменения можно отложить и потом вернуть.\"",
         "occurrences": 1
       },
       {
@@ -12048,8 +12388,18 @@
         "occurrences": 1
       },
       {
+        "needle": "\" The following files would be overwritten:\"",
+        "replacement": "\" Следующие файлы будут перезаписаны:\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"If I have changes and I switch branches...\"",
         "replacement": "\"Если есть изменения и я переключаю ветку…\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\" when changes are present on your branch.\"",
+        "replacement": "\", пока в текущей ветке есть незафиксированные изменения.\"",
         "occurrences": 1
       },
       {
@@ -12423,6 +12773,11 @@
         "occurrences": 2
       },
       {
+        "needle": "\"Stash changes and continue\"",
+        "replacement": "\"Отложить изменения и продолжить\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\" for GitHub Desktop in the\"",
         "replacement": "\" для GitHub Desktop в\"",
         "occurrences": 2
@@ -12466,6 +12821,11 @@
         "needle": "\"Cherry-pick to new branch\"",
         "replacement": "\"Перенести коммиты в новую ветку\"",
         "occurrences": 2
+      },
+      {
+        "needle": "\"Disable commit spellcheck\"",
+        "replacement": "\"Отключить проверку орфографии\"",
+        "occurrences": 1
       },
       {
         "needle": "\"Add Signed-off-by trailer\"",
@@ -12531,6 +12891,11 @@
         "needle": "\"Configure custom editor…\"",
         "replacement": "\"Настроить другой редактор…\"",
         "occurrences": 2
+      },
+      {
+        "needle": "\"Enable commit spellcheck\"",
+        "replacement": "\"Включить проверку орфографии\"",
+        "occurrences": 1
       },
       {
         "needle": "\"Pull requests targeting \"",
@@ -12645,6 +13010,11 @@
       {
         "needle": "\"Use a local Git config\"",
         "replacement": "\"Использовать локальные настройки Git\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Add GitHub.com account\"",
+        "replacement": "\"Добавить аккаунт GitHub.com\"",
         "occurrences": 1
       },
       {
@@ -12780,6 +13150,11 @@
       {
         "needle": "\"Choose a base branch\"",
         "replacement": "\"Выберите базовую ветку\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"Repository settings…\"",
+        "replacement": "\"Параметры репозитория…\"",
         "occurrences": 1
       },
       {
@@ -13183,6 +13558,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Stashed Changes\"",
+        "replacement": "\"Отложенные изменения\"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"discard changes\"",
         "replacement": "\"отменить изменения\"",
         "occurrences": 1
@@ -13211,6 +13591,11 @@
         "needle": "\"Publish branch\"",
         "replacement": "\"Опубликовать ветку\"",
         "occurrences": 4
+      },
+      {
+        "needle": "\"Discard stash?\"",
+        "replacement": "\"Удалить отложенные изменения?\"",
+        "occurrences": 1
       },
       {
         "needle": "\"View on GitHub\"",
@@ -13613,6 +13998,11 @@
         "occurrences": 1
       },
       {
+        "needle": "\"Unable to \"",
+        "replacement": "\"Невозможно \"",
+        "occurrences": 1
+      },
+      {
         "needle": "\"Git config\"",
         "replacement": "\"Настройки Git\"",
         "occurrences": 1
@@ -13764,7 +14154,7 @@
       },
       {
         "needle": "\"Discard\"",
-        "replacement": "\"Отменить\"",
+        "replacement": "\"Удалить\"",
         "occurrences": 2
       },
       {
@@ -13933,6 +14323,11 @@
         "occurrences": 1
       },
       {
+        "needle": "getRetryActionName(){switch(this.props.retryAction.type){case Fn.Checkout:return\"checkout\";case Fn.Pull:return\"pull\";case Fn.Merge:return\"merge\";case Fn.Rebase:return\"rebase\";case Fn.Clone:return\"clone\";case Fn.Fetch:return\"fetch\";case Fn.Push:return\"push\";case Fn.CherryPick:case Fn.CreateBranchForCherryPick:return\"cherry-pick\";case Fn.Squash:return\"squash\";case Fn.Reorder:return\"reorder\";case Fn.DiscardChanges:return\"отменить изменения\";case Fn.PopStash:return\"восстановить отложенные изменения\";default:Dn(this.props.retryAction,`Unknown retryAction: ${this.props.retryAction}`)}}",
+        "replacement": "getRetryActionName(){switch(this.props.retryAction.type){case Fn.Checkout:return\"переключить ветку\";case Fn.Pull:return\"получить изменения\";case Fn.Merge:return\"объединить ветки\";case Fn.Rebase:return\"перенести коммиты\";case Fn.Clone:return\"клонировать\";case Fn.Fetch:return\"проверить обновления\";case Fn.Push:return\"отправить изменения\";case Fn.CherryPick:case Fn.CreateBranchForCherryPick:return\"перенести выбранные коммиты\";case Fn.Squash:return\"объединить коммиты\";case Fn.Reorder:return\"изменить порядок коммитов\";case Fn.DiscardChanges:return\"отменить изменения\";case Fn.PopStash:return\"восстановить отложенные изменения\";default:Dn(this.props.retryAction,`Unknown retryAction: ${this.props.retryAction}`)}}",
+        "occurrences": 1
+      },
+      {
         "needle": "function ki(e,{date:t=!0,time:n=!0,dateStyle:s,timeStyle:i}={}){if(isNaN(e.valueOf()))return\"Invalid date\";let r;if(t&&n)r=`${gi()} ${yi()}`;else if(t)r=gi();else{if(!n)return\"\";r=yi()}try{return Ys(e,r)}catch(t){return log.error(`Error formatting date with format string \"${r}\"`,t),e.toISOString()}}",
         "replacement": "function ki(e,{date:t=!0,time:n=!0,dateStyle:s,timeStyle:i}={}){if(isNaN(e.valueOf()))return\"Некорректная дата\";try{const o={};s?o.dateStyle=s:t&&(o.year=\"numeric\",o.month=\"short\",o.day=\"numeric\");i?o.timeStyle=i:n&&(o.hour=\"numeric\",o.minute=\"2-digit\");return Object.keys(o).length?new Intl.DateTimeFormat(\"ru-RU\",o).format(e):\"\"}catch(t){return e.toISOString()}}",
         "occurrences": 1
@@ -13995,6 +14390,11 @@
       {
         "needle": "null,\"Use\",\" \",N().createElement(OB,{uri:\"https://gh.io/gcm\"},\"Git Credential Manager\",\" \")",
         "replacement": "null,\"Используйте\",\" \",N().createElement(OB,{uri:\"https://gh.io/gcm\"},\"Git Credential Manager\",\" \")",
+        "occurrences": 1
+      },
+      {
+        "needle": "\"You have \",i,\" \",1===i?\"change\":\"changes\",\" in progress that you have not yet committed.\"",
+        "replacement": "`Есть ${i} ${i%10===1&&i%100!==11?\"незафиксированное изменение\":i%10>=2&&i%10<=4&&(i%100<10||i%100>=20)?\"незафиксированных изменения\":\"незафиксированных изменений\"}.`",
         "occurrences": 1
       },
       {
@@ -14065,6 +14465,11 @@
       {
         "needle": ",\" \",\"from \",N().createElement(pU,null,t.name),\".\"",
         "replacement": ",\" \",\"из \",N().createElement(pU,null,t.name),\".\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "{title:\"Error\",id:\"local-changes-overwritten\"",
+        "replacement": "{title:\"Ошибка\",id:\"local-changes-overwritten\"",
         "occurrences": 1
       },
       {
@@ -14145,6 +14550,11 @@
       {
         "needle": "e[e.Prompts=6]=\"Prompts\"",
         "replacement": "e[e.Prompts=6]=\"Подтверждения\"",
+        "occurrences": 1
+      },
+      {
+        "needle": "placeholder:\"Search…\"",
+        "replacement": "placeholder:\"Поиск…\"",
         "occurrences": 1
       },
       {
